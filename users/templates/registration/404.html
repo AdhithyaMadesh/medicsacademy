@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>404 Error</title>
+        <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin: 0px;
+                font-family: 'Mukta Malar',sans-serif !important;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 24px;
+                color: #183153;
+                background-color: #fff !important;
+                min-height: 100vh;
+                -webkit-overflow-scrolling: touch;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                overflow-x: hidden;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            .error-img {
+                width: 400px;
+                height: 400px;
+            }
+            h1 {
+                margin: 0px 0px 10px;
+                font-size: 48px;
+                line-height: 54px;
+                color: #262f5f;
+            }
+            p { 
+                margin: 0px auto 30px;
+                font-size: 18px;
+                line-height: 24px;
+                text-align: center;
+                color: #646464;
+                max-width: 520px;
+            }
+            a {
+                margin: 0px;
+                padding: 10px 30px;
+                font-size: 18px;
+                font-weight: 600;
+                color: #fff;
+                background-color: #126e51;
+                border-radius: 4px;
+                text-decoration: none;
+            }
+            a:hover {
+                opacity: .9;
+            }
+            @media (max-width: 619px) {
+                body {
+                    padding: 20px;
+                }
+                .error-img {
+                    width: 300px;
+                    height: 300px;
+                }
+                h1 {
+                    font-size: 30px;
+                    line-height: 48px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <img class="error-img" src="{% static 'images/user/error.gif' %}" alt="" />
+        <h1>Page Not Found</h1>
+        <p>Sorry, the page you are looking for doesn't exist or has been moved. Try searching our site</p>
+    </body>
+</html>

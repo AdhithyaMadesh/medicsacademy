@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+ Welcome to Medics - Thanks for Registered!!
+ <br><br>
+ Username: {{ name }}
+ <br><br>
+ Password: {{ password }}
+ <br><br>
+
+ Please verify your email by clicking on the following link. <a href="http://{{ domain }}{% url 'user_app:activate' uidb64=uid token=token %}">clik here !!</a>
+ 
+ <!-- Confirmation Link: http://{{ domain }}{% url 'user_app:activate' uidb64=uid token=token %}  -->
+</body>
+</html>

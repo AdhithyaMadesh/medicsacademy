@@ -1,0 +1,210 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,500;1,600&display=swap");
+
+:root {
+    --brand-color: #3ca0ba;
+    --brand-font: "Poppins";
+} */
+
+/* body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif; 
+} */
+
+.custom-bg {
+  background-image: url("/static/images/user/user_login_bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* left-section */
+
+.left-components {
+  margin-top: 500px;
+  /* margin-left: 50px; */
+}
+.left-components p {
+  font-family: var(--brand-font);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #ffffffb2;
+}
+
+/* Right-section */
+
+.form-card {
+  border-radius: 20px;
+  margin-left: 80px !important;
+}
+
+.form h2 {
+  font-family: Poppins;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 39px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--brand-color);
+}
+
+.form h6 {
+  font-family: var(--brand-font);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #74899f;
+}
+
+.form p {
+  font-family: var(--brand-font);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.form-label {
+  font-family: var(--brand-font);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  /* color: var(--brand-color); */
+}
+
+.custom-label {
+  font-family: var(--brand-font);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1b1b1d;
+}
+
+.form-check a {
+  font-family: var(--brand-font);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: var(--brand-color);
+}
+
+#InputEmail1::placeholder {
+  color: #cdd6df;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+#InputPassword1::placeholder {
+  color: #cdd6df;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+/* #InputEmail1:focus {
+    border-color:  var(--brand-color);
+}  */
+
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #3ca0ba75;
+}
+
+/* Login-Page Font Properties   */
+.brand-color {
+  font-family: Poppins;
+
+  font-weight: 600;
+
+  letter-spacing: 0em;
+
+  color: var(--brand-color);
+}
+
+.sub {
+  font-family: Poppins;
+
+  font-weight: 500;
+
+  letter-spacing: 0px;
+  color: var(--color-grey);
+}
+
+.title-sub {
+  font-family: Poppins;
+
+  font-weight: 500;
+}
+
+.forgot {
+  font-family: Poppins;
+  color: var(--brand-color);
+  font-weight: 500;
+}
+
+.form-check-input:checked {
+  background-color: var(--brand-color);
+
+  border-color: var(--brand-color);
+}
+
+.form-check-input:focus {
+  border-color: rgb(134, 183, 254);
+  outline: 0px;
+  box-shadow: #0dcaf054 0px 0px 0px 0.25rem;
+}
+
+.form-select:focus {
+  border-color: rgb(134, 183, 254);
+  outline: 0;
+  box-shadow: #0dcaf054 0px 0px 0px 0.25rem;
+}
+
+/* Login-page-end  */
+.page_end {
+  font-family: var(--brand-font);
+  font-weight: 600;
+
+}
+
+#sign_custom{
+  color: var(--brand-color);
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .custom-bg {
+    background-image: unset;
+    background-color: var(--brand-color);
+  }
+  .left-components
+  {
+      margin-top: 20px;
+  }
+}
+

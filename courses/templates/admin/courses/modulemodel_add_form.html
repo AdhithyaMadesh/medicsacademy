@@ -1,0 +1,642 @@
+{% extends "admin/change_form.html" %}
+
+{% load i18n static courses_admin_helpers %}
+
+{% block title %}
+Add Module
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/add_module.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+{% include "admin/aloader.html" %}
+{% include "admin/custom_nav.html" %}
+
+<div class="container content-outer mt-5">
+    <div class="row card-head">
+        <p class="h3 course-head ms-1">{{course.course_title}} >> Add New Module</p>
+    </div>
+
+    <div class="card card-body p-5 mt-3">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="h4">Module Details</p>
+                    <!-- <button type="button" class="btn btn-secondary"><i class="fa-solid fa-trash"></i>
+                        Delete</button> -->
+                </div>
+            </div>
+        </div>
+
+      <!-- <----Module form start------ -->
+        <form method="post" enctype="multipart/form-data" id="a_form">
+            {% csrf_token %}
+            <input type="hidden" name="edit_module_field" value="0">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <label  class="form-label">Course Name:</label>
+                <select name="course" id="course" class="form-select" {% if request.GET.course %}{{'disabled'}}{% endif %}>
+                    <option value="" selected disabled>Please select course</option>
+                    {% for item in adminform.fields.course.queryset %}
+                    <option value="{{ item.id }}" {% if request.GET.course == item.id|stringformat:'s' %} selected {% endif %}>{{item.course_title}}</option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" name="course" value="{{request.GET.course}}" />
+                <span class="text-danger error-message">{{adminform.form.errors.course.0}}</span>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+
+            <div class="col-md-6">
+                <label for="moduleTitle" class="form-label">Module Title</label>
+                <input name="module_title" type="text" class="form-control" id="moduleTitle" value="{{request.POST.module_title}}">
+                <span class="text-danger error-message">{{adminform.form.errors.module_title.0}}</span>
+            </div>
+            <div class="col-md-6">
+                <label for="order" class="form-label">Module Number</label>
+                <input name="order" type="text" class="form-control" id="order" value="{{request.POST.order}}">
+                <span class="text-danger error-message">{{adminform.form.errors.order.0}}</span>
+            </div>
+            
+        </div>
+
+        <!-- <----Module Order start------ -->
+        <div class="row mt-3">
+
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Duration</label>
+                <div class="row">
+                    <div class="col-6">
+                        <select name="duration_days" class="form-select" aria-label="Default select example">
+                            <option selected disabled>Days</option>
+                            {% for i in 0|crange:326 %}
+                                <option value="{{i}}" {% if i == request.POST.duration_days|to_int %}{{'selected'}}{% endif %}>{{i}}</option>
+                            {% endfor %}
+                        </select>
+                        <span class="text-danger error-message">{{adminform.form.errors.duration_days.0}}</span>
+                    </div>
+                    <div class="col-6">
+                        <select name="duration_months" class="form-select" aria-label="Default select example">
+                            <option selected disabled>Months</option>
+                            {% for i in 0|crange:13 %}
+                                <option value="{{i}}" {% if i == request.POST.duration_months|to_int %}{{'selected'}}{% endif %}>{{i}}</option>
+                            {% endfor %}
+                        </select>
+                        <span class="text-danger error-message">{{adminform.form.errors.duration_months.0}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input type="hidden" name="module_type" value="{{request.POST.module_type}}">
+                <label for="inputPassword4" class="form-label">Course Material Type</label>
+                <div class="row">
+                    <div class="col-12 col-md-12 col-xl-4">
+                        <input class="form-check-input mtype" type="checkbox" id="inlineCheckbox1" value="Video" {% if 'Video'|split_n_check:request.POST.module_type %}{{'checked'}}{% endif %}>
+                        <label class="form-check-label" for="inlineCheckbox1">Video</label>
+                    </div>
+                    <div class="col-12 col-md-12 col-xl-4"> <input class="form-check-input mtype" type="checkbox"
+                            id="inlineCheckbox2" value="Audio" {% if 'Audio'|split_n_check:request.POST.module_type %}{{'checked'}}{% endif %}>
+                        <label class="form-check-label" for="inlineCheckbox2">Audio</label>
+                    </div>
+                    <div class="col-12 col-md-12 col-xl-4">
+                        <input class="form-check-input mtype" type="checkbox" id="inlineCheckbox3" value="Document" {% if 'Document'|split_n_check:request.POST.module_type %}{{'checked'}}{% endif %}>
+                        <label class="form-check-label" for="inlineCheckbox3">Document</label>
+                    </div>
+
+                </div>
+                <span id="module_typeErrorSpan" class="text-danger error-message">{{adminform.form.errors.module_type.0}}</span>
+            </div>
+
+            <div class="col-md-6 d-none mt-3" id="materialTitleDiv">
+                <label for="materialTitle" class="form-label">Material Title</label>
+                <input name="material_title" type="text" class="form-control" id="materialTitle" value="{{request.POST.material_title}}">
+                <span class="text-danger error-message">{{adminform.form.errors.material_title.0}}</span>
+            </div>
+
+            <div id="uploadDiv" class="mb-3"></div>
+
+            <div class="addFileDiv d-none">
+                <label class="form-label mt-2"></label>
+                <div class="row">
+                    <div class="col-3">
+                        <input class="form-control" name="" type="text" placeholder="File Order">
+                    </div>
+                    <div class="col-4">
+                        <input class="form-control" type="file" name="" id="fileInput">
+                    </div>
+                    <div class="col-3 dlink">
+                        <input class="form-control" type="url"  name="" placeholder="Add Your Material Link" id="linkVideo">
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn-close align-bottom removeFileBtn ms-auto" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 d-none"  id="addVideoBtnDiv">
+                <button class="btn btn-md btn-info text-white mt-2" type="button">+ Add Video</button>
+            </div>
+
+            <div id="uploadAudioDiv" class="mb-3"></div>
+            <div class="col-2 d-none"  id="addAudioBtnDiv">
+                <button class="btn btn-md btn-info text-white mt-2" type="button">+ Add Audio</button>
+            </div>
+
+            <div id="uploadDocumentDiv" class="mb-3"></div>
+            <div class="col-2 d-none"  id="addDocumentBtnDiv">
+                <button class="btn btn-md btn-info text-white mt-2" type="button">+ Add Document</button>
+            </div>
+
+            
+        <div class="row mt-3">
+            <div class="col-md-6 col-sm-12 p-3">
+                <div class="form-check form-switch form-check-reverse float-start">
+                    <input class="form-check-input" name="status" type="checkbox" role="switch" id="modulestatus" {% if request.POST.status %} {{'checked'}} {% endif %}>
+                    <label for="moduletatus" class="form-label">Status</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="d-none border" id="AddPopupQuestionDiv">
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn-close align-bottom closePopupBtn" aria-label="Close"></button>
+            </div>
+            <div class="row mb-2">
+                <div class="col-6">
+                    <label class="form-label head-label">Popup show time</label>
+                    <input name="" type="text" class="form-control pst" placeholder="Enter popup show time(optional)">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label class="form-label head-label">Question</label>
+                    <input name="" type="text" class="form-control pq" placeholder="Enter Question">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label class="form-label sub-head">Add Options</label>
+                    <div class="col-6 d-flex flex-column radioContainer">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-6">
+                    <input type="text" class="form-control optionInput" id="" placeholder="Enter Option">
+                </div>
+                <div class="col-4">
+                    <button type="button" id="" class="btn addOptionButton">+ Add Option</button>
+                </div>
+            </div>
+        </div>
+        <!-- <p class="h4">Add Popup Questions</p>
+        <div id="popupQDiv" class="mb-3"></div>
+        <div class="row mt-3">
+            <div class="col-md-6 col-sm-12 p-3">
+                <button id="addPopupQBtn" class="btn btn-md btn-info text-white mt-2" type="button">+ Add Popup question</button>
+            </div>
+        </div> -->
+
+        <!-- <----Module Order end------ -->
+    </div>
+        <!-- <----Module Order end------ -->
+
+    <!-- <----card_body------ -->
+    </div>
+        <!-- <----_card_body end------ -->
+
+
+
+    <!-- card_buttons-start -->
+    <div class="row mt-5">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+
+
+                <div class="d-flex justify-content-start align-items-center mt-3 mt-md-0">
+                    <a href="{% url 'admin:courses_coursemodel_changelist'%}" class="btn ps-0 mb-1 "><i class="fa-solid fa-less-than me-2"></i> Back
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="d-flex justify-content-md-end mt-3 mt-md-0 align-items-center">
+
+                    <!-- <a class="btn me-3 btn-outline-dark" href="#" role="button"> + Add
+                        Modules</a> -->
+                    <button type="submit" class="btn btn-dark btn-next">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </form>
+    <!-- card_buttons-end -->
+
+
+
+    <!-- content-outer-end -->
+</div>
+
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+    <script type="text/javascript">
+        $(function(){
+            var url = "{% url 'admin:courses_modulemodel_add' %}?course={{course.id}}";
+            var redirect_url = "{% url 'admin:list_course_modules' course.id %}";
+            var video_file = [], audio_file=[], document_file=[];
+            $('.mtype').on('change', function(e){
+                var new_val = '';
+                var mhiddenInput = $('[name="module_type"]');
+                var current_val = mhiddenInput.val();
+                if($(this).is(':checked')){
+                    if(current_val != '')
+                        new_val = current_val + ','+ $(this).val();
+                    else
+                        new_val += $(this).val();
+
+                    if($(this).val()=='Video'){
+                        var mt_count = getMtCount();
+                        $('#addVideoBtnDiv').removeClass('d-none').insertAfter('#uploadDiv');
+                        var v_clone = $('.addFileDiv:hidden').clone();
+                        v_clone.removeClass('d-none');
+                        v_clone.find('label').text('Add Video');
+                        v_clone.find('input[type="text"]').attr('name','forder_'+(mt_count));
+                        v_clone.find('input[type="file"]').attr('name','uploaded_file_'+(mt_count)).attr('accept','video/*');
+                        v_clone.find('input[type="url"]').attr('name','mlink_'+(mt_count)).attr('accept','url/*');
+                        var fileInputName = v_clone.find('input[type="file"]').attr('name');
+                        var urlInputName  = v_clone.find('input[type="url"]').attr('name');
+                        
+                        $(document).ready(function() {
+                        $('input[name="' + fileInputName + '"]').on('change', function() {
+                            if ($(this).val() !== "") {
+                            $('input[name="' + urlInputName + '"]').prop('disabled', true);
+                            } else {
+                            $('input[name="' + urlInputName + '"]').prop('disabled', false);
+                            }
+                        });
+
+                        $('input[name="' + urlInputName + '"]').on('change', function() {
+                            if ($(this).val() !== "") {
+                            $('input[name="' + fileInputName + '"]').prop('disabled', true);
+                            } else {
+                            $('input[name="' + fileInputName + '"]').prop('disabled', false);
+                            }
+                        });
+                        });
+                      
+                        
+                        
+                    
+                        v_clone.find('.removeFileBtn').remove();
+                        video_file.push((mt_count));
+                        v_clone.insertAfter('#uploadDiv');
+                    }
+                    if($(this).val()=='Audio'){
+                        var mt_count = getMtCount();
+                        $('#addAudioBtnDiv').removeClass('d-none').insertAfter('#uploadAudioDiv');
+                        var v_clone = $('.addFileDiv:hidden').clone();
+                        v_clone.removeClass('d-none');
+                        v_clone.find('label').text('Add Audio');
+                        v_clone.find('input[type="text"]').attr('name','forder_'+(mt_count));
+                        v_clone.find('input[type="file"]').attr('name','uploaded_file_'+(mt_count)).attr('accept','audio/*');
+                        v_clone.find('input[type="url"]').parent().remove();
+                        v_clone.find('.removeFileBtn').remove();
+                        audio_file.push((mt_count));
+                        v_clone.insertAfter('#uploadAudioDiv');
+                    }
+                    if($(this).val()=='Document'){
+                        var mt_count = getMtCount();
+                        $('#addDocumentBtnDiv').removeClass('d-none').insertAfter('#uploadDocumentDiv');
+                        var v_clone = $('.addFileDiv:hidden').clone();
+                        v_clone.removeClass('d-none');
+                        v_clone.find('label').text('Add Document');
+                        v_clone.find('input[type="text"]').attr('name','forder_'+(mt_count));
+                        v_clone.find('input[type="file"]').attr('name','uploaded_file_'+(mt_count)).attr('accept','application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf');
+                        v_clone.find('input[type="url"]').parent().remove();
+                        v_clone.find('.removeFileBtn').remove();
+                        document_file.push((mt_count));
+                        v_clone.insertAfter('#uploadDocumentDiv');
+                    }
+                }
+                else{
+                    var mharr = mhiddenInput.val().split(',');
+                    // alert(mharr.indexOf($(this).val()));
+                    mharr.splice(mharr.indexOf($(this).val()),1);
+                    new_val = mharr.join(',');
+                    if($(this).val()=='Video'){
+                        video_file = [];
+                        $('#uploadDiv').nextUntil('#addVideoBtnDiv').remove();
+                        $('#addVideoBtnDiv').addClass('d-none');
+                    }
+                    if($(this).val()=='Audio'){
+                        audio_file = [];
+                        $('#uploadAudioDiv').nextUntil('#addAudioBtnDiv').remove();
+                        $('#addAudioBtnDiv').addClass('d-none');
+                    }
+                    if($(this).val()=='Document'){
+                        document_file = [];
+                        $('#uploadDocumentDiv').nextUntil('#addDocumentBtnDiv').remove();
+                        $('#addDocumentBtnDiv').addClass('d-none');
+                    }
+                }
+                mhiddenInput.val(new_val);
+                
+                if(mhiddenInput.val() != ''){
+                    $('#materialTitleDiv').removeClass('d-none');
+                }
+                else{
+                    $('#materialTitleDiv').addClass('d-none');
+                }
+
+
+                // if($(this).val()=='Video'){
+                //     $('.addVideoFileDiv').clone().removeClass('.d-none').insertAfter('#uploadDiv');
+                // }
+            });
+
+            // $("#fileInput").change(function() {
+            //     $('#fileListDiv').html('');
+            //     for (var i = 0; i < $(this).get(0).files.length; ++i) {
+            //         $('#fileListDiv').append(
+            //             '<div class="d-flex align-items-center"> \
+            //                 <h6 class="ms-2">'+ $(this).get(0).files[i].name +'</h6> \
+            //             </div>'
+            //         );
+            //     }
+            // });
+
+            $('.deleteFileBtn').on('click', function(){
+                $("#fileInput").val('').trigger('change');
+            });
+             
+            
+            
+
+            $('#addVideoBtnDiv').on('click', function(e){
+                var mt_count = getMtCount();
+                var v_clone = $('.addFileDiv:hidden').clone();
+                v_clone.removeClass('d-none');
+                v_clone.find('label').text('Add Video');
+              
+                v_clone.find('input[type="text"]').attr('name','forder_'+(mt_count));
+                v_clone.find('input[type="file"]').attr('name','uploaded_file_'+(mt_count)).attr('accept','video/*');
+                v_clone.find('input[type="url"]').attr('name','mlink_'+(mt_count)).attr('accept','url/*');
+                var fileInputName = v_clone.find('input[type="file"]').attr('name');
+                var urlInputName  = v_clone.find('input[type="url"]').attr('name');
+
+                
+                        
+                // alert(fileInputName);
+                // alert(urlInputName);
+                        
+                $(document).ready(function() {
+                $('input[name="' + fileInputName + '"]').on('change', function() {
+                    if ($(this).val() !== "") {
+                    $('input[name="' + urlInputName + '"]').prop('disabled', true);
+                    } else {
+                    $('input[name="' + urlInputName + '"]').prop('disabled', false);
+                    }
+                });
+
+                $('input[name="' + urlInputName + '"]').on('change', function() {
+                    if ($(this).val() !== "") {
+                    $('input[name="' + fileInputName + '"]').prop('disabled', true);
+                    } else {
+                    $('input[name="' + fileInputName + '"]').prop('disabled', false);
+                    }
+                });
+                });
+               
+                video_file.push((mt_count));
+                v_clone.insertAfter('#uploadDiv');
+                v_clone.insertBefore('#addVideoBtnDiv');
+            });
+
+            $('#addAudioBtnDiv').on('click', function(e){
+                var mt_count = getMtCount();
+                var v_clone = $('.addFileDiv:hidden').clone();
+                v_clone.removeClass('d-none');
+                
+                v_clone.find('label').text('Add Audio');
+                v_clone.find('input[type="text"]').attr('name','forder_'+(mt_count));
+                v_clone.find('input[type="file"]').attr('name','uploaded_file_'+(mt_count)).attr('accept','audio/*');
+                v_clone.find('input[type="url"]').parent().remove();
+                audio_file.push((mt_count));
+                v_clone.insertAfter('#uploadAudioDiv');
+                v_clone.insertBefore('#addAudioBtnDiv');
+            });
+
+            $('#addDocumentBtnDiv').on('click', function(e){
+                var mt_count = getMtCount();
+                var v_clone = $('.addFileDiv:hidden').clone();
+                v_clone.removeClass('d-none');
+                v_clone.find('label').text('Add Document');
+                v_clone.find('input[type="text"]').attr('name','forder_'+(mt_count));
+                v_clone.find('input[type="file"]').attr('name','uploaded_file_'+(mt_count)).attr('accept','application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf');
+                v_clone.find('input[type="url"]').parent().remove();
+                document_file.push((mt_count));
+                v_clone.insertAfter('#uploadDocumentDiv');
+                v_clone.insertBefore('#addDocumentBtnDiv');
+            });
+
+            $('body').on('click','.removeFileBtn', function(e) {
+                var video_index_of = video_file.indexOf(parseInt($(this).parent().prev().find('input').attr('name').split('_')[2]));
+                if(video_index_of != -1){
+                    video_file.splice(video_index_of,1);
+                }
+                var audio_index_of = audio_file.indexOf(parseInt($(this).parent().prev().find('input').attr('name').split('_')[2]));
+                if(audio_index_of != -1){
+                    audio_file.splice(audio_index_of,1);
+                }
+                var document_index_of = document_file.indexOf(parseInt($(this).parent().prev().find('input').attr('name').split('_')[2]));
+                if(document_index_of != -1){
+                    document_file.splice(document_index_of,1);
+                }
+                $(this).parent().parent().parent().remove();
+            });
+
+            function getMtCount(){
+                var mt_count = 0;
+                if($('.addFileDiv:visible').length){
+                    var mt_count = (parseInt($('.addFileDiv:visible').sort(function(a,b){
+                        return ($(b).find('input[type="text"]').attr('name').split('_')[1]) < ($(a).find('input[type="text"]').attr('name').split('_')[1]) ? 1 : -1;
+                    }).last().find('input[type="text"]').attr('name').split('_')[1])+1);
+                    // var mt_count = parseInt($('.addFileDiv:visible').uniqueSort().last().find('input[type="text"]').attr('name').split('_')[1])+1;
+                }
+                else{
+                    mt_count = 1
+                }
+                return mt_count;
+            }
+
+            var popup_qt_num = []
+            $('#addPopupQBtn').on('click', function(e){
+                var popclone = $('#AddPopupQuestionDiv:hidden').clone();
+                popclone.removeClass('d-none').addClass('mt-2 visiblePQD').removeAttr('id');
+                var vcount = getVCount();
+                popup_qt_num.push(vcount);
+                popclone.find('.pst').attr('name','popup_show_time_'+(vcount));
+                popclone.find('.pq').attr('name','popup_question_'+(vcount));
+                popclone.insertBefore($(this).parent().parent());
+            });
+
+            $('body').on('click', '.closePopupBtn', function(e){
+                var pq_index_of = popup_qt_num.indexOf(parseInt($(this).parent().parent().find('.pq').attr('name').split('_')[2]));
+                if(pq_index_of != -1){
+                    popup_qt_num.splice(pq_index_of,1);
+                }
+                $(this).parent().parent().remove();
+            });
+
+            $("body").on('click', '.addOptionButton', function () {
+                // Get the user input value
+                var vCount = $(this).parent().parent().parent().find('.pq').attr('name').split('_')[2];
+                var inputOption = $(this).parent().parent().find(".optionInput");
+                var inputValue = inputOption.val().trim();
+                if (inputValue !== "") {
+                    var label = $("<label class='mb-4 d-flex'>");
+                    label.append(`<input class='me-2' type='radio' name='answer_${vCount}' value='${inputValue}'> ${inputValue} <button type="button" class="btn-close align-bottom closeOptBtn ms-auto" aria-label="Close"></button>`);
+                    var rcontainer = $(this).parent().parent().parent().find(".radioContainer");
+                    label.append(`<input type="hidden" name="choices_${vCount}" value="${inputValue}">`);
+                    rcontainer.append(label);
+                    // Clear the input field after adding the radio button
+                    inputOption.val("");
+                } else {
+                    alert("Please enter a value for the option.");
+                }
+            });
+
+            $('body').on('click', '.closeOptBtn', function(e){
+                $(this).parent('label').remove();
+            });
+
+            function getVCount(){
+                var vcount = 0;
+                if($('.visiblePQD:visible').length){
+                    var vcount = (parseInt($('.visiblePQD:visible').sort(function(a,b){
+                        return ($(b).find('.pq').attr('name').split('_')[2]) < ($(a).find('.pq').attr('name').split('_')[2]) ? 1 : -1;
+                    }).last().find('.pq').attr('name').split('_')[2])+1);
+                }
+                else{
+                    vcount = 1
+                }
+                return vcount;
+            }
+
+            $('form').on('submit', function(e){
+                e.preventDefault();
+                const form = document.getElementById("a_form");
+             
+                const submitter = document.querySelector("button[type=submit]");
+                var formdata = new FormData(form, submitter);
+                var file_num = video_file.concat(audio_file,document_file);
+                // formdata.append('file_num', ($('.addFileDiv:visible').length));
+                formdata.append('file_num', file_num);
+                formdata.append('video_file', video_file);
+                formdata.append('audio_file', audio_file);
+                formdata.append('document_file', document_file);
+                formdata.append('popup_qt_num', popup_qt_num);
+                var request = $.ajax({
+                    url: url,
+                    method: "POST",
+                    data: formdata,
+                    processData: false,
+                    contentType: false,
+                });
+                    
+                request.done(function( msg ) {
+                    window.location.replace(redirect_url);
+                });
+                
+                request.fail(function( jqXHR, textStatus ) {
+                    if(jqXHR.status == 422){
+                        $('.error-message').text('');
+                        for( prop in jqXHR.responseJSON.form){
+                            if(prop == 'module_type'){
+                                $("#"+prop+'ErrorSpan').text(jqXHR.responseJSON.form[prop][0]);
+                            }
+                            else{
+                                if($("[name='"+prop+"']").next('.error-message').length){
+                                    $("[name='"+prop+"']").next('.error-message').text(jqXHR.responseJSON.form[prop][0]);
+                                }
+                                else{
+                                    var regChoice_ = new RegExp('choices_*', 'g');
+                                    var regAnswer_ = new RegExp('answer_*', 'g');
+                                    var k = prop.split('_')[1];
+                                    var v_this;
+                                    if(regChoice_.test(prop)){
+                                        $('.visiblePQD:visible').each(function( index ) {
+                                            if($(this).find('.pq').attr('name').split('_')[2] == k){
+                                                v_this = $(this);
+                                                return false;
+                                            }
+                                        });
+                                        v_this.find('.optionInput').next('.error-message').remove();
+                                        $('<span class="text-danger error-message">').text((jqXHR.responseJSON.form[prop][0])).insertAfter(v_this.find('.optionInput'));
+                                    }
+                                    else if(regAnswer_.test(prop)){
+                                        $('.visiblePQD:visible').each(function( index ) {
+                                            if($(this).find('.pq').attr('name').split('_')[2] == k){
+                                                v_this = $(this);
+                                                return false;
+                                            }
+                                        });
+                                        if(v_this.find('.radioContainer').children().length){
+                                            v_this.find('.radioContainer').next('.error-message').remove();
+                                            $('<span class="text-danger error-message">').text((jqXHR.responseJSON.form[prop][0])).insertAfter(v_this.find('.radioContainer'));
+                                        }
+                                    }
+                                    else{
+                                        $('<span class="text-danger error-message">').text((jqXHR.responseJSON.form[prop][0])).insertAfter("[name='"+prop+"']");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+
+            $( document ).on( "ajaxStart", function() {
+                $( "#loader" ).show();
+            });
+
+            $( document ).on( "ajaxStop", function() {
+                $( "#loader" ).hide();
+            });
+
+            $( document ).on( "ajaxError", function() {
+                $( "#loader" ).hide();
+            });
+        });
+    </script>
+{% endblock %}

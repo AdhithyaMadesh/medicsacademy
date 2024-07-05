@@ -1,0 +1,106 @@
+body
+{
+    background-color: #F5F5F5;
+}
+.box
+{
+
+    border-radius: 20px;
+    margin-top: 70px;
+    /* background-color: red; */
+   
+
+
+}
+.left_box
+{
+    border-radius: 20px 0px 0px 20px;
+    background-color: #3CA0BA;
+    padding: 30px;
+}
+.right_box{
+    
+    border-radius: 0px 20px 20px 0px;
+    background-color: white;
+    padding: 30px;
+
+}
+
+        .svg_icon {
+    height: 18px !important;
+    margin-top: 13px;
+}
+
+.fcc {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.smt_btn,.smt_btn:hover {
+/* border-radius: 30px; */
+background: #3CA0BA;
+color: white;
+/* padding-left: 25px;
+padding-right: 25px;
+float: right; */
+}
+
+.txt_1
+{
+color: #FFF;
+font-family: Poppins;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 157.5%; /* 44.1px */
+}
+
+.left_box_text
+{
+
+color: rgba(255, 255, 255, 0.70);
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 157.5%; /* 25.2px */
+margin-left:10px;
+
+}
+/* p
+{
+display:flex;
+margin-top: 25px;
+} */
+
+hr
+{
+color: white;
+margin-top: 25px;
+}
+label
+{
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+.left_box,.right_box
+{
+    border-radius: 0px;
+}
+
+.mbw
+{
+    width:100%!important;
+}
+.mvr
+{
+    margin: 5px;
+}
+
+
+
+}

@@ -1,0 +1,114 @@
+body {
+  margin-bottom: 48px;
+  /* background: var(--color-contentbg); */
+}
+
+.search-control {
+  border: 0;
+  background: none;
+}
+
+.search-lens {
+  width: 25px;
+  height: 25px;
+}
+
+.first-letter-bg {
+  background-color: #3ca0ba1a;
+  color: var(--brand-color);
+}
+
+.table-head th {
+  font-family: Poppins;
+  /* font-size: 14px; */
+  font-weight: 500;
+
+  color: var(--color-grey);
+}
+
+td {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.table-body{
+  border: unset;
+  
+
+}
+
+
+.table-contents{
+  position: relative;
+  margin-top: -42px;
+}
+.nav-search:focus{
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: unset !important;
+}
+.table>:not(caption)>*>* {
+    padding: 1rem 1rem;
+}
+
+.course-active {
+    font-family: Poppins;
+    /* font-size: 14px; */
+    font-weight: 500;
+    
+    
+    color: var(--color-green);
+  }
+  
+  .course-filter{
+    color: var(--color-white);
+  }
+
+
+  .modal-title{
+    color: rgba(230, 19, 19, 0.815);
+  }
+
+
+  .form-check-input:checked {
+    background-color: #35c34c !important;
+    border-color: #35c34c !important;
+  }
+  
+
+  tbody, td, tfoot, th, thead, tr {
+    border-color: #3ca1ba2d;
+    border-style: solid;
+    border-width: 0;
+}
+
+.form-check-input-custom:focus {
+  border-color: none;
+  outline: unset;
+
+  box-shadow: none;
+}
+
+.btn-pagination {
+  color: var(--brand-color);
+  border: solid var(--brand-color) 1px;
+}
+
+.btn-page {
+  background-color: var(--brand-color) !important;
+  border: none;
+  color: #ffffff !important;
+}
+
+.active > .page-link,
+.page-link.active {
+  color: var(--brand-color);
+  background-color: unset;
+  border-color: var(--brand-color);
+}
+
+

@@ -1,0 +1,116 @@
+body {
+    margin-bottom: 48px;
+    /* background: var(--color-contentbg); */
+  }
+  
+
+
+
+
+
+
+
+
+
+.card-head p {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 600;
+   
+    text-align: left;
+
+}
+
+
+.table-head th {
+    font-family: Poppins;
+    /* font-size: 14px; */
+    font-weight: 500;
+  
+    color: var(--color-grey);
+  }
+  
+  td {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-black);
+  }
+  
+  
+  
+  .table>:not(caption)>*>* {
+      padding: 1rem 1rem;
+  }
+
+
+
+
+  tbody, td, tfoot, th, thead, tr {
+    border-color: #3ca1ba2d;
+    border-style: solid;
+    border-width: 0;
+}
+
+.table-body{
+   border: unset;
+
+}
+
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--brand-color)!important;
+  --bs-tooltip-color: var(--bs-white);
+}
+
+
+.modal {
+    
+  --bs-modal-header-border-color:unset; 
+ --bs-modal-header-border-width: unset; 
+
+  --bs-modal-footer-border-color: unset; 
+ --bs-modal-footer-border-width: unset;
+
+}
+
+
+.float-start {
+  float: unset !important;
+}
+
+.btn-document{
+  background: #3CA0BA1A;
+  font-family: Poppins;
+  
+  font-weight: 500;
+  
+ 
+
+  
+
+
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+  color: var(--bs-btn-active-color);
+  background-color: var(--bs-btn-active-bg);
+  border-color: unset;
+}
+
+.btn-pagination {
+  color: var(--brand-color);
+  border: solid var(--brand-color) 1px;
+}
+
+.btn-page {
+  background-color: var(--brand-color) !important;
+  border: none;
+  color: #ffffff !important;
+}
+
+.active > .page-link,
+.page-link.active {
+  color: var(--brand-color);
+  background-color: unset;
+  border-color: var(--brand-color);
+}

@@ -1,0 +1,73 @@
+body {
+    margin-bottom: 48px;
+    /* background: var(--color-contentbg); */
+  }
+
+
+
+
+.delete-btn{
+    background-color: #CDD6DF;
+    color: #74899F;
+}  
+
+
+
+.head-label{
+    color: var(--brand-color);
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    
+   
+
+}
+
+
+.sub-head{
+
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
+
+
+#addButton{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0px;
+    
+    color: var(--brand-color);
+
+}
+
+
+
+/* Add-Assesment */
+
+
+.form-check-input:checked {
+    background-color: var(--brand-color);
+    border-color: var(--brand-color);
+  }
+  
+  .form-check-input:focus {
+    border-color: var(--brand-color);
+    outline: unset;
+    box-shadow: 0 0 0 0.25rem #0dcaf05b;
+  }
+  
+  
+  .active > .page-link,
+  .page-link.active {
+    color: var(--color-white);
+    background-color: var(--brand-color);
+    border-color: var(--brand-color);
+  }

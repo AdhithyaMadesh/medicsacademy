@@ -1,0 +1,152 @@
+/* mobile view */
+.custom-card {
+    background-color: #ebf5f8;
+    border: unset;
+    position: unset;
+    margin-top: 60px;
+}
+
+.section-two {
+    height: unset;
+}
+/* .custom-control-next
+{
+    margin-left: 0px;
+}
+.custom-control-prev 
+{
+    margin-right: 0px;
+} */
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: unset;
+    }
+
+    .has-search {
+        width: 210px;
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .trending-title {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .title-more {
+        font-size: 14px;
+    }
+
+    .nav-item {
+        padding-left: 20px !important;
+    }
+
+    #myTab {
+        margin-left: 0px !important;
+    }
+
+    .breadcrumb-item {
+        width: 100%;
+        padding-left: 0px !important;
+        margin-top: 15px;
+    }
+    .row_mv
+    {
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+    }
+    .mb_text
+    {
+        margin-top:10px;
+        font-size: 12px;
+        width:100%;
+    }
+    .mb_p{
+        padding: 0px!important;
+        margin-top: 10px;
+    }
+    .bc_mv
+    {
+        margin-left: 0px!important;
+        width:100%;
+        margin-top:10px;
+
+    }
+    #carousel-btn {
+        --bs-btn-padding-y: .25rem; /* Adjust the padding-y for smaller screens */
+        --bs-btn-padding-x: 2rem;  /* Adjust the padding-x for smaller screens */
+        --bs-btn-font-size: .5rem; /* Adjust the font size for smaller screens */
+        
+    }
+
+    .section-one {
+        height: unset;
+    }
+   
+}
+
+
+
+
+@media only screen and (max-width: 320px) {
+    .carousel-btn {
+        left: 29.5%;
+    }
+    .btn-custom-brand
+    {
+        font-size: 10px;
+    }
+
+    #carousel-btn {
+        width: 5px !important;
+        height: 5px !important;
+        padding: 5px !important;
+    }
+}
+
+
+
+ 
+ 
+
+
+
+
+@media only screen and (max-width:678px){
+    .first-page-section-one .custom-control-prev {
+        
+         margin-right: 0px!important; 
+    }
+   .first-page-section-one .custom-control-next {
+        
+         margin-left: 0px!important;
+    }
+    
+    .first-page-section-one
+    {
+    height:132px!important;
+    }
+    .first-page-section-one .carousel-btn {
+       
+        bottom: 15%!important; 
+        display:none!important;
+       
+    }
+   .first-page-section-one .btn btn-dark
+    {
+    --bs-btn-padding-x: 0rem!important;
+    }
+    .first-page-section-one .carousel-control-next-icon , .carousel-control-prev-icon {
+      
+        width: 1rem!important;
+        height: 1rem!important;
+    }
+  
+
+  }
+
+  
+

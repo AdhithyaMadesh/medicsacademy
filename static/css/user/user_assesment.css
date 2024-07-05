@@ -1,0 +1,47 @@
+.custom-btn {
+  width: 50px; /* Set your desired width */
+  height: 40px; /* Set your desired height */
+  margin: 5px; /* Adjust the margin as needed */
+  font-size: 14px; /* Set the font size as needed */
+}
+
+.total-mark {
+  color: var(--brand-color);
+}
+
+.asses-btn-title {
+  font-family: var();
+}
+
+body {
+  margin-bottom: 50px !important;
+  /* background: var(--color-contentbg); */
+}
+
+/* .card {
+  border: unset;
+} */
+
+.question {
+  font-family: var(--brand-font);
+  font-weight: 500;
+}
+
+.active > .page-link,
+.page-link.active {
+  z-index: 3;
+  color: var(--bs-pagination-active-color);
+  background-color: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+.page-link {
+  color: var(--color-black) !important;
+  background-color: transparent !important;
+  border: var(--bs-pagination-border-width) solid var(--brand-color) !important;
+}
+
+.form-check-label {
+  color: var(--color-grey);
+  font-family: var(--brand-font);
+}

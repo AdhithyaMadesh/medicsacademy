@@ -1,0 +1,79 @@
+body {
+  margin-bottom: 50px;
+  /* background: var(--color-contentbg); */
+}
+
+.course-head {
+  color: var(--brand-black);
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 600;
+
+  text-align: left;
+}
+
+select:-internal-list-box option:hover {
+  background-color: var(--brand-black) !important;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+  background: unset !important;
+  border: unset !important;
+  outline: unset !important;
+  box-shadow: unset !important;
+  -webkit-appearance: textfield;
+}
+
+.select2-container--default
+  .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: var(--brand-color) !important;
+}
+
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice {
+  background-color: #3ca1ba50;
+  border: 1px solid var(--brand-color);
+  border-radius: 5px;
+  color: var(--brand-black);
+  font-family: var(--brand-font);
+}
+
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice__remove {
+  color: black;
+}
+
+/* .select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: unset ;
+    outline: 0;
+} */
+
+.select2-container--default.select2-container--focus
+  .select2-selection--multiple {
+  border: unset;
+  outline: 0;
+}
+
+.select2-container--default .select2-selection--multiple {
+
+  border: unset;
+  border-radius: 4px;
+ 
+ 
+}
+
+
+.form-label {
+    font-family: var(--brand-font);
+    font-weight: 600;
+
+}
+
+
+.card.active-card:active {
+
+    border: 1px solid var(--brand-color) !important;
+
+}

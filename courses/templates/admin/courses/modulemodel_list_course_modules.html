@@ -1,0 +1,290 @@
+{% extends "admin/change_list.html" %}
+
+{% load i18n static admin_list courses_admin_pagination courses_admin_helpers tz %}
+
+{% block title %}
+List Modules
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/module_list.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+{% include "admin/aloader.html" %}
+{% include "admin/custom_nav.html" %}
+
+<div class="container content-outer mt-5">
+    <div class="row card-head">
+        <div class="d-flex p-2 course-view align-items-center ">
+            <a href="{% url 'admin:courses_coursemodel_changelist' %}">
+                <img src="{% static 'images/arrow-left-solid.svg' %}" width="32px" height="32px" left-arrow">
+            </a>
+            <p class="h3 ms-5 mt-1">{{course.course_title}}</p>
+            <a href="{% url 'admin:module_export_as_csv' %}?course={{course.id}}" class="btn btn-dark ms-auto me-2">Export</a>
+            <a href="{% url 'admin:courses_modulemodel_add' %}?course={{course.id}}" class="btn btn-dark">Create New Module</a>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div class="card card-body"> -->
+
+    <div class="table-responsive table-responsive card rounded-5 py-5 table-body text-center">
+        <table class="table p-5">
+            <thead>
+                <tr class="table-head">
+                    <th scope="col">S.No</th>
+                    <th scope="col">Module Name</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Order</th>
+                    <th scope="col">Module Type</th>
+                    <th scope="col">Assesment</th>
+                    <th scope="col">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for module in cl.result_list %}
+                <tr>
+                    <th scope="row">
+                        {% if request.GET.p %}
+                        {% start_index cl request.GET.p forloop.counter0 %}.
+                        {% elif request.GET.all == '' %}
+                            {{ forloop.counter }}.
+                        {% else %} 
+                        {% start_index cl 1 forloop.counter0 %}.
+                        {% endif %}
+                    </th>
+                    <td>{{module.module_title}}</td>
+                    <td>{{module.duration_days}}d {{module.duration_months}}m</td>
+                    <td>{{module.order}}</td>
+                    <td>{{ module.module_type|split_n_join }}</td>
+                    <td>
+                        {% if module.question_set.count > 0 %}
+                        <a class="btn btn-document btn text-nowrap" href="{% url 'admin:list_module_questions' module.id %}" role="button">
+                            <span><img src="{% static 'images/asses_btn.svg' %}" alt="Image" class="img-fluid" /></span>
+                            Module Assesement
+                        </a>
+                        {% else %}
+                        <a class="btn btn-dark btn-sm text-nowrap" href="{% url 'admin:courses_question_add' %}?module={{module.id}}" role="button">+ Add Question</a>
+                        {% endif %}
+                        <button class="btn btn-dark btn-sm text-nowrap importQuestionsBtn" data-module-title="{{module.module_title}}" data-module-id="{{module.id}}" data-url="{% url 'admin:import_module_questions' module.id %}">Import Questions</button>
+                        <a class="btn btn-document btn text-nowrap" href="{% url 'admin:list_module_popup_question' module.id %}" role="button">
+                            <span><img src="{% static 'images/asses_btn.svg' %}" alt="Image" class="img-fluid" /></span>
+                            Popup Questions
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <div class="float-start">
+                            <a href="{% url 'admin:edit_module' module.id %}" class="btn">
+                                <img src="{% static 'images/edit.svg' %}" alt="edit" class="img-fluid"> 
+                            </a>
+                            <a href="{% url 'admin:courses_modulemodel_delete' module.id %}" class="btn deleteBtn">
+                                <img src="{% static 'images/delete.svg' %}" alt="delete" class="img-fluid">
+                            </a>
+                            <!-- <a href="#" class="btn" data-bs-toggle="tooltip" data-bs-placement="right"
+                                data-bs-custom-class="custom-tooltip" data-bs-title="Add Assesement">
+                                <img src="{% static 'images/add_button.svg' %}" alt="edit" class="img-fluid">
+                            </a> -->
+
+                        </div>
+                    </td>
+
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7">No records found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- </div> -->
+
+    <!-- content-outer-end -->
+</div>
+
+<div class="modal fade text-center" id="deleteModuleModal" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content align-items-center">
+            <div class="modal-header">
+                <h5 class="modal-title text-center text-danger" id="deleteLabel">Delete?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-text">
+                Are you sure you want to Delete?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4"
+                    data-bs-dismiss="modal">No, Cancel</button>
+                <form action="" method="post" id="deleteModuleForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="course_id" value="{{course.id}}">
+                    <input type="hidden" name="post" value="yes">
+                <button type="submit" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4">Yes, Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-center" id="importModuleModal" tabindex="-1" aria-labelledby="importLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="" method="post" id="importModuleForm" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h5 class="modal-title text-center text-info" id="importLabel">Import Assesement Questions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-text">
+                    <div class="mb-3 text-start">
+                        <label for="formFile" class="form-label">Import Assesement Question for <span id="moduleTitleModalSpan"></span></label>
+                        <input class="form-control" name="csvfile" type="file" id="formFile" accept=".csv">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-1" data-bs-dismiss="modal">No, Cancel</button>
+                    <input type="hidden" name="module_id" value="">
+                    <button type="submit" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4 me-1" id="importSubmitBtn">Yes, Import</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% block pagination %}{% pagination cl %}{% endblock %}
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        tooltips.forEach(function (tooltip) {
+            new bootstrap.Tooltip(tooltip, {
+                customClass: tooltip.getAttribute('data-bs-custom-class')
+            });
+        });
+    });
+
+    $(function(){
+
+        const deleteModuleModal = new bootstrap.Modal('#deleteModuleModal', {
+            keyboard: false,
+            backdrop: 'static'
+        });
+
+        var deleteUrl = '';
+        $('.deleteBtn').on('click', function(e){
+            e.preventDefault();
+            deleteUrl = $(this).attr('href');
+            deleteModuleModal.show();
+        });
+
+        const myModalEl = document.getElementById('deleteModuleModal');
+        myModalEl.addEventListener('show.bs.modal', event => {
+            $('#deleteModuleForm').attr('action', deleteUrl);
+        });
+
+        const importModuleModal = new bootstrap.Modal('#importModuleModal', {
+            keyboard: false,
+            backdrop: 'static'
+        });
+
+        var importUrl = '';
+        var moduleId = '';
+        var moduleTitle = '';
+        $('.importQuestionsBtn').on('click', function(e){
+            e.preventDefault();
+            importUrl = $(this).data('url');
+            moduleId = $(this).data('module-id');
+            moduleTitle = $(this).data('module-title');
+            importModuleModal.show();
+        });
+
+        const importModalEl = document.getElementById('importModuleModal');
+        importModalEl.addEventListener('show.bs.modal', event => {
+            $('#importModuleForm').attr('action', importUrl);
+            $('#importModuleForm').find('[name="module_id"]').val(moduleId);
+            $('#moduleTitleModalSpan').text('"'+moduleTitle+'"');
+        });
+
+        importModalEl.addEventListener('hidden.bs.modal', event => {
+            $('#formFile').val('');
+            $('.error-message').remove();
+            $('#importModuleForm').attr('action', '');
+            $('#importModuleForm').find('[name="module_id"]').val('');
+            $('#moduleTitleModalSpan').text('');
+        });
+
+        $('form#importModuleForm').on('submit', function(e){
+            e.preventDefault();
+            $('.error-message').remove();
+            const form = document.getElementById("importModuleForm");
+            const submitter = document.querySelector("button#importSubmitBtn[type=submit]");
+            var formdata = new FormData(form, submitter);
+            var request = $.ajax({
+                url: form.action,
+                method: "POST",
+                data: formdata,
+                processData: false,
+                contentType: false,
+            });
+                
+            request.done(function( msg ) {
+                importModuleModal.hide();
+                location.reload(true);
+            });
+            
+            request.fail(function( jqXHR, textStatus ) {
+                if(jqXHR.status == 422){
+                    for( prop in jqXHR.responseJSON.form){
+                        $('<span class="text-danger error-message">'+jqXHR.responseJSON.form[prop][0]+'</span>').insertAfter('[name="csvfile"]')
+                    }
+                }
+            });
+        });
+
+        $( document ).on( "ajaxStart", function() {
+            $( "#loader" ).show();
+        });
+
+        $( document ).on( "ajaxStop", function() {
+            $( "#loader" ).hide();
+        });
+
+        $( document ).on( "ajaxError", function() {
+            $( "#loader" ).hide();
+        });
+
+    });
+</script>
+{% endblock %}
+

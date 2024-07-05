@@ -1,0 +1,160 @@
+{% extends "admin/change_list.html" %}
+
+{% load i18n static admin_list courses_admin_pagination courses_admin_helpers tz %}
+
+{% block title %}
+List Admin Users
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/user_list.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+<div class="container-fluid header">
+    <div class="container">
+        {% include "admin/custom_nav.html" %}
+
+
+        <div class="row mt-3">
+            <div class="col-6">
+                <div class="d-flex justify-content-start bg-white rounded-3 w-75 py-1 align-items-center">
+                    <img src="{% static 'images/search.png' %}" class="img-fluid search-lens ms-2" alt="...">
+                    <form method="get">
+                    <input class="form-control me-2 search-control nav-search" type="search" placeholder="Search"
+                        aria-label="Search" name="q" value="{{ cl.query }}">
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <div
+                    class="d-flex flex-column  flex-sm-row justify-content-start justify-content-sm-end align-items-left">
+
+                    <a href="{% url 'admin:auth_user_add' %}" class="btn btn-dark ">Add User</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row course-filter mt-3">
+            <div class="col-12 mb-5 d-flex justify-content-between">
+                <p class="h6">User List</p>
+                <!-- <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Active Courses
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Active Courses</a></li>
+                        <li><a class="dropdown-item" href="#">Paused Courses</a></li>
+                        <li><a class="dropdown-item" href="#">All Courses</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container table-contents">
+
+
+    <!-- <div class="card card-body"> -->
+
+    <div class="table-responsive card rounded-3 py-2 table-body ">
+        <table class="table p-5">
+            <thead>
+                <tr class="table-head">
+                    <th scope="col">S.No</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Access</th>
+                    <th scope="col">Login Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in cl.result_list %}
+                <tr>
+                    <th scope="row">
+                        {% if request.GET.p %}
+                        {% start_index cl request.GET.p forloop.counter0 %}.
+                        {% elif request.GET.all == '' %}
+                            {{ forloop.counter }}.
+                        {% else %} 
+                        {% start_index cl 1 forloop.counter0 %}.
+                        {% endif %}
+                    </th>
+                    <td>
+                        <div class="d-inline-flex align-items-center">
+                            <span class="badge me-2 rounded-circle text-center first-letter-bg">{{user.username|make_list|first}}</span>{{user.username}}
+                    </td>
+                    <td>{{user.email}}</td>
+                    <td>
+                        {% if not user.user_permissions.count %}
+                        -
+                        {% endif %}
+                        {% for user_permission in user.user_permissions.all %}
+                        {{user_permission.name}}
+                        {% if not forloop.last %},{% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="user_id" value="{{user.id}}">
+                        <div class="form-check form-switch form-check-reverse float-start">
+                            <input name="is_active" class="form-check-input form-check-input-custom" type="checkbox" value="{% if user.is_active %}1{% else %}0{% endif %}"
+                                id="flexSwitchCheckReverse{{user.id}}" {% if user.is_active %}checked{% endif %} onChange="this.form.submit()">
+                            <label class="form-check-label {% if user.is_active %}course-active{% else %}text-secondary{% endif %}"
+                                for="flexSwitchCheckReverse{{user.id}}">{% if user.is_active %}Active{% else %}Inactive{% endif %}</label>
+                        </div>
+                        </form>
+                    </td>
+                    <td>
+                        <div class="float-start">
+                            <a href="{% url 'admin:edit_user' user.id %}" class="btn">
+                                <img src="{% static 'images/edit.png' %}" alt="edit" class="img-fluid">
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                   <td colspan="6" class="text-center">No Record Found</td> 
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- </div> -->
+
+</div>
+
+
+{% block pagination %}{% pagination cl %}{% endblock %}
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}

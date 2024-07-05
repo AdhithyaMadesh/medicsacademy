@@ -1,0 +1,69 @@
+{% load admin_list courses_admin_pagination %}
+{% load i18n %}
+
+
+{% if custom_data and custom_data == 'list_module_questions' %}
+{% if pagination_required %}
+<div class="row mt-3">
+    <div class="col-md-3 col-12"></div>
+    <div class="col-md-6 col-12">
+        <div class="d-flex justify-content-between">
+            <nav aria-label="...">
+                <div class="d-inline-flex align-items-center ">
+                    <p class="h6 me-2">Page</p>
+                    <ul class="pagination pagination">
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">{{ cl.page_num }}</span>
+                        </li>
+
+                    </ul>
+                    <p class="h6 ms-2">of {{ cl.paginator.num_pages }}</p>
+                </div>
+            </nav>
+            <div class="float-start">
+                <a class="btn btn-dark px-4  btn-sm {% if cl|has_previous == False %}disabled{% endif %}" href="{% previous_page_num cl %}" role="button">Prev</a>
+                <a class="btn btn-dark px-4  btn-sm {% if cl|has_next == False %}disabled{% endif %}" href="{% next_page_num cl %}" role="button">Next</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-12"></div>
+</div>
+{% endif %}
+{% else %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-12 col-md-5 col-sm-12">
+            <!-- (col-5) -->
+        </div>
+        {% if pagination_required %}
+        <div class="col-12 col-md-7 col-sm-12">
+            <!-- (col-7) -->
+            <div class="d-flex justify-content-between">
+                <div class="float-start">
+                    
+                    <div class="btn">
+                        <a href="{% previous_page_num cl %}{% if custom_data %}&month={{custom_data}}{% endif %}" class="btn btn-pagination {% if cl|has_previous == False %}disabled{% endif %}"><i class="fa-solid fa-arrow-left"></i></a>
+                        <a href="{% next_page_num cl %}{% if custom_data %}&month={{custom_data}}{% endif %}" class="btn active btn-page {% if cl|has_next == False %}disabled{% endif %}" aria-current="page">
+                            Next   <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+                <nav aria-label="...">
+                    <div class="d-inline-flex align-items-center">
+                    <p class="h6 me-2">Page</p>
+                    <ul class="pagination pagination">
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">{{ cl.page_num }}</span>
+                        </li>
+                        
+                    </ul>
+                    <p class="h6 ms-2">of {{ cl.paginator.num_pages }}</p>
+                </div>
+                </nav>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,244 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n static courses_admin_helpers tz %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/user_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid header">
+    <div class="container">
+        {% include "admin/custom_nav.html" %}
+        <div class="row mt-5 px-3">
+            <div class="col-md-12">
+                <h5 id="d_title"><span id="d_title_1">Hello </span><span id="d_title_2"> {{data.name}},</span></h5>
+                <p id="d_sub_title">Let’s check your business status</p>
+        
+            </div>
+        </div>
+
+        <div class="row mt-2 pb-3">
+            <div class="col-md-4">
+                <div class="card d_card" id="d_card_1">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto circle_size d_icon_1">
+                                    <img src="{% static 'images/c1.svg' %}">
+                                </div>
+                            </div>
+                            <div class="col-6 my-auto">
+                                <div class="d_card_title my-auto">Total Courses</div>
+                            </div>
+                            <div class="col-4 my-auto">
+                                <div class="d_card_updown"></div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-6">
+                                <div class="d_numbers px-3">{{data.course_count}} <span class="d_sub_numbers">Courses</span></div>
+                            </div>
+                            <div class="col-4">
+
+                            </div>
+                            <div class="col-2 my-auto">
+                                <a href="#"><img src="{% static 'images/greater_arrow.svg' %}" id=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card d_card" id="d_card_2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-2">
+                                <div
+                                    class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto circle_size d_icon_2">
+                                    <img src="{% static 'images/c2.svg' %}">
+                                </div>
+                            </div>
+                            <div class="col-6 my-auto">
+                                <div class="d_card_title my-auto">No. of students</div>
+                            </div>
+                            <div class="col-4 my-auto">
+                                <div class="d-flex d_card_updown">
+                                    <img src="{% static 'images/up.svg' %}" class="up_down_img">
+                                    <div class="d_percentage">23.05%</div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-6">
+                                <div class="d_numbers px-3">{{data.no_of_students}} <span class="d_sub_numbers"></span></div>
+                            </div>
+                            <div class="col-4">
+
+                            </div>
+                            <div class="col-2 my-auto">
+                                <a href="{% url 'admin:student_user_list' %}"><img src="{% static 'images/greater_arrow.svg' %}" id=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card d_card" id="d_card_3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto circle_size d_icon_3">
+                                    <img src="{% static 'images/c3.svg' %}">
+                                </div>
+                            </div>
+                            <div class="col-6 my-auto">
+                                <div class="d_card_title my-auto">Conversion Students</div>
+                            </div>
+                            <div class="col-4 my-auto">
+                                
+                                <div class="d-flex d_card_updown">
+                                    <img src="{% static 'images/down.svg' %}" class="up_down_img">
+                                    <div class="d_percentage_2 ">23.05%</div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-6">
+                                <div class="d_numbers px-3">{{data.conversion_students}} <span class="d_sub_numbers"></span></div>
+                            </div>
+                            <div class="col-4">
+
+                            </div>
+                            <div class="col-2 my-auto">
+                                <a href="#"><img src="{% static 'images/greater_arrow.svg' %}" id=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container dashboard_container">
+    <div class="row mt-5">
+        <div class="col-md-12 mobile_view_mt">
+            <div class="row">
+                <div class="col-md-9 my-auto">
+                    <div class="dc_title">Non Active students</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dc_dropdown">
+                        <form method="get">
+                            <select class="form-select dashboard_dropdown" id="" name="non_active_students" onchange="this.form.submit()">
+                                <option value="recent" {% if request.GET.non_active_students and request.GET.non_active_students == 'recent' %}selected{% endif %}>Recent</option>
+                                <option value="last_month" {% if request.GET.non_active_students and request.GET.non_active_students == 'last_month' %}selected{% endif %}>Last Month</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="container table-contents">
+
+
+          
+            
+                    <div class="table-responsive card rounded-3 py-2 table-body ">
+                        <table class="table p-5">
+                            <thead>
+                                <tr class="table-head">
+                                    <th >S.No</th>
+                                    <th >Username</th>
+                                    <th >Email</th>
+                                    <th >Last Login</th>
+                                    <th >Courses</th>
+                                    <th>Total Days Of Inactive</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for naUser in data.user_list %}
+                                <tr>
+                                  <td>{{forloop.counter}}.</td>
+                                  <td>
+                                    <div class="d-flex my-auto">
+                                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center circle_size td_icon">
+                                            <span class="td_icon_txt">{{naUser.first_name|make_list|first}}</span>
+                                        </div>
+                                        <span class="mt-2 mx-2">{{naUser.first_name}} {{naUser.last_name}}</span>
+                                    </div>
+                                    </td>
+                                  <td>{{naUser.email}}</td>
+                                  <td>
+                                    {% timezone "Asia/Kolkata" %}
+                                    {{naUser.last_login}}
+                                    {% endtimezone %}
+                                  </td>
+                                  <td>{{naUser.pcourse_count}}</td>
+                                  <td>
+                                    {% timezone "Asia/Kolkata" %}
+                                    {{naUser.last_login|days_until}}
+                                    {% endtimezone %}
+                                  </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="6" class="text-center">No data found!</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- </div> -->
+            
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}

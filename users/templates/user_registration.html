@@ -1,0 +1,307 @@
+{% extends "user_base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid custom-bg">
+    <div class="row">
+        <!-- left-section -->
+        <div class="col-md-6 left-components">
+            <img src="{% static 'images/user/brand.png' %}" alt="Brand Logo" class="img-fluid" />
+            <p class="text-start mt-md-4">
+                "Unlock Your Potential with Medics Academy Where <br />
+                Knowledge Meets Opportunity!"
+            </p>
+        </div>
+
+        <!-- right-section -->
+        <div class="col-md-6 mb-5 mt-5">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-7">
+                    <div class="card rounded-4 card-container" id="card1">
+                        <!-- Start of card content -->
+                        <div class="card-body p-md-5">
+                            <a href="#">
+                                <img src="{% static 'images/user/form-logo.svg' %}" alt="Brand Logo" class="img-fluid w-25" />
+                            </a>
+                            <h5 class="brand-color mt-5">Create Account!</h5>
+                            <p class="sub">Please fill the details to create account.</p>
+
+                            <div class="mb-3">
+                                <label for="UserName" class="form-label">Name</label>
+                                <input type="text" class="form-control input-data" id="name" name="name" aria-describedby="emailHelp"
+                                    placeholder="Enter Name"/>
+                                
+                               
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="InputPassword1" class="form-label">Gender</label>
+                                <select class="form-select input-data" aria-label="Default select example" id="gender" name="gender">
+                                    <option selected>Please select your gender</option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputPassword1" class="form-label">Mobile Number</label>
+                                <div class="row g-3">
+                                    <div class="col-auto">
+                                        <select class="form-select input-data" aria-label="Select an option"
+                                            aria-describedby="basic-addon1" name="country_code" id="country_code">
+                                            <option value="+91" selected>+91</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <input type="tel" class="form-control input-data" placeholder="Mobile Number"
+                                            aria-label="mobile" aria-describedby="basic-addon1" name="phone_number" id="phone_number">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-4">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control input-data" placeholder="E-mail" name="email" id="email" />
+                            </div>
+
+
+                            <button type="button" class="btn btn-dark w-100 mt-md-2 next-click"
+                            onclick="showCard('card2', 'card1',1)">Next</button>
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-center">
+                                        <p class="page_end">Already have an account?</p><a class="ms-2 page_end" id="sign_custom"  href="{% url 'user_app:user_login' %}">Sign-in</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End of card content -->
+                    </div>
+                    <div class="card rounded-4 card-container" id="card2" style="display: none;">
+                        <!-- Start of card content (initially hidden) -->
+                        <div class="card-body p-md-5">
+                            <a href="#">
+                                <img src="{% static 'images/user/form-logo.svg' %}" alt="Brand Logo" class="img-fluid w-25" />
+                            </a>
+                            <h5 class="brand-color mt-5">Create Account!</h5>
+                            <p class="sub">Please fill the details to create account.</p>
+
+
+                            <!-- <div class="mb-3">
+                    
+                    
+                            </div> -->
+                            <div class="mb-3">
+                                <label for="Occupation" class="form-label">Occupation</label>
+                                <select class="form-select input-data" aria-label="Default select example" id="occupation" name="occupation">
+                                    <option selected disabled>Select Occupation</option>
+                                    <option value="S">Student</option>
+                                    <option value="T">Teacher</option>
+                                    <option value="O">Others</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4 occupationtherget" style=" display: none;">
+                             <input type="text" class="form-control input-data" placeholder="Occupation" name="occupation_others" id="occupation_others" />
+                            </div>
+
+                            <div class="mb-4 studoccupationtherget" style=" display: none;">
+                                <label for="college" class="form-label">College</label>
+                                <input type="text" class="form-control input-data" placeholder="College" name="college" id="college" />
+                            </div>
+                            
+
+                            <div class="mb-4">
+                                <label for="InputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control input-data" id="InputPassword1" placeholder="Password" name="password" id="password" />
+                            </div>
+                            <div class="mb-4">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control input-data" id="confirm_password" name="confirm_password"
+                                    placeholder="Confirm Password"/>
+                            </div>
+                            <div class="mb-1 d-flex justify-content-start">
+                                <input class="form-check-input me-2 input-data input-data-check" type="checkbox" name="termcheck" id="termcheck" value="">
+                                <label class="form-check-label m-0 checkoccuption">
+                                    <span class="text-grey">I agree </span>Terms of conditions <span class="text-grey">&</span> Privacy Policy
+                                </label>
+                               
+                            </div>
+                            <div class="row">
+                                <div class="col-12" id="checkbox_error_msg">
+
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-between">
+                                        <button type="submit" class="btn btn-dark  mt-3 "
+                                        onclick="showCard('card1', 'card2',1)">Previous</button>
+                                        <button type="submit" class="btn btn-dark  mt-3" id="submit" onclick="showCard('card2','card1',2)">Submit </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-center">
+                                        <p class="page_end">Already have an account?</p><a class="ms-2 page_end" id="sign_custom"  href="{% url 'user_app:user_login' %}">Sign-in</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End of card content -->
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+    
+    <script>
+         $(function(){
+            $('.form-control').on('keypress', function(){
+                $(this).parent().find('.error-message').remove();
+            });
+
+            $('.form-select').on('change', function(){
+                $(this).parent().find('.error-message').remove();
+            });
+           
+            $("#occupation").change(function(){
+                var selected_option = $('#occupation').val();
+                
+                if(selected_option == 'O')
+                {
+                    $('.occupationtherget').show();
+                }
+                else
+                {
+                    $('.occupationtherget').hide();
+                }
+
+                if(selected_option == 'S')
+                {
+                    $('.studoccupationtherget').show();
+                }
+                else
+                {
+                    $('.studoccupationtherget').hide();
+                }
+                
+            });
+
+            $("#termcheck").change(function(){
+                $(this).parent().find('.error-message').remove();
+            });
+            
+            
+
+        });
+        function showCard(showId, hideId, step) {
+                const showCard = document.getElementById(showId);
+                const hideCard = document.getElementById(hideId);
+                var idata = {};
+                $('.input-data').each(function() {
+                    if($(this).attr('id') =='termcheck' && $(this).prop('checked'))
+                    {
+                       // alert($(this).attr('name'));
+                        idata[$(this).attr('name')] =  1;
+                    }
+                    else
+                    {
+                        idata[$(this).attr('name')] = $(this).val();
+                    }
+                    
+                });
+                idata['csrfmiddlewaretoken']= '{{ csrf_token }}'
+                idata['step'] = step;
+                // idata['termcheck'] = $('$termcheck').is(':checked');
+                console.log(idata);
+                
+                var url = "{% url 'user_app:userRegistration' %}";
+                
+                    $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: idata,
+                    success: function (data) {
+                        console.log(data);
+                        if(data.success == true && data.redirect == true)
+                        {
+                            var url_login = "{% url 'user_app:user_login' %}";
+                            window.location.href = url_login; 
+                        }
+                        else
+                        {
+                        // alert(data.errors);
+                            if(data.success == false)
+                            {
+                                if(data.step2 == true)
+                                {
+                                    if (showCard && hideCard) {
+                                        showCard.style.display = 'block';
+                                        hideCard.style.display = 'none';
+                                    }
+                                }
+                                $('.error-message').remove();
+                                $('.input-data:visible').each(function() {
+                                    var fcname = $(this).attr('name');
+                                    console.log(fcname);
+
+                                    if(fcname=="termcheck")
+                                    {
+                                       // alert('my process');
+                                        if(data.errors[fcname])
+                                    {
+                                        $("#checkbox_error_msg").append('<span class="text-danger error-message">Please check terms & condition</span>');
+                                    }
+                                    }else
+                                    {
+                                    if(data.errors[fcname])
+                                    {
+                                        $(this).parent().append('<span class="text-danger error-message">'+data.errors[fcname][0]+'</span>');
+                                    }
+                                      
+
+                                    }
+
+
+                                    
+                                
+                                });
+                                // $('.form-select:visible').each(function(){
+                                //     var fsname = $(this).attr('name');
+                                //     if(data.errors[fsname])
+                                //         $(this).parent().append('<span class="text-danger error-message">'+data.errors[fsname][0]+'</span>');
+                                // });
+                               
+                                    
+                                // }
+                            
+                            }
+                            else
+                            {
+                                if (showCard && hideCard) {
+                                    showCard.style.display = 'block';
+                                    hideCard.style.display = 'none';
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                
+        }
+    
+       
+        
+    </script>
+    
+{% endblock %}

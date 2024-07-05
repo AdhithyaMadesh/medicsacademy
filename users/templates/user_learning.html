@@ -1,0 +1,1170 @@
+{% extends "user_base.html" %}
+{% load static %}
+{% block title %}
+User Learning
+{% endblock %}
+{% load custom_filters %}
+{% load custom_file_types %}
+
+
+   
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/user/user_learn.css' %}">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/user/mobile_view.css' %}">
+    {% endblock %}
+  
+    {% block content %}
+    {% include "admin/aloader.html" %}
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+   
+                <video class="d-block w-100" id="video1" controls muted>
+                    <source src="video/demo_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+   
+            <div class="carousel-item">
+                <video class="d-block w-100" id="video2" controls muted>
+                    <source src="video/demo_two.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="carousel-item">
+                <video class="d-block w-100" id="video3" controls muted>
+                    <source src="video/demo_three.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> -->
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                
+                                <video class="d-block w-100" id="video1" controls muted >
+                                    <source src="{% static 'video/demo_video.mp4' %}"
+                                     type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <video class="d-block w-100" id="video2" controls muted>
+                                    <source src="{% static 'video/demo_video.mp4' %}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="d-block w-100" id="video3" controls muted>
+                                    <source src="{% static 'video/demo_video.mp4' %}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div> -->
+                    <div class="d-block w-100" id="emptyCardBlock">
+                        <div class="card">
+                            <div class="card-body py-5 my-5">
+                                <p class="h6 text-center">Please click on a material and start learning!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe class="d-block w-100 d-none" id="iframe1" src="" frameborder="0" height="500" data-course="{{selected_course.id}}"  allow="autoplay"></iframe>
+                    <video class="d-block w-100 d-none" id="video1" autoplay oncontextmenu="return false;" preload="auto" controlsList="nodownload" data-course="{{selected_course.id}}">
+                        Your browser does not support the video tag.
+                    </video>
+                    <audio id="audio1" class="d-block w-100 d-none" src="" autoplay controls oncontextmenu="return false;" preload="auto" controlsList="nodownload" data-course="{{selected_course.id}}"></audio>
+                    <embed id='pdf' class="d-block w-100 d-none" src="" height="350" data-course="{{selected_course.id}}"></embed>
+                </div>
+                
+                
+                <div class="row border-bottom">
+                    <ul class="nav nav-tabs nav-pills  ms-5" id="myTab">
+                        <!-- <li class="nav-item sub-link">
+                            <a href="#home" class="nav-link  active" data-bs-toggle="tab">Reviews</a>
+                        </li> -->
+                        <li class="nav-item sub-link">
+                            <a href="#profile" class="nav-link  " data-bs-toggle="tab">Assessment Marks</a>
+                        </li>
+                        <!-- <li class="nav-item sub-link">
+                            <a href="#messages" class="nav-link  " data-bs-toggle="tab">FAQ</a>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="row mt-5 ms-5">
+                    <div class="col-12 col-md-5">
+                        <!-- <div class="d-flex flex-column">
+                            <div class="d-flex align-items-center">
+                                <p class="me-2 rating-num">4.5/5</p>
+                                <div class="rating" id="star-rating">
+                                    <i class="fas fa-star" data-index="1"></i>
+                                    <i class="fas fa-star" data-index="2"></i>
+                                    <i class="fas fa-star" data-index="3"></i>
+                                    <i class="fas fa-star" data-index="4"></i>
+                                    <i class="fas fa-star" data-index="5"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <p class="total-rating">Based on 567 Reviews</p>
+                            </div>
+                            <div class="d-flex justify-content-center justify-content-md-start">
+                                <button type="button" class="btn btn-dark rounded-3 px-3 px-md-5 mt-2 mt-md-3">Add Review</button>
+                            </div>
+                        </div> -->
+                    </div>
+                    
+                    <div class="col-7 col-md-7">
+                        <!-- <div class="row">
+                            <div class="col-12 col-md-12">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <p class="star-text">5 Star</p>
+                                    <div class="progress mb-3 ms-2 me-2" style="height: 8px; width: 250px;">
+                                        <div class="progress-bar" role="progressbar" style="width: 50%;"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="star-text">25%</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <p class="star-text">4 Star</p>
+                                    <div class="progress mb-3 ms-2 me-2" style="height: 8px; width: 250px;">
+                                        <div class="progress-bar" role="progressbar" style="width: 30%;"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="star-text">30%</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <p class="star-text">3 Star</p>
+                                    <div class="progress mb-3 ms-2 me-2" style="height: 8px; width: 250px;">
+                                        <div class="progress-bar" role="progressbar" style="width: 10%;"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="star-text">10%</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <p class="star-text">2 Star</p>
+                                    <div class="progress mb-3 ms-2 me-2" style="height: 8px; width: 250px;">
+                                        <div class="progress-bar" role="progressbar" style="width: 10%;"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="star-text">10%</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <p class="star-text">1 Star</p>
+                                    <div class="progress mb-3 ms-2 me-2" style="height: 8px; width: 250px;">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%;"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="star-text">25%</p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="row tab-pane fade show active" id="home"">
+                        <div class="row mt-2">
+                            <div class="col-md-11 mx-auto">
+                                <!-- <div class="card rounded-4">
+                                    <div class="card-body">
+                                        <div class="row border-bottom">
+                                            <div class="col-md-1">
+                                                <span class="badge name-bg text-center p-3 rounded-circle">J</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <h6 class="reviewer-name">Jemin Mathew</h6>
+                                                <p class="reviewer-date">23 Feb 2023</p>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="d-flex justify-content-end">
+                                                    <div class="rating" id="star-rating">
+                                                        <i class="fas fa-star" data-index="1"></i>
+                                                        <i class="fas fa-star" data-index="2"></i>
+                                                        <i class="fas fa-star" data-index="3"></i>
+                                                        <i class="fas fa-star" data-index="4"></i>
+                                                        <i class="fas fa-star" data-index="5"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12">
+                                                <div class="d-flex ">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas neque sed rerum, .</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <h5 class="text-secondary">"Kindly please complete the course and add your valuable response, which will greatly enhance the learning experience for all participants."</h5>
+                            </div>
+                        </div>
+                        
+<!-- 
+                    <div class="row mt-2">
+                        <div class="col-md-11 mx-auto">
+                            <div class="card rounded-4">
+                                <div class="card-body">
+                                    <div class="row border-bottom">
+                                        <div class="col-md-1">
+                                            <span class="badge name-bg text-center p-3 rounded-circle">J</span>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6 class="reviewer-name">Jemin Mathew</h6>
+                                            <p class="reviewer-date">23 Feb 2023</p>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="d-flex justify-content-end">
+                                                <div class="rating" id="star-rating">
+                                                    <i class="fas fa-star" data-index="1"></i>
+                                                    <i class="fas fa-star" data-index="2"></i>
+                                                    <i class="fas fa-star" data-index="3"></i>
+                                                    <i class="fas fa-star" data-index="4"></i>
+                                                    <i class="fas fa-star" data-index="5"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-12">
+                                            <div class="d-flex">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas neque sed rerum, .</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+
+                    <!-- <div class="row mt-2">
+                        <div class="col-md-11 mx-auto">
+                            <div class="card rounded-4">
+                                <div class="card-body">
+                                    <div class="row border-bottom">
+                                        <div class="col-md-1">
+                                            <span class="badge name-bg text-center p-3 rounded-circle">J</span>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h6 class="reviewer-name">Jemin Mathew</h6>
+                                            <p class="reviewer-date">23 Feb 2023</p>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="d-flex justify-content-end">
+                                                <div class="rating" id="star-rating">
+                                                    <i class="fas fa-star" data-index="1"></i>
+                                                    <i class="fas fa-star" data-index="2"></i>
+                                                    <i class="fas fa-star" data-index="3"></i>
+                                                    <i class="fas fa-star" data-index="4"></i>
+                                                    <i class="fas fa-star" data-index="5"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-12">
+                                            <div class="d-flex ">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas neque sed rerum, .</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+
+                    <!-- <div class="row mt-3">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10 col-12">
+                            <button type="button" class="btn btn-view w-100">View More</button>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                     -->
+
+
+
+
+
+                </div>
+                <div class="row tab-pane fade" id="profile">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-11">
+                            <div class="table-responsive card rounded-3 py-3 table-body">
+                                <table class="table p-5">
+                                    <thead>
+                                        <tr class="table-head">
+                                            <th scope="col">Module.No</th>
+                                            <th scope="col">Assesment Name</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Score & Action</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for m in related_modules  %}
+                                          {% for average in m.module_averages %}
+                                            
+                                        
+                                         
+                                        
+                                        <tr>
+                                            <th scope="row">{{m.order}}</th>
+                                            <td>
+                                               {{m.module_title}}
+                                            </td>
+                                            <td class="{% if  average.is_attempted and average.first_average >= 80 or  average.last_average >= 80 %}text-status{% else %}text-danger{% endif %}"> {% if  average.is_attempted and average.first_average >= 80 or  average.last_average >= 80 %}Completed{% else %}Pending{% endif %}</td>
+                                            <td class="align-middle text-center">
+                                                <div class="d-flex justify-content-start align-items-center">
+                                                    
+                                                               
+                                                    <span class="me-2 {% if average.first_average >= 80 or  average.last_average >= 80 %}text-status{% elif average.first_average >= 40 or  average.last_average >= 40 %}text-warning{% else %}text-danger{% endif %}"> {% if  average.first_average > average.last_average or average.last_average == None %}  {{average.first_average}}% {% else %} {{average.last_average}}% {% endif %} </span>
+
+                                                    {% if not average.is_attempted or average.first_average > 79 or average.last_average > 79 %}
+                                                    <a href="{% url 'user_app:moduleasses' pk=m.pk %}" class="btn btn-sm btn-outline-dark disabled">Reassessment</a>
+                                                {% else %}
+                                                    <a href="{% url 'user_app:moduleasses' pk=m.pk %}" class="btn btn-sm btn-outline-dark">Reassessment</a>
+                                                {% endif %}
+                                                </div>
+                                            </td>
+
+
+
+                                        </tr>
+                                
+                                        {% endfor %}
+                                        {% endfor %}
+                                        <!-- <tr>
+                                            <th scope="row">2</th>
+                                            <td>
+                                                Assessment Name
+                                            </td>
+                                            <td class="text-status">Completed</td>
+
+                                            <td class="align-middle text-center">
+                                                <div class="d-flex justify-content-start align-items-center">
+                                                    <span class="me-2 text-average-b">5.5%</span>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-dark">Reassessment</button>
+                                                </div>
+                                            </td>
+
+
+
+                                        </tr> -->
+                                        <!-- <tr>
+                                            <th scope="row">3</th>
+                                            <td>
+                                                Assessment Name
+                                            </td>
+                                            <td class="text-status">Completed</td>
+                                            <td class="align-middle text-center">
+                                                <div class="d-flex justify-content-start align-items-center">
+                                                    <span class="me-2 text-average-l">4.5%</span>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-dark">Reassessment</button>
+                                                </div>
+                                            </td>
+
+
+
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane fade" id="messages">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="faq-title">Frequently Asked Questions</h5>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="questionOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            What are your professional goals for learning and development? ...
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="questionOne"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                                            collapse plugin adds the appropriate classes that we use
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="questionTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            How would you rate the quality of this training session?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="questionTwo"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until
+                                            the collapse plugin adds the appropriate classes that we use <code>.accordion-body</code>,
+                                            though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="questionThree faq-question">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Were you able to get all your questions answered during the training?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="questionThree"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                                            the collapse plugin adds the appropriate classes that we use <code>.accordion-body</code>,
+                                            though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ...... -->
+
+            </div>
+
+
+        </div>
+
+
+        <!-- right-section-starts -->
+
+
+
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <p class="heading-m">  {{ selected_course.course_title }} Module List</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <img src="{% static 'images/user/cup.svg' %}" class="img-fluid" alt="...">
+                        <div class="progress ms-2 me-2" style="height: 6px; width: 100%;">
+                            <div class="progress-bar" role="progressbar" id="course_progress_bar" aria-valuenow="{{course_progress_percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p id="progressText" class="star-text ms-2 mb-0">{{course_progress_percentage}}%</p>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="row p-2">
+                <!-- <div class="card rounded-5">
+                        <div class="card-body"> -->
+                          
+
+                            {% for m in related_modules_pc %}
+                           
+                      
+
+                          
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item {% if forloop.first %}accord-top{% endif %} {% if forloop.last %}accord-bottom{% endif %}">
+                        <h2 class="accordion-header" id="question">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#{{ m.module_title|remove_spaces }}" aria-expanded="true" aria-controls="{{ m.module_title|remove_spaces }}">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="title-m">
+                                       
+                                       {{m.module_title}}
+                                   
+                                    
+                                
+
+                                        <p class="sub-title-m mt-1"><span></span><span>{{m.duration_months}} months {{m.duration_days}} days</span></p>
+                                    </div>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="{{ m.module_title|remove_spaces }}" class="accordion-collapse collapse show" aria-labelledby="question"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="InputPassword1" class="form-label">It Includes</label>
+                                        <nav aria-label="breadcrumb">
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">
+                                                    <a href="#">
+                                                        <img src="{% static 'images/user/video-play_svgrepo.svg' %}" alt="Home" />
+                                                        {{m.modulesmediafile_set.all|count_file_type:'Video'}} Videos
+                                                    </a>
+                                                </li>
+                                                <li class="breadcrumb-item ms-1">
+                                                    <a href="#">
+                                                        <img src="{% static 'images/user/audio.svg' %}" alt="Library" />   {{m.modulesmediafile_set.all|count_file_type:'Audio'}} Audios
+                                                    </a>
+                                                </li>
+                                                <li class="breadcrumb-item ms-1 document">
+                                                    <a href="#">
+                                                        <img src="{% static 'images/user/document.svg' %}" alt="Library" />   {{m.modulesmediafile_set.all|count_file_type:'Document'}}
+                                                        Document
+                                                    </a>
+                                                </li>
+                                            </ol>
+                                        </nav>
+
+                                    </div>
+                                </div>
+                                <hr class="hr" />
+
+                                <div class="row">
+                                    <div class="col-12">
+
+                                        <p class="h6 capitalize">{{m.material_title|default_if_none:''}}</p> 
+                                        {% for media in m.modulesmediafile_set.all|dictsort:"order" %}
+                                        <div class="d-flex justify-content-start" id="materialDiv{{media.id}}">
+                                            {% for m_item in processed_media_list %}
+                                                {% if media.id == m_item.media_id %}
+                                            <p class="me-2 m-duration">
+                                                
+                                                    {% if m_item.lock == False %}
+                                                    <i class="bi bi-unlock"></i>
+                                                    {% elif m_item.lock == True %}
+                                                    <i class="bi bi-lock"></i>
+                                                    {% endif %}
+                                            </p>
+                                            <label class="module-title-label">
+                                                {% if m_item.lock == False %}
+                                                <a data-module="{{media.module_id}}" data-media="{{media.id}}" data-file-extension="{{media.file_extension}}" data-file-type="{{media.file_type}}" href="/{{selected_course.id}}/{{media.id}}/{{ media|convert_to_signed_val }}" class="text-dark media-material" >Material {{ media.order }} ({{media.file_type}})</a>
+                                                {% elif m_item.lock == True %}
+                                                <a data-module="{{media.module_id}}" data-media="{{media.id}}" data-file-extension="{{media.file_extension}}" data-file-type="{{media.file_type}}" href="/{{selected_course.id}}/{{media.id}}/{{ media|convert_to_signed_val }}" data-lock="1" class="text-dark media-material" >Material {{ media.order }} ({{media.file_type}})</a>
+                                                {% endif %}
+
+                                            </label>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+
+
+
+                                    <!-- <div class="col-12">
+                                        <div class="d-flex justify-content-start">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <p>1.1 Sub Module</p>
+                                                </label>
+                                            </div>
+
+
+
+                                            <p class="ms-5 m-duration">12 Minutes</p>
+                                        </div>
+                                    </div> -->
+
+
+
+                                    <!-- <div class="col-12">
+                                        <div class="d-flex justify-content-start">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="defaultCheck1">
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                    <p>1.1 Sub Module</p>
+                                                </label>
+                                            </div>
+
+
+
+                                            <p class="ms-5 m-duration">12 Minutes</p>
+                                        </div>
+                                    </div> -->
+
+
+                                </div>
+                                {% for d in at_assessment %}
+                                    {% if m.id == d.module_id and d.count == m.modulesmediafile_set.count and d.acount == False %}
+                                    <div class="row start_assessment">
+                                        <div class="d-flex justify-content-center">
+                                            <a href="{% url 'user_app:moduleasses' pk=m.pk %}" class="btn m-button w-75">Start Assessment</a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                    </div>
+
+                    
+                </div>
+                {% endfor %}
+
+                <!-- </div>
+    </div> -->
+                <!-- card -->
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+   <!-- Modal    -->
+
+   <div class="modal" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Please answer the below question</h4>
+                <button type="button" class="btn-close close d-none"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" id="mbody">
+                
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn m-button close d-none">Close</button>
+                <button type="button" class="btn btn-danger" id="submitPopupBtn">Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row  mt-1 py-3 d-none" id="popupQuestionDiv">
+    <div class="col-12 questionCol">
+        <p class="h6"></p>
+    </div>
+</div>
+      
+<input type="hidden" name="module">
+
+{% endblock %}
+
+
+{% block scripts %}
+{% csrf_token %}
+<script>
+    // Prevent the carousel from advancing when clicking video controls
+    // document.querySelectorAll('video').forEach(function(video) {
+    //     video.addEventListener('click', function(e) {
+    //         e.stopPropagation();
+    //     });
+    // });
+    let intervalID;
+    var player;
+    const intervalSeconds = 10;
+    $(function(){
+        $('.media-material').on('click', function(e){
+            e.preventDefault();
+            if($(this).attr('data-lock')){
+                return false;
+            }
+            stopAudioVideo();
+            $('#emptyCardBlock').removeClass('d-none');
+            var file_type = $(this).data('file-type');
+            var file_extension = $(this).data('file-extension');
+            var href = $(this).attr('href')+"/";
+            var media = $(this).data('media');
+            var module = $(this).data('module');
+            $('[name="module"]').val(module);
+            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', href, true);
+            xhr.setRequestHeader('X-CSRFToken', csrftoken);
+            if(file_extension != 'url'){
+                xhr.responseType = 'blob';
+            }
+            else{
+                xhr.responseType = 'json';
+            }
+            $( "#loader" ).show();
+            clearInterval(intervalID);
+            xhr.onload = function(e) {
+                if (this.status == 200) {
+                    // if( !( blob instanceof Blob ) ) throw new Error( '`videoFile` must be a Blob or File object.' ); 
+                    $('#emptyCardBlock').addClass('d-none');
+                    if(file_type == 'Video'){
+                        if(file_extension != 'url'){
+                            var blob = new Blob([this.response], { type: `video/${file_extension}` });
+                            $('#video1').removeClass('d-none');
+                            $('#audio1').addClass('d-none');
+                            $('#pdf').addClass('d-none');
+                            $('#iframe1').addClass('d-none');
+                            var video = document.getElementById('video1');
+                            // video.oncanplaythrough = function() {
+                            //     URL.revokeObjectURL(this.src);
+                            // };
+                            $('#video1').attr('data-module',module);
+                            $('#video1').attr('data-media',media);
+                            video.src = URL.createObjectURL(blob);
+                            video.load();
+                        }
+                        else{
+                            $('#iframe1').removeClass('d-none');
+                            $('#video1').addClass('d-none');
+                            $('#audio1').addClass('d-none');
+                            $('#pdf').addClass('d-none');
+                            var iframe = document.getElementById('iframe1');
+                            $('#iframe1').attr('data-module',module);
+                            $('#iframe1').attr('data-media',media);
+                            const urlObj = new URL(this.response.link);
+                            iframe.src = "https://www.youtube.com/embed/"+urlObj.searchParams.get('v')+'?autoplay=1&controls=0&rel=0&enablejsapi=1';
+                            var tag = document.createElement('script');
+                            tag.id = 'iframe-demo';
+                            tag.src = 'https://www.youtube.com/iframe_api';
+                            var firstScriptTag = document.getElementsByTagName('script')[0];
+                            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                        }
+                    }
+                    else if(file_type == 'Audio'){
+                        var blob = new Blob([this.response], { type: `audio/${file_extension}` });
+                        $('#iframe1').addClass('d-none');
+                        $('#video1').addClass('d-none');
+                        $('#audio1').removeClass('d-none');
+                        $('#pdf').addClass('d-none');
+                        var audio = document.getElementById('audio1');
+                        $('#audio1').attr('data-module',module);
+                        $('#audio1').attr('data-media',media);
+                        audio.src = URL.createObjectURL(blob);
+                        audio.load();
+                    }
+                    else if(file_type == 'Document'){
+                        var blob = new Blob([this.response], { type: `application/${file_extension}` });
+                        $('#iframe1').addClass('d-none');
+                        $('#video1').addClass('d-none');
+                        $('#audio1').addClass('d-none');
+                        $('#pdf').removeClass('d-none');
+                        var pdf = document.getElementById('pdf');
+                        $('#pdf').attr('data-module',module);
+                        $('#pdf').attr('data-media',media);
+                        pdf.src = '';
+                        pdf.src = URL.createObjectURL(blob)+'#toolbar=0';
+                        storeProgress('document');
+                    }
+                    intervalID = setInterval(getPopupOutput, intervalSeconds * 1000, file_type);
+                }
+                $( "#loader" ).hide();
+            };
+            xhr.send();
+
+            // var request = $.ajax({
+            //     // url: "{# % url 'user_app:material_token' % #}",
+            //     url: href,
+            //     method: "POST",
+            //     data: { id : media },
+            //     headers: {'X-CSRFToken': csrftoken}
+            // });
+            
+            // request.done(function( msg ) {
+            //     if(file_type == 'Video'){
+            //         var video = document.getElementById('video1');
+            //         // $('#video1').attr('src', href);
+            //         video.src = URL.createObjectURL(blob);
+            //         video.load();
+            //     }
+            // });
+            
+            // request.fail(function( jqXHR, textStatus ) {
+            //     console.log( "Request failed: " + textStatus );
+            // });
+            // if(file_type == 'Video'){
+            //     $('#video1').attr('src', $(this).attr('href'));
+            // }
+            // else if(file_type == 'Audio'){
+            //     $('#video1').attr('src', $(this).attr('href'));
+            // }
+            // else if(file_type == 'Document'){
+            //     $('#video1').attr('src', $(this).attr('href'));
+            // }
+        });
+
+        function stopAudioVideo(){
+            var video1 = document.getElementById('video1');
+            var audio1 = document.getElementById('audio1');
+            video1.pause();
+            video1.currentTime = 0;
+            audio1.pause();
+            audio1.currentTime = 0;
+        }
+    });
+
+
+
+    
+        // document.addEventListener('contextmenu', function(e) {
+        //     e.preventDefault();
+        // });
+
+</script>
+
+
+<script>
+    var video = document.getElementById('video1');
+    var audio = document.getElementById('audio1');
+    var no_modules = 0;
+    $(function () {
+        
+    
+        // var supposedCurrentTime = 0;
+
+        // video.addEventListener('timeupdate', function () {
+        //     if (!video.seeking) {
+        //         supposedCurrentTime = video.currentTime;
+        //     }
+        // });
+        // // prevent user from seeking
+        // video.addEventListener('seeking', function () {
+        //     // guard agains infinite recursion:
+        //     // user seeks, seeking is fired, currentTime is modified, seeking is fired, current time is modified, ....
+        //     var delta = video.currentTime - supposedCurrentTime;
+        //     // delta = Math.abs(delta); // disable seeking previous content if you want
+        //     if (delta > 0.01) {
+        //         video.currentTime = supposedCurrentTime;
+        //     }
+        // });
+
+        // video.addEventListener('ended', function () {
+        //     // reset state in order to allow for rewind
+        //     supposedCurrentTime = 0;
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var alerted = false;
+        var currentTime = 0;
+
+
+        // video.addEventListener("timeupdate", function () {
+        //     $('#myModal').find('.close').addClass('d-none');
+        //     var newTime = Math.floor(video.currentTime);
+
+        //     if (newTime > 0 && newTime % 10 === 0 && newTime !== currentTime) {
+        //         video.pause();
+        //         currentTime = newTime;
+        //         // $("#mbody").html("You've been watching for 10 minutes. Current time: " + formatTime(currentTime));
+        //         getPopupQuestion($('#video1').attr('data-module'));
+        //         if(no_modules == 1){
+        //             no_modules = 0;
+        //             video.play();
+        //         }
+        //         else{
+        //             $("#myModal").modal('show');
+        //         }
+        //     }
+        // });
+
+        video.addEventListener("ended", function() {
+            clearInterval(intervalID);
+            storeProgress('video');
+        });
+
+        audio.addEventListener("ended", function() {
+            clearInterval(intervalID);
+            storeProgress('audio');
+        });
+
+        function formatTime(seconds) {
+            var minutes = Math.floor(seconds / 60);
+            var remainingSeconds = seconds % 60;
+            return minutes + "m " + remainingSeconds + "s";
+        }
+
+        $(".close").click(function () {
+            $("#myModal").modal('hide');
+            $('.close').addClass('d-none');
+            clearInterval(intervalID);
+            if(video.currentTime > 0 && video.paused){
+                intervalID = setInterval(getPopupOutput, intervalSeconds * 1000, 'Video');
+                video.play();
+            }
+            else if(audio.currentTime > 0 && audio.paused){
+                intervalID = setInterval(getPopupOutput, intervalSeconds * 1000, 'Audio');
+                audio.play();
+            }
+            else if(player != undefined && player.getPlayerState() == 2){
+                intervalID = setInterval(getPopupOutput, intervalSeconds * 1000, 'Video');
+                player.playVideo();
+            }
+            else{
+                intervalID = setInterval(getPopupOutput, intervalSeconds * 1000, '');
+            }
+        });
+
+        $('#submitPopupBtn').on('click', function(e){
+            e.preventDefault();
+            $('#mbody').find('span.text-danger').remove();
+            $('#mbody').find('span.text-success').remove();
+            var popupAnswer = $('[name="popupAnswer"]:checked');
+            if(popupAnswer.length == 0){
+                $('#mbody').append('<span class="text-danger">Please select an answer</span>')
+            }
+            else if(popupAnswer.data('answer') == ''){
+                $('#mbody').append('<span class="text-danger">You selected wrong answer! Correct answer is marked green!</span>');
+                $('#mbody [data-answer="1"]').addClass('bg-success');
+                $('#myModal').find('.close').removeClass('d-none');
+            }
+            else if(popupAnswer.data('answer') != ''){
+                $('#mbody').append('<span class="text-success">You have selected correct answer!</span>');
+                $('#mbody [data-answer="1"]').addClass('bg-success');
+                $('#myModal').find('.close').removeClass('d-none');
+            }
+        });
+
+        
+    });
+    
+    function getPopupOutput(file_type){
+        if(file_type == 'Video'){
+            video.pause();
+            if(player != undefined){
+                player.pauseVideo();
+            }
+        }
+        else if(file_type == 'Audio'){
+            audio.pause();
+        }
+        clearInterval(intervalID);
+        getPopupQuestion($('[name="module"]').val());
+        if(no_modules == 1){
+            no_modules = 0;
+            if(file_type == 'Video'){
+                video.play();
+                if(player != undefined){
+                    player.playVideo();
+                }
+                intervalID = setInterval(getPopupOutput, intervalSeconds * 1000, 'Video');
+            }
+            else if(file_type == 'Audio'){
+                audio.play();
+                intervalID = setInterval(getPopupOutput, intervalSeconds * 1000, 'Audio');
+            }
+            else{
+                intervalID = setInterval(getPopupOutput, intervalSeconds * 1000, '');
+            }
+        }
+        else{
+            $("#myModal").modal('show');
+        }
+    }
+
+    function getPopupQuestion(moduleId) {
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        var request = $.ajax({
+            url: "{% url 'user_app:get_popup_question' %}",
+            method: "POST",
+            data: { id : moduleId },
+            headers: {'X-CSRFToken': csrftoken},
+            async: false
+        });
+        
+        request.done(function( response ) {
+            $('#mbody').html('');
+            if(response.no_modules){
+                no_modules = 1
+            }
+            else{
+                var popupQuestionDiv = $('#popupQuestionDiv').clone();
+                popupQuestionDiv.find('p').text(response.data.popup_question)
+                response.data.choice.forEach(element => {
+                    var dchoice = '<div class="col-6"> \
+                        <div class="d-flex justify-content-start mt-3"> \
+                            <div class="form-check form-check-inline"> \
+                                <input class="form-check-input" type="radio" name="popupAnswer" \
+                                    id="inlineRadio'+element.id+'" value="'+element.c+'" data-answer="'+(element.answer?element.answer:'')+'"> \
+                                <label class="form-check-label" for="inlineRadio'+element.id+'">'+element.c+'</label> \
+                            </div> \
+                        </div> \
+                    </div>';
+                    $(dchoice).insertAfter(popupQuestionDiv.find('.questionCol'));
+                });
+                popupQuestionDiv.removeClass('d-none')
+                popupQuestionDiv.appendTo('#mbody');
+            }
+        });
+        
+        request.fail(function( jqXHR, textStatus ) {
+            console.log( "Request failed: " + textStatus );
+        });
+    }
+</script>
+<script>
+    $('#course_progress_bar').css('width', "{{course_progress_percentage}}%");
+    function storeProgress(type){
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        let course_data = '', module_data = '', media_data = '';
+        if(type == 'video'){
+            course_data = $('#video1').attr('data-course');
+            module_data = $('#video1').attr('data-module');
+            media_data = $('#video1').attr('data-media');
+        }
+        else if(type == 'audio'){
+            course_data = $('#audio1').attr('data-course');
+            module_data = $('#audio1').attr('data-module');
+            media_data = $('#audio1').attr('data-media');
+        }
+        else if(type == 'document'){
+            course_data = $('#pdf').attr('data-course');
+            module_data = $('#pdf').attr('data-module');
+            media_data = $('#pdf').attr('data-media');
+        }
+        else if(type == 'iframe'){
+            course_data = $('#iframe1').attr('data-course');
+            module_data = $('#iframe1').attr('data-module');
+            media_data = $('#iframe1').attr('data-media');
+        }
+        var data = {
+            'course': course_data,
+            'module': module_data,
+            'media': media_data,
+        };
+        var request = $.ajax({
+            url: "{% url 'user_app:store_course_progress' %}",
+            method: "POST",
+            data: data,
+            headers: {'X-CSRFToken': csrftoken},
+        });
+        
+        request.done(function( response ) {
+            if(response.success){
+                var lockedMaterial = $('#materialDiv'+media_data).next();
+                if(lockedMaterial.length){
+                    lockedMaterial.find('p').html('<i class="bi bi-unlock"></i>');
+                    lockedMaterial.find('label a').removeAttr('data-lock');
+                }
+                else{
+                    $('.start_assessment').remove();
+                    if(response.lock_assessment == 0){
+                        var assessmentDiv = $('#materialDiv'+media_data).parent().parent();
+                        var sdiv = `<div class="row start_assessment">
+                                        <div class="d-flex justify-content-center">
+                                            <a href="/module_assesment/${module_data}" class="btn m-button w-75">Start Assessment</a>
+                                        </div>
+                                    </div>`
+                        $(sdiv).insertAfter(assessmentDiv);
+                    }
+                }
+                $('#course_progress_bar').css('width',(response.percentage+'%'));
+                $('#progressText').text((response.percentage+'%'));
+            }
+        });
+
+        request.fail(function( jqXHR, textStatus ) {
+            console.log( "Request failed: " + textStatus );
+        });
+    }
+
+    $( document ).on( "ajaxStart", function() {
+        $( "#loader" ).show();
+    });
+
+    $( document ).on( "ajaxStop", function() {
+        $( "#loader" ).hide();
+    });
+
+    $( document ).on( "ajaxError", function() {
+        $( "#loader" ).hide();
+    });
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('iframe1', {
+            events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.setVolume(100);
+        event.target.playVideo();
+    }
+
+
+    function onPlayerStateChange(state){
+        if(state.data==0){
+            clearInterval(intervalID);
+            storeProgress('iframe');
+        }
+    }
+</script>
+  {% endblock %}

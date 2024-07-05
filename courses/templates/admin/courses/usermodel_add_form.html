@@ -1,0 +1,196 @@
+{% extends "admin/change_form.html" %}
+
+{% load i18n static courses_admin_helpers %}
+
+{% block title %}
+Add New Admin
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'css/add_admin.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+{% include "admin/custom_nav.html" %}
+
+<div class="container content-outer mt-5">
+    <div class="row card-head">
+        <p class="h3 course-head ms-1">Add New Admin</p>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="is_staff" value="1">
+        <input type="hidden" name="is_superuser" value="0">
+        <input type="hidden" name="date_joined" value="{% now 'Y-m-d H:i:s' %}">
+    <div class="row">
+        <div class="card rounded-3 mt-3">
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="userName" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="userName" name="username" value="{{request.POST.username}}">
+                        <span class="text-danger">{{adminform.form.errors.username.0}}</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="inputEmail4" value="{{request.POST.email}}">
+                        <span class="text-danger">{{adminform.form.errors.email.0}}</span>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="first_name" value="{{request.POST.first_name}}">
+                        <span class="text-danger">{{adminform.form.errors.first_name.0}}</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" name="last_name" value="{{request.POST.last_name}}">
+                        <span class="text-danger">{{adminform.form.errors.last_name.0}}</span>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Create Password</label>
+                        <input type="password" name="password1" class="form-control" id="inputPassword4">
+                        <span class="text-danger">{{adminform.form.errors.password1.0}}</span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Login Status</label>
+                        <div class="d-flex justify-content-start">
+                            <div class="card form-check form-check-inline py-2 text-center active-card">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="is_active" id="inlineRadio1" value="1" {% if request.POST.is_active == '1' %} {{'checked'}} {% endif %}>
+                                    <label class="form-check-label" for="inlineRadio1">Active</label>
+                                </div>
+                            </div>
+
+                            <div class="card form-check form-check-inline py-2 text-center active-card">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="is_active" id="inlineRadio2" value="0" {% if request.POST.is_active == '0' %} {{'checked'}} {% endif %}>
+                                    <label class="form-check-label" for="inlineRadio2">In Active</label>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-danger">{{adminform.form.errors.is_active.0}}</span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12">
+                        <label for="permissionSelect" class="form-label">Access</label>
+                        <div class="form-control">
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="selectAll">
+                            <label class="form-check-label" for="selectAll">Select All Access</label>
+                        </div>
+                        <select name="user_permissions" id="permissionSelect" class="form-select" aria-label="Default select example" multiple>
+                            {% for permission in permissions %}
+                                <option value="{{permission.id}}" {% if permission.id|title in request.POST|get_list:'user_permissions' %}selected{% endif %}>{{permission.name}}</option>
+                            {% endfor %}
+                        </select>
+                        </div>
+                        <span class="text-danger">{{adminform.form.errors.user_permissions.0}}</span>
+                        <!-- <div class="dropdown">
+                            <button class="btn form-control admin-access dropdown-toggle text-start" type="button" id="multiSelectDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Select Options
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="multiSelectDropdown">
+                                <li><label class="dropdown-item"><input type="checkbox"> Dashboard Access</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox">Course</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox"> Option 3</label></li>
+                            </ul>
+                        </div> -->
+
+                  
+                    </div>
+
+                    <!-- <div class="col-md-12">
+                        <div class="d-flex justify-content-end mt-5">
+                            <button type="button" class="btn btn-outline-dark me-2">Close</button>
+                            <button type="button" class="btn btn-outline-dark">Add Now</button>
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6">
+                    <div class="p-3 ps-0 mt-2">
+                        <a href="{% url 'admin:list_admin_users' %}" class="btn mb-1 ps-0">
+                            <i class="fa-solid fa-less-than me-2"></i>
+                            Back
+                        </a>
+                    </div>
+      
+                </div>
+                <div class="col-6">
+                    <div class="d-flex justify-content-end p-3 pe-0 mt-2">
+      
+                        <button type="submit" class="btn btn-dark buttons">
+                            Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+
+{% block extra_scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#permissionSelect').select2({
+                placeholder: 'Please select permissions',
+                allowClear: true
+
+            }).on('select2:clear, select2:unselect', function (e) {
+                $('#selectAll').prop('checked', false);
+            });
+
+            $('#selectAll').on('change', function(e){
+                if($(this).is(':checked')){
+                    $('#permissionSelect > option').prop('selected', true).trigger('change');
+                }
+                else{
+                    $('#permissionSelect > option').prop('selected', false).trigger('change');
+                }
+            });
+
+            
+
+        });
+    </script>
+{% endblock %}

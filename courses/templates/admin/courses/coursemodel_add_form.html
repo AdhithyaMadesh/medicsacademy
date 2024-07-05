@@ -1,0 +1,209 @@
+{% extends "admin/change_form.html" %}
+
+{% load i18n static courses_admin_helpers %}
+
+{% block title %}
+Add Course
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'css/add_course_style.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+{% include "admin/custom_nav.html" %}
+
+<div class="container mt-5 w-75">
+
+
+    <div class="row card-head">
+      <p class="h3 text-dark ms-1">Add New Course</p>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card card-body p-5 mt-3">
+        <div class="row">
+
+            <div class="col-12 course-details">
+            <p class="h4">Course Details</p>
+            </div>
+
+            <div class="row ">
+                <div class="col-md-6 col-sm-12 p-3">
+                    <label for="formcoursetitle" class="form-label">Course Title</label>
+                    <input type="text" name="course_title" class="form-control" id="formcoursetitle" placeholder="Enter Title"
+                        aria-label="First name" value="{{ request.POST.course_title }}">
+                    <span class="text-danger">{{adminform.form.errors.course_title.0}}</span>
+                </div>
+
+                <div class="col-md-6 col-sm-12 p-3">
+                    <label for="formcourseauthor" class="form-label">Course Author</label>
+                    <input type="text" name="course_author" class="form-control" id="formcourseauthor" placeholder="Enter Author"
+                        aria-label="Course author" value="{{ request.POST.course_author }}">
+                    <span class="text-danger">{{adminform.form.errors.course_author.0}}</span>
+                </div>
+
+                <div class="col-md-6 col-sm-12 p-3">
+                    <label for="formcoursemodules" class="form-label">Total Modules</label>
+                    <input type="text" name="total_modules" class="form-control" id="formcoursemodules" placeholder="Enter Course Modules"
+                        aria-label="Last name" value="{{ request.POST.total_modules }}">
+                    <span class="text-danger">{{adminform.form.errors.total_modules.0}}</span>
+                </div>
+
+
+                <div class="col-md-6 col-sm-12 p-3">
+                    <label for="formcourseversion" class="form-label">Version</label>
+                    <input type="text" name="version" class="form-control" id="formcourseversion" placeholder="Enter Version"
+                        aria-label="First name" value="{{ request.POST.version }}">
+                    <span class="text-danger">{{adminform.form.errors.version.0}}</span>
+                </div>
+
+                <div class="col-md-6 col-sm-12 p-3">
+                    <label for="formcourseprice" class="form-label">Price</label>
+                    <input type="text" name="price" class="form-control" id="formcourseprice" placeholder="Enter Price"
+                    aria-label="Last name" value="{{ request.POST.price }}">
+                    <span class="text-danger">{{adminform.form.errors.price.0}}</span>
+                </div>
+
+                <div class="col-md-6 col-sm-12 p-3">
+                    <label for="formcourseflag" class="form-label">Flag</label>
+                    <div class="form-control">
+                        <input type="hidden" name="flag" value="{{request.POST.flag}}">
+                        <select id="flagSelect" class="form-select" multiple>
+                            <option value="Trending" {% if 'Trending'|split_n_check:request.POST.flag %}selected{% endif %}>Trending</option>
+                            <option value="Upselling" {% if 'Upselling'|split_n_check:request.POST.flag %}selected{% endif %}>Upselling</option>
+                        </select>
+                    </div>
+                    <span class="text-danger">{{adminform.form.errors.flag.0}}</span>
+                </div>
+
+                <div class="col-md-12 col-sm-12 p-3">
+                    <label for="formcourseexpertise" class="form-label">Course Expertise</label>
+                    <textarea class="form-control" name="course_expertise" id="formcourseexpertise" rows="4"></textarea>
+                    <span class="text-danger">{{adminform.form.errors.course_expertise.0}}</span>
+                </div>
+
+                <div class="col-md-12 col-sm-12 p-3">
+                    <div class="form-check form-switch form-check-reverse float-start">
+                        <input class="form-check-input" name="status" type="checkbox" role="switch" id="coursestatus" {% if request.POST.status %} {{'checked'}} {% endif %}>
+                        <label for="coursestatus" class="form-label">Status</label>
+                    </div>
+                </div>
+
+                <div class="col-12 p-3">
+                    <p class="h6">Cover Image</p>
+                    <img src="" class="img-fluid" id="output" width="150" height="150" {% if not request.FILES %}{{'style="display: none;"'}}{% endif %}>
+                </div>
+                <div class="col-10 col-sm-12 mx-sm-auto">
+                    <div class="d-flex flex-column  align-items-center  p-5 justify-content-center w-75 upload-box">
+                        <img src="{% static 'images/upload.svg' %}" class="img-fluid" alt="upload">
+                        <p class="h6">Drag and Drop Your Files Here</p>
+                        <label for="fileInput" class="btn browse-btn">
+                            Browse Files
+                            <input accept="image/*" type="file" id="fileInput" name="cover_image" class="d-none" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0]);document.getElementById('output').style='display:block;'">
+                        </label>
+                        <span class="text-danger">{{adminform.form.errors.cover_image.0}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6">
+                    <div class="p-3 ps-0 mt-2">
+                        <a href="{% url 'admin:courses_coursemodel_changelist' %}" class="btn mb-1 ps-0">
+                            <i class="fa-solid fa-less-than me-2"></i>
+                            Back
+                        </a>
+                    </div>
+      
+                </div>
+                <div class="col-6">
+                    <div class="d-flex justify-content-end p-3 pe-0 mt-2">
+      
+                        <button type="submit" class="btn btn-dark buttons">
+                            Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            let fileInputElement = document.getElementById('fileInput');
+            var imageType = "{{ request.FILES|file_content_type:'cover_image' }}";
+            var imageBase64 = "{{ request.FILES|base64:'cover_image' }}";
+
+            if(imageType != ''){
+                // Decode the Base64 string and create a Blob
+                var byteCharacters = atob(imageBase64);
+                var byteNumbers = new Array(byteCharacters.length);
+                for (var i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+                var byteArray = new Uint8Array(byteNumbers);
+
+                var blob = new Blob([byteArray], { type: imageType });
+                const file = new File([blob], "{{request.FILES.cover_image}}");
+                let container = new DataTransfer();
+                container.items.add(file);
+                fileInputElement.files = container.files;
+
+                const blobURL = URL.createObjectURL(blob);
+                $('#output').attr('src', blobURL);
+            }
+
+            $('#flagSelect').select2({
+                placeholder: 'Please select flag',
+                allowClear: true
+            }).on('change', function(e){
+                var fhiddenInput = $('[name="flag"]');
+                var flagInput = [];
+                $( "#flagSelect option:selected" ).each(function() {
+                    flagInput.push($(this).val());
+                });
+                flagInput = flagInput.join(',');
+                fhiddenInput.val(flagInput);
+            });
+
+            
+
+         
+
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,28 @@
+<div class="list-group rounded-4">
+    <a href="{% url 'admin:staff_profile_general_view' %}" class="list-group-item list-group-item-action user-profile {% if active == 'general' %} {{'active'}} {% endif %}">General</a>
+    <a href="{% url 'admin:staff_profile_general_edit' %}" class="list-group-item list-group-item-action user-profile {% if active == 'edit_profile' %} {{'active'}} {% endif %}">Edit Profile</a>
+    <a href="{% url 'admin:admin_password_change' %}" class="list-group-item list-group-item-action user-profile {% if active == 'password' %} {{'active'}} {% endif %}">Password</a>
+    <a href="" class="list-group-item list-group-item-action admin-logout mt-1 rounded-bottom mb-2" data-bs-toggle="modal" data-bs-target="#adminlogout">Logout</a>
+
+    <!-- Modal -->
+    <div class="modal fade text-center logout-modal" id="adminlogout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+        <div class="modal-content align-items-center">
+            <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Logout?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-text">
+                Are you sure you want to Logout?
+            </div>
+            <div class="modal-footer">                                       
+            <button type="button" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4" data-bs-dismiss="modal">No, Cancel</button>
+            <form method="post" action="{% url 'admin:logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4">Yes, Logout</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

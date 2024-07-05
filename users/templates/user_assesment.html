@@ -1,0 +1,377 @@
+{% extends "user_base.html" %} {% load static %} {% block title %} Assessement
+{% endblock %} {% block styles %}
+
+<link rel="stylesheet" href="{% static 'css/user/user_assesment.css' %}" />
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+/>
+
+{% endblock %} {% block content %}
+<!-- content -->
+{% include "admin/aloader.html" %}
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="d-flex">
+        <!-- <a class="me-2" href="{{ previous_page_url }}">
+                    <img src="{% static 'images/user/arrow-left-solid.svg' %}" alt="Description of the SVG"
+                        height="22px" />
+                </a> -->
+        <h5 class="ms-4">Assessment Questions</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-3">
+    <div class="row p-3">
+      <div class="col-md-8">
+        <form method="post" id="a_form">
+          {% csrf_token %}
+          <input type="hidden" name="module" value="{{module.id}}" />
+
+          <!-- <input type="hidden" name="redirect_url" id="redirct_url" value="www.youtube.com"> -->
+          <div class="pagination-container">
+            <div class="card card-body rounded-3 p-3 p-md-5" id="card1">
+              {{ module.module_title }}
+              <!-- Question-Components -->{% if questions %}
+              <div class="question-container">
+                {% for question in questions %}
+                <div class="question-row" style="display: none">
+                  <div class="col-12">
+                    <p class="h6">
+                      <span>
+                        <strong>{{ forloop.counter }}:</strong> </span
+                      >{{ question.question_text }}
+                    </p>
+                  </div>
+                  <!-- Render choices here -->
+                  <div class="row">
+                    {% for choice in question.choice_set.all %}
+                    <div class="col-6">
+                      <div class="form-check form-check-inline">
+                        <input
+                          id="inlineRadio{{choice.id}}"
+                          class="form-check-input"
+                          type="radio"
+                          data-question="{{question.id}}"
+                          name="choice_{{ forloop.parentloop.counter }}"
+                          value="{{question.id}}_{{ choice.id }}"
+                        />
+                        <!-- onchange="toggleButton(this)" -->
+                        <label
+                          class="form-check-label"
+                          for="inlineRadio{{choice.id}}"
+                          >{{choice.choice_text }}
+                        </label>
+                      </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:2 %}
+                  </div>
+                  <div class="row">{% endif %} {% endfor %}</div>
+                </div>
+
+                <div
+                  class="error text-danger m-1"
+                  id="error_{{ forloop.counter }}"
+                ></div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-12">
+              <div class="d-flex justify-content-between">
+                <nav aria-label="...">
+                  <div class="d-inline-flex align-items-center">
+                    <p class="h6 me-2">Page</p>
+                    <ul class="pagination pagination">
+                      <li class="page-item active" aria-current="page">
+                        <span class="page-link" id="currentPage"></span>
+                      </li>
+                    </ul>
+                    <p class="h6 ms-2" id="totalPages"></p>
+                  </div>
+                </nav>
+
+                <div class="float-start">
+                  <!-- <a class="btn btn-dark px-4  btn-sm" href="#" id="nextButton"></a>" role="button">Previous</a>
+                               -->
+                  <button
+                    class="btn btn-dark px-4 btn-sm"
+                    id="prev"
+                    type="button"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="btn btn-dark px-4 btn-sm"
+                    id="next"
+                    type="button"
+                  >
+                    Next
+                  </button>
+
+                  <button
+                    class="btn btn-dark px-4 btn-sm d-none"
+                    id="submit_btn"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+
+                  <!-- <a class="btn btn-dark px-4  btn-sm" href="?page={{ page_obj.next_page_number }}" role="button">Next</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-1"></div>
+      <div class="col-md-3">
+        <div class="row mt-2">
+          <div class="card rounded-4 p-1">
+            <div class="card-body">
+              <div class="row">
+                <div class="d-flex justify-content-start flex-wrap">
+                  {% for question in questions %}
+                  <div class="">
+                    <button
+                      type="button"
+                      class="btn text-dark btn-outline-dark custom-btn px-3"
+                      id="btn_{{forloop.counter}}"
+                    >
+                      {{forloop.counter}}
+                    </button>
+                  </div>
+
+                  {% endfor %}
+                </div>
+
+                <hr />
+                <div class="row mt-3">
+                  <div class="col-12">
+                    <div
+                      class="d-flex justify-content-between align-items-center">
+                    
+                      <!-- <h6 class="asses-btn-title">Assessment Marks</h6>
+                      <h1><span class="total-mark">13</span>/18</h1>
+                      {% if user.is_authenticated %}
+                      <a href="#">Link</a>
+                      {% endif %} -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <p><strong>This Module Has No Assessement</strong></p>
+
+    {% endif %}
+  </div>
+
+  {% endblock %}
+
+  <!-- <script>
+    function toggleButton(radio) {
+        const qbtnOne = document.getElementById('qbtnOne');
+        qbtnOne.disabled = radio.checked;
+    }
+</script>  -->
+  {% block scripts %}
+
+  <script>
+    // Function to toggle button state
+    function toggleButton(buttonId, radio) {
+      const customButton = document.getElementById(buttonId);
+      customButton.disabled = radio.checked;
+    }
+
+    // Add event listener to the radio button
+    // const radio = document.querySelector('input[name="inlineRadioOptions"]');
+    // radio.addEventListener('change', function () {
+    //     toggleButton('qbtnOne', this);
+    // });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      /* button  disable logic start*/
+
+        //logic:when i select or click radio button based on question that button wants to disabled
+        //step 1:need to radio button on click
+        //step 2:dynamically get question no
+        //step 3:same id based button disabled
+        $(".form-check-input").click(function(){
+        var q_id = $(this).attr("name").split("_")[1];
+        $('#btn_'+q_id).prop('disabled', true).removeClass('btn-outline-dark').addClass('btn-secondary');
+        });
+
+    /* button  disable logic end*/
+
+      var itemsPerPage = 5;
+   
+      var currentIndex = 0;
+
+      function showItems() {
+        $(".question-row").hide(); // Hide all question rows
+        $(".question-row")
+          .slice(currentIndex, currentIndex + itemsPerPage)
+          .show(); // Show the current set of questions
+
+        // Calculate the current page and total pages
+        var currentPage = Math.floor(currentIndex / itemsPerPage) + 1;
+        var totalQuestions = $(".question-row").length;
+        var totalPages = Math.ceil(totalQuestions / itemsPerPage);
+
+        // Update the "current page" and "total pages" elements
+        $("#currentPage").text(" " + currentPage);
+        $("#totalPages").text("of " + totalPages);
+
+        // alert(currentPage);
+        // alert(totalQuestions);
+        // alert(currentIndex);
+        // alert(totalPages);
+
+        if (currentPage == 1) {
+          $("#prev").addClass("d-none");
+        } else {
+          $("#prev").removeClass("d-none");
+        }
+
+        if (totalPages == currentPage) {
+          // alert('last submit');
+
+          $("#submit_btn").removeClass("d-none");
+          $("#next").addClass("d-none");
+        } else {
+          // alert('normal next');
+        }
+      }
+
+      showItems(); // Show the initial set of questions
+
+      // Handle "Next" button click
+      $("#next").on("click", function () {
+        // console.log()
+
+        var allQuestionsAnswered = true;
+        // i=1; 1< (1+2)
+        for (
+          var i = currentIndex + 1;
+          i < currentIndex + 1 + itemsPerPage;
+          i++
+        ) {
+          if (!$("input[name='choice_" + i + "']:checked").val()) {
+            allQuestionsAnswered = false;
+            $("#error_" + i).text("Please answer this question.");
+            // alert('not okay');
+          } else {
+            $("#error_" + i).text("");
+            //alert('okay');
+          }
+        }
+
+        // alert(allQuestionsAnswered);
+
+        if (allQuestionsAnswered) {
+          if (currentIndex + itemsPerPage < $(".question-row").length) {
+            currentIndex += itemsPerPage;
+            showItems();
+          }
+        }
+      });
+
+      // Handle "Previous" button click
+      $("#prev").on("click", function () {
+        if (currentIndex - itemsPerPage >= 0) {
+          currentIndex -= itemsPerPage;
+          showItems();
+          $("#submit_btn").addClass("d-none");
+          $("#next").removeClass("d-none");
+        }
+      });
+
+      $("form").on("submit", function (e) {
+        // var url=$("#redirct_url").val();
+        var url = "{% url 'user_app:learning' module.course.id %}";
+        e.preventDefault();
+        var allQuestionsAnswered = true;
+        // i=1; 1< (1+2)
+        var itemsPerPage1 = $(".question-row:visible").length;
+        //  alert(currentIndex);
+        //  alert(itemsPerPage1);
+        // return;
+       // currentIndex=$(".question-row:visible").length;
+
+        for (
+          var i = currentIndex + 1;
+          i <= currentIndex  + itemsPerPage1;
+          i++
+        ) {
+            console.log($("input[name='choice_" + i + "']:hidden").is(':checked'));
+            if (!$("input[name='choice_" + i + "']:checked").val()) {
+            allQuestionsAnswered = false;
+            $("#error_" + i).text("Please answer this question.");
+            //  alert('not okay');
+          } else {
+            $("#error_" + i).text("");
+            // alert('okay');
+          }
+        }
+
+        if (allQuestionsAnswered) {
+          // alert('success');
+          // return;
+          const form = document.getElementById("a_form");
+          const submitter = document.querySelector(
+            "button#submit_btn[type=submit]"
+          );
+          var formdata = new FormData(form, submitter);
+          var request = $.ajax({
+            url: "{% url 'user_app:assessment_submit' %}",
+            method: "POST",
+            data: formdata,
+            processData: false,
+            contentType: false,
+          });
+
+          request.done(function (msg) {
+            // console.log(msg)
+            // alert(msg)
+            window.location.replace(url);
+          });
+
+          request.fail(function (jqXHR, textStatus) {
+            console.log(textStatus);
+          });
+        }
+
+        // e.preventDefault();
+        // alert();
+      });
+      $( document ).on( "ajaxStart", function() {
+          $( "#loader" ).show();
+      });
+
+      $( document ).on( "ajaxStop", function() {
+          $( "#loader" ).hide();
+      });
+
+      $( document ).on( "ajaxError", function() {
+          $( "#loader" ).hide();
+      });
+    });
+  </script>
+
+  {% endblock %}
+</div>

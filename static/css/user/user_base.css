@@ -1,0 +1,129 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@200;300&family=Inconsolata:wght@600&family=Inter:wght@200;400&family=Montserrat:wght@100;200&family=Mulish:wght@800;1000&family=Playfair+Display&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400&family=Ruwudu&display=swap");
+
+/* fonts_and_colors */
+:root {
+  --brand-color: #3ca0ba;
+  --brand-font: "Poppins";
+  --color-black: #1b1b1d;
+  --color-contentbg: #f5f5f5;
+  --color-white: #ffffff;
+  --color-grey: #74899f;
+  --color-green: #35c34c;
+  --color-transparent: #3ca0ba1a;
+}
+
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+/* Nav-bar User-Header  */
+
+.nav-title {
+  font-family: var(--brand-font);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-grey);
+
+  letter-spacing: 0em;
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-grey);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--brand-color);
+  background-color: var(--color-transparent);
+  border-radius: 5px;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: var(--color-grey) !important;
+}
+
+.navbar-nav .navbar-brand img:hover {
+  opacity: 0.8;
+  border: #3ca0ba;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.form-control-feedback.form-control-feedback-custom {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  color: var(--color-grey);
+}
+.nav-form-control {
+  padding-left: 2.375rem;
+}
+.has-search {
+  width: 400px;
+}
+
+
+/* custom-footer */
+
+.custom-footer {
+  height: 48px;
+}
+
+.custom-footer {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+/* default-for-all - Boostrap Customization */
+
+/* .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+}
+.form-control {
+  padding-left: 2.375rem;
+}
+.has-search{
+  width: 400px;
+} */
+
+.form-check-input:checked {
+  background-color: var(--brand-color);
+
+  border-color: var(--brand-color);
+}
+
+.form-check-input:focus {
+  border-color: rgb(134, 183, 254);
+  outline: 0px;
+  box-shadow: #0dcaf054 0px 0px 0px 0.25rem;
+}
+
+.progress-bar {
+  background-color: #3ca0ba !important;
+}
+
+.btn-custom-brand {
+  background-color: var(--brand-color) !important;
+  color: var(--color-white) !important;
+  font-family: var(--brand-font) !important;
+}

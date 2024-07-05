@@ -1,0 +1,50 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+404 Page Not Found
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+
+{% include "admin/custom_nav.html" %}
+
+<div class="container-fluid custom_foundbg">
+    <div class="container components">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 text-center">
+                <p class="h3 text-md">Page Not Found</p>
+                <p class="h6 text-sm">"The requested page does not exist. Return to the home page."</p>
+                <a href="/admin" class="btn fnf_btn">Back to Home</a>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

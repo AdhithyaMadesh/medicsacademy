@@ -1,0 +1,154 @@
+{% extends "admin/change_list.html" %}
+
+{% load i18n static admin_list courses_admin_pagination courses_admin_helpers tz %}
+
+{% block title %}
+List Subscription
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/module_list.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+{% include "admin/custom_nav.html" %}
+
+<div class="container content-outer mt-5">
+    <div class="row card-head">
+        <div class="d-flex p-2 course-view align-items-center ">
+            <p class="h3 ms-5 mt-1">Subscription</p>
+            <a href="{% url 'admin:courses_subscription_add' %}" class="btn btn-dark ms-auto">Create New Subscription</a>
+        </div>
+    </div>
+
+    <div class="table-responsive table-responsive card rounded-5 py-5 table-body text-center">
+        <table class="table p-5">
+            <thead>
+                <tr class="table-head">
+                    <th scope="col">S.No</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for subscription in cl.result_list %}
+                <tr>
+                    <th scope="row">
+                        {% if request.GET.p %}
+                        {% start_index cl request.GET.p forloop.counter0 %}.
+                        {% elif request.GET.all == '' %}
+                            {{ forloop.counter }}.
+                        {% else %} 
+                        {% start_index cl 1 forloop.counter0 %}.
+                        {% endif %}
+                    </th>
+                    <td>{{subscription.course.course_title}}</td>
+                    <td>
+                        {% for s_user in subscription.user.all %}
+                        {{s_user.username}}
+                        {% if not forloop.last %},{% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{{subscription.price}}</td>
+                    <td>{{ subscription.discount }}</td>
+                    <td>
+                        <div class="float-start">
+                            <a href="{% url 'admin:edit_subscription' subscription.id %}" class="btn">
+                                <img src="{% static 'images/edit.svg' %}" alt="edit" class="img-fluid"> 
+                            </a>
+                            <a href="{% url 'admin:courses_subscription_delete' subscription.id %}" class="btn deleteBtn">
+                                <img src="{% static 'images/delete.svg' %}" alt="delete" class="img-fluid">
+                            </a>
+                        </div>
+                    </td>
+
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">No records found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="modal fade text-center" id="deleteSubscriptionModal" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content align-items-center">
+            <div class="modal-header">
+                <h5 class="modal-title text-center text-danger" id="deleteLabel">Delete?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-text">
+                Are you sure you want to Delete?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4"
+                    data-bs-dismiss="modal">No, Cancel</button>
+                <form action="" method="post" id="deleteSubscriptionForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="course_id" value="{{course.id}}">
+                    <input type="hidden" name="post" value="yes">
+                <button type="submit" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4">Yes, Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block pagination %}{% pagination cl %}{% endblock %}
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    $(function(){
+
+        const deleteSubscriptionModal = new bootstrap.Modal('#deleteSubscriptionModal', {
+            keyboard: false,
+            backdrop: 'static'
+        });
+
+        var deleteUrl = '';
+        $('.deleteBtn').on('click', function(e){
+            e.preventDefault();
+            deleteUrl = $(this).attr('href');
+            deleteSubscriptionModal.show();
+        });
+
+        const myModalEl = document.getElementById('deleteSubscriptionModal');
+        myModalEl.addEventListener('show.bs.modal', event => {
+            $('#deleteSubscriptionForm').attr('action', deleteUrl);
+        });
+
+    });
+</script>
+{% endblock %}

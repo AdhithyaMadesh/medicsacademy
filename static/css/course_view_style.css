@@ -1,0 +1,81 @@
+body {
+  margin-bottom: 48px;
+  background: var(--color-contentbg);
+}
+
+
+
+
+ /* card-items card body */
+
+.course-view p {
+  font-family: var(--brand-font);
+  font-size: 18px;
+  font-weight: 600;
+ 
+  text-align: left;
+}
+
+
+.content {
+  color: var(--color-white);
+}
+
+.course-name{
+  color: var(--color-black) !important;
+
+}
+.heading {
+  font-family:var(--brand-font);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #74899f;
+}
+
+.contents {
+ 
+  font-family: var(--brand-font);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  
+  text-align: left;
+  color: var(--color-black);
+}
+
+.module-count {
+  color: var(--color-white) !important;
+  background-color: var(--brand-color) !important;
+  font-family: var(--brand-font);
+}
+
+
+
+
+.course-active {
+  font-family: var(--brand-font);
+  /* font-size: 14px; */
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: var(--color-green);
+}
+
+
+
+
+
+
+
+/* unused-non-delete */
+
+
+
+/* .buttons {
+  width: 100px;
+  height: 40px;
+} */

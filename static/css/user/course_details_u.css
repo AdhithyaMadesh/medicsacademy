@@ -1,0 +1,308 @@
+body {
+  margin-bottom: 48px;
+  /* background: var(--color-contentbg); */
+}
+
+.price_banner{
+  color: var(--brand-color) !important;
+}
+
+.section-one {
+  background-color: #3ca1ba3f;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  color: #6c757d;
+  content: none !important;
+}
+
+.breadcrumb {
+  background-color: unset !important;
+ 
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+}
+/* Accordian - left-section befor certificate */
+
+.accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  background-color: #3ca1ba60;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: var(--bs-accordion-btn-focus-border-color);
+  outline: 0;
+  box-shadow: none;
+}
+
+.accordion-item {
+  color: var(--bs-accordion-color);
+  background-color: var(--bs-accordion-bg);
+  border: solid 0.1px #3ca1ba60 !important;
+}
+
+.accord-top {
+  border-radius: 25px 25px 0px 0px !important;
+}
+
+.accord-top.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.heading-m {
+  font-family: var(--brand-font);
+  font-weight: 600;
+}
+
+.title-m {
+  font-family: var(--brand-font);
+  font-weight: 500;
+}
+
+.sub-title-m {
+  font-family: var(--brand-font);
+  font-weight: 500;
+  font-size: 10px;
+  color: var(--color-grey);
+}
+
+.form-label {
+  color: var(--brand-color);
+  font-weight: 500;
+}
+
+.breadcrumb-item a {
+  font-family: var(--brand-font);
+  color: var(--color-grey);
+  font-weight: 500;
+}
+
+.module-title-label {
+  font-family: var(--brand-font);
+  font-weight: 400;
+}
+
+.m-duration {
+  font-family: var(--brand-font);
+  color: var(--color-grey);
+}
+
+.m-button {
+  background-color: var(--brand-color) !important;
+  color: var(--color-white) !important;
+}
+
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  color: var(--bs-btn-active-color);
+  background-color: var(--bs-btn-active-bg);
+  border-color: unset;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: #0dcaf054 0px 0px 0px 0.25rem !important;
+}
+
+/* banner-style-contents */
+.main-title {
+  font-family: var(--brand-font);
+  font-weight: 700;
+}
+
+.heading {
+  font-family: var(--brand-font);
+  color: var(--color-grey);
+}
+
+.contents {
+  font-family: var(--brand-font);
+  font-weight: 500;
+}
+
+.price {
+  color: var(--brand-color) !important;
+  font-weight: 600;
+}
+
+.price-og {
+  color: var(--color-grey);
+}
+
+.total-text {
+  font-family: var(--brand-font);
+}
+
+.card-text {
+  font-size: 10px;
+}
+
+.card-text-star,
+.price {
+  color: var(--brand-color) !important;
+  font-size: 10px;
+}
+
+.card-text-icon {
+  color: var(--brand-color);
+}
+
+.section-title {
+  font-family: var(--brand-font);
+  font-weight: 600;
+}
+
+.title-more {
+  font-family: var(--brand-font);
+  color: var(--brand-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card-sub-text {
+  color: var(--color-grey);
+  font-weight: 400;
+  font-size: 14px;
+  font-family: var(--brand-font);
+}
+
+.card-title {
+  font-family: var(--brand-font);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.certificate {
+  font-family: var(--brand-font);
+  font-weight: 900;
+}
+
+.rating-head {
+  font-family: var(--brand-font);
+  font-weight: 600;
+}
+
+.review-sub-title {
+  font-family: var(--brand-font);
+  font-weight: 500;
+}
+
+.rating-total {
+  font-family: var(--brand-font);
+  font-weight: 700;
+}
+
+/* star-color-commom */
+
+.rating i {
+  color: #3ca0ba;
+}
+
+.rating {
+  font-size: 15px;
+}
+
+.star-text {
+  font-family: var(--brand-font);
+  font-weight: 500;
+}
+
+/* user-reviews-list */
+
+.name-bg {
+  background-color: #3ca1ba41;
+  color: var(--brand-color);
+}
+
+.reviewer-name {
+  font-family: var(--brand-font);
+  font-weight: 500;
+}
+
+.reviewer-date {
+  font-weight: 400;
+  font-family: var(--brand-font);
+  font-size: 14px;
+  color: var(--color-grey);
+}
+
+/* faq-list */
+
+.section-title {
+  font-family: var(--brand-font);
+  font-weight: 600;
+}
+
+.faq-question {
+  font-family: var(--brand-font);
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  font-weight: bold;
+}
+
+.accordion-button {
+  font-weight: 500;
+}
+
+
+/* caraousel-card */
+
+.card-title {
+  text-decoration: none;
+  color: var(--color-black);
+
+}
+
+
+a{
+  text-decoration: none;
+}
+
+
+
+/* .accordion {
+  
+   --bs-accordion-border-radius: unset !important; 
+   --bs-accordion-inner-border-radius: unset !important;
+ 
+} */
+
+
+
+
+.accordion {
+  border-top-right-radius: 25px !important;
+  border-top-left-radius: 25px !important;
+  --bs-accordion-border-radius: unset !important; 
+  --bs-accordion-inner-border-radius: unset !important;
+
+}
+
+
+.module-right{ margin-right: 4rem!important;
+}
+
+
+.bi.bi-bookmark:hover{
+  color: var(--brand-color)!important;
+
+}
+
+
+.bi-bookmark-check-fill{
+  color: var(--brand-color)!important;
+}
+

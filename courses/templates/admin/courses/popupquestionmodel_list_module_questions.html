@@ -1,0 +1,260 @@
+{% extends "admin/change_list.html" %}
+
+{% load i18n static admin_list courses_admin_pagination courses_admin_helpers tz %}
+
+{% block title %}
+List Popup Questions
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/module_list.css' %}">
+<link rel="stylesheet" href="{% static 'css/assesment.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+{% include "admin/aloader.html" %}
+{% include "admin/custom_nav.html" %}
+
+<div class="container-fluid">
+
+    <div class="container mt-5">
+
+        <div class="container mt-5">
+
+            <div class="row mt-5">
+                <div class="col-12 col-offset-4">
+                    <p class="h5 text-center">{{module.course.course_title}} >> {{module.module_title}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-3"></div>
+                <div class="col-12 col-md-6">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group d-flex align-items-center">
+                            <a href="{% url 'admin:list_course_modules' module.course.id %}">
+                                <img src="{% static 'images/arrow-left-solid.svg' %}" width="32px" height="32px"
+                                    alt="left arrow">
+                            </a>
+                            <p class="h5 ms-2 mt-1">Popup Questions</p>
+                        </div>
+                        <div class="next-btn">
+                            <button class="btn btn-dark btn-sm text-nowrap importQuestionsBtn" data-module-title="{{module.module_title}}" data-module-id="{{module.id}}" data-url="{% url 'admin:import_module_popup_questions' module.id %}">Import Popup Questions</button>
+                            <a class="btn btn-dark px-4  btn-sm" href="{% url 'admin:courses_popupquestion_add' %}?module={{module.id}}" role="button">Add Question</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2"></div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-3 col-12"></div>
+            <div class="col-md-6 col-12">
+                <div class="card card-body p-5">
+                    {% for question in cl.result_list %}
+                    <div class="row  mt-1 py-3">
+                        <div class="col-12">
+                            <div class="next-btn float-end">
+                                <a href="{% url 'admin:edit_popup_question' question.id %}" class="btn">
+                                    <img src="{% static 'images/edit.svg' %}" alt="edit" class="img-fluid"> 
+                                </a>
+                                <a href="{% url 'admin:courses_popupquestion_delete' question.id %}" class="btn deleteBtn">
+                                    <img src="{% static 'images/delete.svg' %}" alt="delete" class="img-fluid">
+                                </a>
+                            </div>
+                            <p class="h6">
+                                <span><bold>Q{% if request.GET.p %}{% start_index cl request.GET.p forloop.counter0 %}:{% elif request.GET.all == '' %}{{ forloop.counter }}:{% else %}{% start_index cl 1 forloop.counter0 %}:{% endif %}</bold></span> {{question.popup_question_text}}
+                            </p>
+                        </div>
+                        {% for choice in question.popupchoice_set.all %}
+                        <div class="col-6">
+                            <div class="d-flex justify-content-start mt-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions{{question.id}}"
+                                        id="inlineRadio{{choice.id}}" value="{{choice.popup_choice_text}}" {% if choice.is_correct_answer %}checked{% else %}disabled{% endif %}>
+                                    <label class="form-check-label" for="inlineRadio{{choice.id}}">{{choice.popup_choice_text}}</label>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% empty %}
+                    <span class="text-center h6">No popup questions added</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% block pagination %}{% custom_pagination cl custom_data=clink %}{% endblock %}
+    
+    </div>
+
+</div>
+
+<div class="modal fade text-center" id="importModuleModal" tabindex="-1" aria-labelledby="importLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="" method="post" id="importModuleForm" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h5 class="modal-title text-center text-info" id="importLabel">Import Popup Questions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-text">
+                    <div class="mb-3 text-start">
+                        <label for="formFile" class="form-label">Import Popup Question for <span id="moduleTitleModalSpan"></span></label>
+                        <input class="form-control" name="csvfile" type="file" id="formFile" accept=".csv">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-1" data-bs-dismiss="modal">No, Cancel</button>
+                    <input type="hidden" name="module_id" value="">
+                    <button type="submit" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4 me-1" id="importSubmitBtn">Yes, Import</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-center" id="deleteQuestionModal" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content align-items-center">
+            <div class="modal-header">
+                <h5 class="modal-title text-center text-danger" id="deleteLabel">Delete?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-text">
+                Are you sure you want to Delete?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4"
+                    data-bs-dismiss="modal">No, Cancel</button>
+                <form action="" method="post" id="deleteQuestionForm">
+                    {% csrf_token %}
+                    <input type="hidden" name="post" value="yes">
+                    <input type="hidden" name="module" value="{{module.id}}">
+                <button type="submit" class="btn-modal btn btn-outline-dark px-5 mx-auto ms-4">Yes, Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    $(function(){
+
+        const deleteQuestionModal = new bootstrap.Modal('#deleteQuestionModal', {
+            keyboard: false,
+            backdrop: 'static'
+        });
+
+        var deleteUrl = '';
+        $('.deleteBtn').on('click', function(e){
+            e.preventDefault();
+            deleteUrl = $(this).attr('href');
+            deleteQuestionModal.show();
+        });
+
+        const myModalEl = document.getElementById('deleteQuestionModal')
+        myModalEl.addEventListener('show.bs.modal', event => {
+            $('#deleteQuestionForm').attr('action', deleteUrl);
+        });
+
+        const importModuleModal = new bootstrap.Modal('#importModuleModal', {
+            keyboard: false,
+            backdrop: 'static'
+        });
+
+        var importUrl = '';
+        var moduleId = '';
+        var moduleTitle = '';
+        $('.importQuestionsBtn').on('click', function(e){
+            e.preventDefault();
+            importUrl = $(this).data('url');
+            moduleId = $(this).data('module-id');
+            moduleTitle = $(this).data('module-title');
+            importModuleModal.show();
+        });
+
+        const importModalEl = document.getElementById('importModuleModal');
+        importModalEl.addEventListener('show.bs.modal', event => {
+            $('#importModuleForm').attr('action', importUrl);
+            $('#importModuleForm').find('[name="module_id"]').val(moduleId);
+            $('#moduleTitleModalSpan').text('"'+moduleTitle+'"');
+        });
+
+        importModalEl.addEventListener('hidden.bs.modal', event => {
+            $('#formFile').val('');
+            $('.error-message').remove();
+            $('#importModuleForm').attr('action', '');
+            $('#importModuleForm').find('[name="module_id"]').val('');
+            $('#moduleTitleModalSpan').text('');
+        });
+
+        $('form#importModuleForm').on('submit', function(e){
+            e.preventDefault();
+            $('.error-message').remove();
+            const form = document.getElementById("importModuleForm");
+            const submitter = document.querySelector("button#importSubmitBtn[type=submit]");
+            var formdata = new FormData(form, submitter);
+            var request = $.ajax({
+                url: form.action,
+                method: "POST",
+                data: formdata,
+                processData: false,
+                contentType: false,
+            });
+                
+            request.done(function( msg ) {
+                importModuleModal.hide();
+                location.reload(true);
+            });
+            
+            request.fail(function( jqXHR, textStatus ) {
+                if(jqXHR.status == 422){
+                    for( prop in jqXHR.responseJSON.form){
+                        $('<span class="text-danger error-message">'+jqXHR.responseJSON.form[prop][0]+'</span>').insertAfter('[name="csvfile"]')
+                    }
+                }
+            });
+        });
+
+        $( document ).on( "ajaxStart", function() {
+            $( "#loader" ).show();
+        });
+
+        $( document ).on( "ajaxStop", function() {
+            $( "#loader" ).hide();
+        });
+
+        $( document ).on( "ajaxError", function() {
+            $( "#loader" ).hide();
+        });
+    });
+</script>
+{% endblock %}

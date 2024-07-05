@@ -1,0 +1,53 @@
+body {
+  margin-bottom: 50px;
+  background: var(--color-contentbg);
+}
+
+.course-head {
+  color: var(--brand-black);
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 600;
+
+  text-align: left;
+}
+
+.upload-box {
+  border-style: dashed;
+  background-color: #3ca0ba1a;
+  border-color: var(--brand-color);
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+.btn-back {
+  font-family: Poppins;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: var(--brand-black);
+  text-decoration: none;
+}
+
+/* Bootstrap-styles */
+
+.form-check-input:checked {
+  background-color: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+.form-check-input:focus {
+  border-color: var(--brand-color) !important;
+
+  box-shadow: 0 0 0 0.25rem #0dcaf057 !important;
+}
+
+.form-select:focus {
+  /* border-color:  var(--brand-color) !important; */
+  border: unset;
+
+  box-shadow: 0 0 0 0.25rem #0dcaf057 !important;
+}

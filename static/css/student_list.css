@@ -1,0 +1,206 @@
+body {
+  margin-bottom: 48px;
+  /* background: var(--color-contentbg); */
+}
+
+/* header-items */
+
+.btn-group img {
+  width: 25px;
+  height: 25px;
+}
+
+.search-control {
+  border: 0;
+  background: none;
+}
+
+.search-lens {
+  width: 25px;
+  height: 25px;
+}
+
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: var(--brand-font);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: inherit;
+  border: unset;
+  color: #74899fa9 ;
+  
+  
+  
+  
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+  background-color:var(--brand-color)!important;
+  border-color: transparent;
+  color: #fff;
+}
+
+/* .btn:hover {
+  color: var(--bs-btn-hover-color);
+  background-color: var(--brand-color)!important;
+  border-color: unset;
+} */
+.daterangepicker .drp-buttons .btn  {
+  border: unset !important;
+  color: var(--bs-btn-hover-color)!important;
+  background-color: var(--color-black)!important;
+  color: #fff !important;
+}
+
+
+.daterangepicker .drp-selected {
+  display: inline-block;
+  font-size: 12px;
+  padding-right: 8px;
+  font-weight: 700;
+  font-family: var(--brand-font);
+  color: var(--brand-color);
+}
+
+.calendar{
+  outline: none;
+}
+
+#btn-months {
+  background: none !important;
+  border: none;
+  border-radius: 0%;
+  color: #74899f;
+  font-family: var(--brand-font);
+  font-size: 14px;
+  font-weight: 500;
+
+  border-left: 1px solid #c4cfdb;
+}
+
+#btn-months:hover {
+  color: var(--brand-color) !important;
+}
+
+.course-filter p {
+  font-family: var(--brand-font);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+
+  color: #ffffff;
+}
+.course-filter .btn {
+  border: #fff solid 1px !important;
+  color: #ffffff;
+}
+
+/* table-content */
+
+.first-letter-bg {
+  background-color: #3ca0ba1a;
+  color: var(--brand-color);
+}
+
+.table-contents {
+  position: relative;
+  margin-top: -42px;
+}
+
+.table > :not(caption) > * > * {
+  padding: 1rem 1rem;
+}
+
+.course-filter {
+  color: var(--color-white);
+}
+
+.table-body {
+  border: unset;
+}
+
+.table-head th {
+  font-family: Poppins;
+  /* font-size: 14px; */
+  font-weight: 500;
+
+  color: var(--color-grey);
+}
+
+td {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: #3ca1ba2c;
+    border-style: solid;
+    border-width: 0;
+}
+
+.table-body{
+   border: unset;
+
+}
+
+.course-active {
+    font-family: var(--brand-font);
+    /* font-size: 14px; */
+    font-weight: 500;
+  
+    letter-spacing: 0px;
+    text-align: left;
+    color: var(--color-green);
+  }
+
+.btn-pagination {
+  color: var(--brand-color);
+  border: solid var(--brand-color) 1px;
+}
+
+.btn-page {
+  background-color: var(--brand-color) !important;
+  border: none;
+  color: #ffffff !important;
+}
+
+/* Bootstrap-customization */
+
+.active > .page-link,
+.page-link.active {
+  color: var(--brand-color);
+  background-color: unset;
+  border-color: var(--brand-color);
+}
+
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--brand-color) !important;
+}
+
+
+.progress-bar{
+    background-color: var(--brand-color)!important;
+}
+
+.form-select {
+  border: unset;
+}
+
+.form-control {
+  border: unset;
+  border-radius: unset;
+}
+
+.form-select:focus,
+.nav-search:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: unset !important;
+}

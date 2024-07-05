@@ -1,0 +1,150 @@
+{% extends "admin/change_form.html" %}
+
+{% load i18n static courses_admin_helpers %}
+
+{% block title %}
+Edit Subscription
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'css/add_subscription.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+{% include "admin/custom_nav.html" %}
+
+<div class="container content-outer mt-5">
+    <div class="row card-head">
+        <p class="h3 course-head ms-1">Edit Subscription</p>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+    <div class="row">
+        <div class="card rounded-3 mt-3">
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="course" class="form-label">Course</label>
+                        <select name="course" id="courseSelect" class="form-select" aria-label="Default select example">
+                            <option value="" disabled selected>Please selecte course</option>
+                            {% for course in courses %}
+                                <option value="{{course.id}}" {% if request.method == 'POST' and course.id|title == request.POST.course %}selected{% elif request.method != 'POST' and course.id == original.course.id %}selected{% endif %}>{{course.course_title}}</option>
+                            {% endfor %}
+                        </select>
+                        <span class="text-danger">{{adminform.form.errors.course.0}}</span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12">
+                        <label for="userSelect" class="form-label">User</label>
+                        <div class="form-control">
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="selectAll">
+                            <label class="form-check-label" for="selectAll">Select All User</label>
+                        </div>
+                        <select name="user" id="userSelect" class="form-select" aria-label="Default select example" multiple>
+                            {% for user in users %}
+                                <option value="{{user.id}}" {% if request.method == 'POST' and user.id|title in request.POST|get_list:'user' %}selected{% elif request.method != 'POST' and user.id in original.user.all|get_values_list:'id' %}selected{% endif %}>{{user.username}}(
+                                    {% for p_course in user.purchasedcourse_set.all %}
+                                        {{p_course.courses.course_title}}
+                                        {% if not forloop.last %},{% endif %}
+                                    {% endfor %})
+                                </option>
+                            {% endfor %}
+                        </select>
+                        </div>
+                        <span class="text-danger">{{adminform.form.errors.user.0}}</span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="price" name="price" value="{% if request.method == 'POST' %}{{request.POST.price}}{% else %}{{original.price}}{% endif %}">
+                        <span class="text-danger">{{adminform.form.errors.price.0}}</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="discount" class="form-label">Discount</label>
+                        <input type="text" class="form-control" id="discount" name="discount" value="{% if request.method == 'POST' %}{{request.POST.discount}}{% else %}{{original.discount}}{% endif %}">
+                        <span class="text-danger">{{adminform.form.errors.discount.0}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6">
+                    <div class="p-3 ps-0 mt-2">
+                        <a href="{% url 'admin:courses_subscription_changelist' %}" class="btn mb-1 ps-0">
+                            <i class="fa-solid fa-less-than me-2"></i>
+                            Back
+                        </a>
+                    </div>
+      
+                </div>
+                <div class="col-6">
+                    <div class="d-flex justify-content-end p-3 pe-0 mt-2">
+      
+                        <button type="submit" class="btn btn-dark buttons">
+                            Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#userSelect').select2({
+                placeholder: 'Please select user',
+                allowClear: true
+
+            }).on('select2:clear, select2:unselect', function (e) {
+                $('#selectAll').prop('checked', false);
+            });
+
+            $('#selectAll').on('change', function(e){
+                if($(this).is(':checked')){
+                    $('#userSelect > option').prop('selected', true).trigger('change');
+                }
+                else{
+                    $('#userSelect > option').prop('selected', false).trigger('change');
+                }
+            });
+
+            
+
+        });
+    </script>
+{% endblock %}

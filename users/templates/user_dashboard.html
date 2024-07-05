@@ -1,0 +1,1056 @@
+{% extends "user_base.html" %}
+{% load static %}
+{% block title %}
+User Dashboard
+{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/user/user_home_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/user/mobile_view.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<!-- <link rel="stylesheet" href="{% static 'css/user/fontawesome.css' %}"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+
+{% if purchased_course_models and latest_course_detail != None %}
+
+<div class="container-fluid section-one">
+
+    <div class="container wrapper">
+     
+        <div class="card rounded-4 p-3 custom-card">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="{{latest_course_detail.course.cover_image.url }}" class="img-fluid" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-12 mt-2">
+                            <p class="h5">{{latest_course_detail.course.course_title}}</p>
+                            <p class="h5">{{latest_course_detail.course.course_expertise}}</p>
+                            {% if percentage < 100 %}
+                            <p>{{latest_course_detail.module.module_title}}</p>
+                            {% endif %}
+                        </div>
+                        <div class="col-12">
+                            <label for="progressText" class="form-label">Your Progress</label>
+                            <div class="d-flex align-items-center">
+                                <div class="progress flex-grow-1" style="height: 10px;">
+                                    <div class="progress-bar" id="progressText" role="progressbar"
+                                        aria-label="Example 1px high" style="width: {{ percentage }}%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="m-0 ms-2" id="progressText">{{percentage}}%</p>
+                            </div>
+                        </div>
+                        <!-- <div class="col-12 mt-4">
+                            <div class="d-flex justify-content-start align-items-center align-contents-center">
+                                <button type="button" class="btn btn-dark px-5">Resume Learning</button>
+                                <p class="h6 ms-5">Assessment Score 8.1</p>
+                            </div>
+                        </div> -->
+                        <div class="col-sm-6 mt-4">
+                           <a href="{% url 'user_app:learning' latest_course_detail.course.id %}" class="btn btn-dark px-5">{% if percentage < 100 %}Resume Learning{% else %}Course Completed{% endif %} </a> 
+                         </div>
+                         <div class="col-sm-6 mt-4">
+                             <!-- <p class="h6 ms-5">Assessment Score 8.1</p> -->
+                         </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+{% else %}  
+
+{% include "user_dash_first.html" %}
+
+
+{% endif %}
+<div class="container wrapper-two">
+
+
+    <div class="row mt-5">
+        <div class="col-12 ">
+            <p class="h5 trending-title">Your Courses</p>
+        </div>
+        <div class="container card rounded-4 courses-card card-body p-3 mt-sm-5 mt-0">
+            {% if purchased_course_models %}
+        
+       
+            {% for course in purchased_course_models %}
+           
+            
+
+            <div class="row courses-row">
+                <div class="col-lg-3 col-md-4 col-6 mb-3 mt-2">
+                    <div class="d-flex align-items-center">
+
+                        <img src="{{ course.cover_image.url }}" class="img-fluid" alt="course_img" height="100" width="100">
+                        <h6 class="ml-2 ms-2 course-title">{{ course.course_title }}</h6>
+                    </div>
+                </div>
+                
+               
+                <!-- <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="p-1">
+                        <h6 class="heading">Duration</h6>
+                        <h6 class="contents">{{module.duration_days}}</h6>
+                    </div>
+                </div>
+                -->
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="p-1">
+                        <h6 class="heading">Modules</h6>
+                        <h6 class="contents badge custom-badge text-dark">{{course.modulemodel_set.count}}</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="p-1">
+                        <h6 class="heading">Versions</h6>
+                        <h6 class="contents">{{course.version}}</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="p-1">
+                        <h6 class="heading">Author</h6>
+                        <h6 class="contents">{{course.course_author}}</h6>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-3">
+                    <div class="p-1 text-center">
+                      <a href="{% url 'user_app:learning' course.pk %}" class="btn btn-custom-brand">Start Learning</a>  
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- <div class="row courses-row">
+                <div class="col-lg-2 col-md-4 col-6 mb-3 mt-2">
+                    <div class="d-flex align-items-center">
+
+                        <img src="{% static 'images/user/Rectangle 51.png' %} " class="img-fluid" alt="course_img">
+                        <h6 class="ml-2 ms-2 course-title">Course Name</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="p-1">
+                        <h6 class="heading">Duration</h6>
+                        <h6 class="contents">30h 07m</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="p-1">
+                        <h6 class="heading">Modules</h6>
+                        <h6 class="contents badge custom-badge">05</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="p-1">
+                        <h6 class="heading">Versions</h6>
+                        <h6 class="contents">1.1</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="p-1">
+                        <h6 class="heading">Assessment Score</h6>
+                        <h6 class="contents">1.1</h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-3">
+                    <div class="p-1">
+                        <button type="button" class="btn btn-custom-brand">Start Learning</button>
+                    </div>
+                </div>
+
+            </div> -->
+           
+            {% endfor %}
+            {% else %}  
+            <p>Sorry You have no purchased courses</p>
+            
+          
+            {% endif %}
+        </div>
+
+    </div>
+
+
+
+
+    <div class="row mt-5" id="CouresView">
+        <div class="col-12">
+            <div class="d-flex justify-content-between">
+                <p class="h5 trending-title">Courses Available</p>
+                <a class="title-more" href="#carouselExample" data-bs-slide="next">
+                    Explore Course >
+                    <span class="carousel-control" aria-hidden="true"></span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="carouselExample" class="carousel slide mt-4">
+        <div class="carousel-inner">
+            {% for c in course %}
+            {% if forloop.counter0|divisibleby:4 %}
+            <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                <div class="row">
+                    {% endif %}
+                    {% if c.status == True %}
+                    <div class="col-md-3 mb-3">
+                        <div class="card p-3 rounded-3">
+                            <a href="{% url 'user_app:courseview' c.pk %}">
+                                <img class="img-fluid rounded-3" alt="100%x280" src="{{c.cover_image.url}}">
+                            </a>
+                            
+                            <div class="card-body">
+                                <a class="card-title" href="{% url 'user_app:courseview' c.pk %}">
+                                    <h4 class="card-title">{{ c.course_title }}</h4>
+                                </a>
+                                <p class="card-text">{{c.course_expertise}}</p>
+                                <div class="row border-top border-bottom">
+                                    <!-- <div class="col-6">
+                                        <div class="d-flex justify-content-start align-items-center mt-1">
+                                            <p class="m-0 me-1 card-text">4</p>
+                                            <i class="bi bi-star-fill card-text-icon me-1"></i>
+                                            <p class="m-0 card-text">(36 reviews)</p>
+                                        </div>
+                                    </div> -->
+                                    <!-- <div class="col-6 border-start">
+                                        <div class="d-flex align-items-center justify-content-start">
+                                            <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                            <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center justify-content-start mt-3">
+                                            <a class="price" href="{% url 'user_app:courseview' c.pk %}">
+                                            <p class="h5 price">₹{{ c.price }}</p>  </a>
+                                            <p class="ms-1"><sub><s></s></sub></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex justify-content-end align-items-center mt-3">
+                                            {% if user.is_authenticated %}
+                                               
+                                         
+                                               
+
+    <a class="bookmark_check" data-course-id="{{c.id}}"
+        data-user-id="{{user.id}}" data-url="{% url 'user_app:saved_check' user.id c.id %}"
+        href="#">
+        <i class="icon_{{c.id}} {% if c.id in courses_saved %} bi-bookmark-check-fill {% else %} bi-bookmark {% endif %}"></i>
+    </a>
+{% endif %}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:4 or forloop.last %}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+    <!-- <div id="carouselExample" class="carousel slide mt-4">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill card-text-icon me-1"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-3">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280backe"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start aligbuy nowtrn-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-3">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-3">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-3">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-3">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-3">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-3">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-4">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-4">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-4">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-4">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card p-3 rounded-3">
+                                <img class="img-fluid rounded-3" alt="100%x280"
+                                    src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                <div class="card-body">
+                                    <h4 class="card-title">Special title treatment</h4>
+                                    <p class="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <div class="row border-top border-bottom">
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-start align-items-center mt-1">
+                                                <p class="m-0 me-1 card-text">4</p>
+                                                <i class="bi bi-star-fill me-1 card-text-icon"></i>
+                                                <p class="m-0 card-text">(36 reviews)</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-6 border-start">
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <p class="m-0"><i class="bi bi-clock-fill card-text-icon"></i></p>
+                                                <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center justify-content-start mt-3">
+                                                <p class="h5 price">₹7444</p>
+                                                <p class="ms-1"><sub><s></s></sub></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end align-items-center mt-4">
+                                            <i class="bi bi-bookmark"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button> -->
+    <!-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button> -->
+    <!-- </div> -->
+
+    <!-- disable this feature as per client request -->
+    <!-- <div class="row mt-5">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <p class= "h5 trending-title">Trending Course</p>
+                    <a class="title-more" href="#">View More ></a>
+                </div>
+            </div>
+        </div>
+
+        {% for c in course %}
+          {% if c.status == True %}
+        <div class="card rounded-3 p-2 mt-3">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 ">
+                    <div class="row">
+                        <div class="d-flex align-items-center">
+                            <img src="{{c.cover_image.url}}" class="img-fluid" alt="{{c.course_title}}" width="110" height="110">
+                            <div class="p-1 ms-2">
+                                <h6 class="heading">{{c.course_title}}</h6>
+                                <p class="contents">Jemin Mathew</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="row align-items-center">
+                        <div class="col-4 col-md-3 mt-3">
+                            <div class="p-1">
+                                <h6 class="heading">Rating</h6>
+                                <div class="d-flex card-text">
+                                    <p class="m-0">4.0</p>
+                                    <i class="bi bi-star-fill card-text-star ms-1"></i>
+                                    <p class="ms-1">(36 reviews)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 ">
+                            <div class="p-1">
+                                <h6 class="heading">Duration</h6>
+                                <div class="d-flex card-text">
+                                    <i class="bi bi-clock-fill card-text-star "></i>
+                                    <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 mt-3">
+                            <div class="p-1">
+                                <h6 class="heading">Price</h6>
+                                <div class="d-flex card-text">
+                                    <p class="h6 price">₹{{c.price}}</p>
+                                    <p class="ms-1"><sub><s></s></sub></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 mt-3">
+                            <div class="p-1">
+                                <a href="{% url 'user_app:courseview' pk=c.pk %}" class="btn btn-custom-brand">Enroll Now</a>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         {% endif %}
+        {% endfor %} -->
+
+
+
+    <!-- 
+        <div class="card rounded-3 p-2 mt-2">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'images/user/thumb_nail_one.svg' %}" class="img-fluid" alt="..." width="110" height="110">
+                            <div class="p-1 ms-2">
+                                <h6 class="heading">Course Title For Medics</h6>
+                                <p class="contents">Jemin Mathew</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="row align-items-center">
+                        <div class="col-4 col-md-3 mt-3">
+                            <div class="p-1">
+                                <h6 class="heading">Rating</h6>
+                                <div class="d-flex card-text">
+                                    <p class="m-0">4.0</p>
+                                    <i class="bi bi-star-fill card-text-star ms-1"></i>
+                                    <p class="ms-1">(36 reviews)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 ">
+                            <div class="p-1">
+                                <h6 class="heading">Duration</h6>
+                                <div class="d-flex card-text">
+                                    <i class="bi bi-clock-fill card-text-star "></i>
+                                    <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 mt-3">
+                            <div class="p-1">
+                                <h6 class="heading">Price</h6>
+                                <div class="d-flex card-text">
+                                    <p class="h5 price">₹7444</p>
+                                    <p class="ms-1"><sub><s></s></sub></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 mt-3">
+                            <div class="p-1">
+                                <button type="button" class="btn btn-custom-brand">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card rounded-3 p-2 mt-2">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'images/user/thumb_nail_two.svg' %}" class="img-fluid" alt="..." width="110" height="110">
+                            <div class="p-1 ms-2">
+                                <h6 class="heading">Course Title For Medics</h6>
+                                <p class="contents">Jemin Mathew</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="row align-items-center">
+                        <div class="col-4 col-md-3 mt-3">
+                            <div class="p-1">
+                                <h6 class="heading">Rating</h6>
+                                <div class="d-flex card-text">
+                                    <p class="m-0">4.0</p>
+                                    <i class="bi bi-star-fill card-text-star ms-1"></i>
+                                    <p class="ms-1">(36 reviews)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 ">
+                            <div class="p-1">
+                                <h6 class="heading">Duration</h6>
+                                <div class="d-flex card-text">
+                                    <i class="bi bi-clock-fill card-text-star "></i>
+                                    <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 mt-3">
+                            <div class="p-1">
+                                <h6 class="heading">Price</h6>
+                                <div class="d-flex card-text">
+                                    <p class="h5 price">₹7444</p>
+                                    <p class="ms-1"><sub><s></s></sub></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 mt-3">
+                            <div class="p-1">
+                                <button type="button" class="btn btn-custom-brand">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="card rounded-3 p-2 mt-2">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'images/user/thumb_nail_three.svg' %}" class="img-fluid" alt="..." width="110" height="110">
+                            <div class="p-1 ms-2">
+                                <h6 class="heading">Course Title For Medics</h6>
+                                <p class="contents">Jemin Mathew</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="row align-items-center">
+                        <div class="col-4 col-md-3 mt-3">
+                            <div class="p-1">
+                                <h6 class="heading">Rating</h6>
+                                <div class="d-flex card-text">
+                                    <p class="m-0">4.0</p>
+                                    <i class="bi bi-star-fill card-text-star ms-1"></i>
+                                    <p class="ms-1">(36 reviews)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 ">
+                            <div class="p-1">
+                                <h6 class="heading">Duration</h6>
+                                <div class="d-flex card-text">
+                                    <i class="bi bi-clock-fill card-text-star "></i>
+                                    <p class="m-0 ms-2 card-text">3h <span>45min</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3 mt-3">
+                            <div class="p-1">
+                                <h6 class="heading">Price</h6>
+                                <div class="d-flex card-text">
+                                    <p class="h5 price">₹7444</p>
+                                    <p class="ms-1"><sub><s></s></sub></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 mt-3">
+                            <div class="p-1">
+                                <button type="button" class="btn btn-custom-brand">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  -->
+
+    {% endblock %}
+
+    {% block scripts %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('body').on("click", ".bookmark_check", function (e) {
+                e.preventDefault();
+                var course_id = $(this).attr("data-course-id");
+                var user_id = $(this).attr("data-user-id");
+    
+                var url = $(this).data('url');
+    
+                var icon = $('.icon_' + course_id);  // Find the specific course icon
+    
+                $.ajax({
+                    type: 'post',
+                    url: url,
+                    data: {
+                        'course_id': course_id,
+                        'user_id': user_id,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        console.log(res);
+                        if (res.success == 1) {
+                            icon.removeClass("bi-bookmark");
+                            icon.addClass("bi-bookmark-check-fill");
+                        } else {
+                            icon.addClass("bi-bookmark");
+                            icon.removeClass("bi-bookmark-check-fill");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
+
+    {% endblock %}

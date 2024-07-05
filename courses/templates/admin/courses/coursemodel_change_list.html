@@ -1,0 +1,266 @@
+{% extends "admin/change_list.html" %}
+
+{% load i18n static admin_list courses_admin_pagination tz %}
+
+{% block title %}
+List Course
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/course_list.css' %}">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block messages %}
+    {% if messages %}
+    <div class="toast-container position-fixed top-25 end-0 p-3" style="z-index: 11">
+        <div class="">
+            {% for message in messages %}        
+                <div class="toast align-items-center text-white bg-{{message.tags}} border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true">
+                    <div class="d-flex">
+                    <div class="toast-body">
+                        {{message|capfirst}}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+{% endblock messages %}
+
+{% block content %}
+<div class="container-fluid header">
+    <div class="container">
+        {% include "admin/custom_nav.html" %}
+
+        <div class="row mt-3">
+            <div class="col-6">
+                <form method="get" id="search_form">
+                    <div class="d-flex justify-content-between bg-white rounded-3 w-75 py-1 align-items-center">
+                        
+                        <img src="{% static 'images/search.png' %}" class="img-fluid search-lens ms-2 " alt="...">
+                        <input class="form-control me-2 search-control" name="q" type="search" placeholder="Search"
+                            aria-label="Search" value="{{ cl.query }}">
+                        <select name="date_value" class="form-select w-50" aria-label="Default select example" id="btn-months">
+                            <option value="1" {% if month_query == '1' or month_query == None %}selected{% endif %}>All Months</option>
+                            <option class="options-value" value="2" {% if month_query == '2' %}selected{% endif %}>Last Two Months</option>
+                            <option class="options" value="3" {% if month_query == '3' %}selected{% endif %}>Last Month</option>
+                            <option class="options" value="4" {% if month_query == '4' %}selected{% endif %}>Custom</option>
+                        </select>
+                        
+                    </div>
+                    <div id="date-picker-container" style="display: none;">
+                        <input type="text" name="daterange" value="{% if month_query == '4' %}{{created_at_query}}{% endif %}" class="calendar rounded-3 p-1 mt-1" />
+                    </div>
+                    <input type="submit" class="d-none">
+                </form>
+            </div>
+            <div class="col-6">
+                <div class="d-flex flex-column  flex-sm-row justify-content-start justify-content-sm-end align-items-left">
+                    <a href="{% url 'admin:course_export_as_csv' %}" class="btn btn-dark mb-2 mb-sm-0 me-sm-2">EXPORT</a>
+                    <a href="{% url 'admin:courses_coursemodel_add' %}" class="btn btn-dark ">Create New Course</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row course-filter mt-3">
+            <div class="col-12 mb-5 d-flex justify-content-between">
+                <p class="h6">All Courses {{cl.result_count}}</p>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {% if request.GET.status__exact == '1' %}
+                        Active Courses
+                        {% elif request.GET.status__exact == '0' %}
+                        Paused Courses
+                        {% else %}
+                        All Courses
+                        {% endif %}
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'admin:courses_coursemodel_changelist' %}">All Courses</a></li>
+                        <li><a class="dropdown-item" href="{{'?status__exact=1'}}">Active Courses</a></li>
+                        <li><a class="dropdown-item" href="{{'?status__exact=0'}}">Paused Courses</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container card courses-card card-body p-4">
+    {% for course in cl.result_list %}
+    <div class="row courses-row">
+        <div class="col-lg-3 col-md-4 col-6 mb-3 mt-2">
+            <div class="d-flex align-items-center">
+                <h6 class="ml-2 ms-2 me-2">
+                    {% if request.GET.p %}
+                        {% start_index cl request.GET.p forloop.counter0 %}.
+                    {% elif request.GET.all == '' %}
+                        {{ forloop.counter }}.
+                    {% else %} 
+                    {% start_index cl 1 forloop.counter0 %}.
+                    {% endif %}
+                </h6>
+                <img src="{{course.cover_image.url}}" class="img-fluid" alt="course_img" width="100" height="100">
+                <a class="text-decoration-none px-3" href="{% url 'admin:view_course' course.id %}"><h6 class="ml-2 ms-2 course-title">{{course.course_title}}</h6></a>
+              </div>
+        </div>
+        <!-- <div class="col-lg-2 col-md-4 col-6 mb-3">
+            <div class="p-1">
+                <h6 class="heading">Duration</h6>
+                <h6 class="contents">30h 07m</h6>
+            </div>
+        </div> -->
+        <div class="col-lg-2 col-md-4 col-6 mb-3">
+            <div class="p-1">
+                <h6 class="heading">Modules</h6>
+                <a href="{% url 'admin:list_course_modules' course.id %}"><h6 class="contents badge custom-badge">{{course.total_modules}}</h6></a>
+              </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6 mb-3">
+            <div class="p-1">
+                <h6 class="heading">Price</h6>
+                <h6 class="contents">₹{{course.price}}</h6>
+              </div>
+        </div>
+        <div class="col-lg-1 col-md-4 col-6 mb-3">
+            <div class="p-1">
+                <h6 class="heading">Versions</h6>
+                <h6 class="contents">{{course.version}}</h6>
+              </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6 mb-3"> 
+            <div class="p-1">
+                <h6 class="heading text-center">Status</h6>
+                {% if course.status %}
+                <h6 class="course-active text-center">
+                    <img src="{% static 'images/active_green.png' %}" class="img-fluid" alt="green_online"> Active
+                </h6>
+                {% else %}
+                <h6 class="paused text-center">Paused</h6>
+                {% endif %}
+              </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-6 mb-3">
+            <div class="p-1">
+                <h6 class="heading">Created Date</h6>
+                <h6 class="contents">
+                    {% timezone "Asia/Kolkata" %}
+                        {{course.created_at|date:'d b Y'}}
+                    {% endtimezone %}
+                </h6>
+              </div>
+        </div>
+
+    </div>
+
+    {% empty %}
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-12 mb-3 mt-2">
+            <div class="d-flex justify-content-center">No Records Found</div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+  
+{% block pagination %}{% custom_pagination cl custom_data=month_query %}{% endblock %}
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+{% if messages %}
+    <script type="text/javascript">
+        $(function(){
+            $('.toast').toast('show');
+        });
+    </script>
+{% endif %}
+    <script type="text/javascript">
+        $(function(){
+            var url = "{% url 'admin:courses_coursemodel_changelist' %}";
+            $('#search_form').on('submit', function(e){
+                e.preventDefault();
+                var search = $('.search-control').val().trim();
+                var months = $('#btn-months').val();
+                if(search !=''){
+                    url += '?q='+search;
+                    if(months == '4'){
+                        months = $('input[name="daterange"]').val().split(' - ');
+                        url += '&created_at__gte='+months[0]+'+00:00:00'+'&created_at__lte='+months[1]+'+23:59:59';
+                    }
+                    else if(months == '2'){
+                        months = []
+                        months[0] = moment().subtract(3,'months').startOf('month').format('YYYY-MM-DD')
+                        months[1] = moment().subtract(1,'months').endOf('month').format('YYYY-MM-DD')
+                        url += '&created_at__gte='+months[0]+'+00:00:00'+'&created_at__lte='+months[1]+'+23:59:59';
+                    }
+                    else if(months == '3'){
+                        months = []
+                        months[0] = moment().subtract(2,'months').startOf('month').format('YYYY-MM-DD')
+                        months[1] = moment().subtract(1,'months').endOf('month').format('YYYY-MM-DD')
+                        url += '&created_at__gte='+months[0]+'+00:00:00'+'&created_at__lte='+months[1]+'+23:59:59';
+                    }
+                    url += '&month='+$('#btn-months').val();
+                }
+                window.location.href = url;
+            });
+
+            $('#btn-months').change(function() {
+                var selectedOption = $('#btn-months option:selected').val();
+                
+                if (selectedOption === '4') {
+                    $('#date-picker-container').show();
+                } else {
+                    $('#date-picker-container').hide();
+                }
+            });
+        
+            $('input[name="daterange"]').daterangepicker({
+                opens: 'left',
+                locale: {
+                    format: 'YYYY-MM-DD'
+                }
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+
+        });
+    </script>
+    {% if month_query == '4' %}
+        <script>
+            $(function(){
+                $('#date-picker-container').show();
+            });
+        </script> 
+    {% endif %}
+{% endblock %}

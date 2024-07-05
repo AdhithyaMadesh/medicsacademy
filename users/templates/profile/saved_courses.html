@@ -1,0 +1,207 @@
+{% extends "user_base.html" %}
+{% load static %}
+{% block title %}
+saved courses
+{% endblock %}
+{% block styles %}
+
+
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+      
+        <link rel="stylesheet" href="{% static 'css/user/user_user_style.css' %}">
+        {% endblock %}
+
+    {% block content %}
+    <div class="container-fluid header border_line">
+        <div class="container">
+        </div>
+    </div>
+    <!-- content -->
+    <div class="section">
+    <div class="container">
+        <div class="row p-3 ">
+            <!-- <div class="col-1">
+                <a href=""><img src="{% static 'images/user/back-arrow.png' %}"></a>
+
+            </div> -->
+            <div class="col-12">
+                <h4><span class="page_title ms-2">Profile</span></h4>
+            </div>
+        </div>
+        <div class="row p-3 ">
+            <div class="col-md-3">
+                {% include "profile/user_profile_sidebar.html" with active="saved_course" %}
+            </div>
+            <div class="col-md-9 pb-5">
+                <div class="card card-body rounded-4  p-3">
+                        {% for course in saved_course %}
+                    <div class="card card-body card-border rounded-4  p-3 mb-3">
+                        
+                        <div class="row pt-3">
+                            <div class="col-lg-2 col-sm-4">
+                                <img src="{{ course.cover_image.url }}" alt="Course Image" height="100" width="100">
+
+                            </div>
+                            <div class="col-lg-9 col-sm-8s mt-3">
+                                <h3>{{ course.course_title }}</h3>
+                                <h5>Jayamravi Rajamovli</h5>
+
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p>Duration</p>
+                                        <h6 class="px-1"> {{ course.course_duration_months }} Months {{ course.course_duration_days }} Days </h6>
+                                    </div>
+                                    <!-- <div class="col-lg-4">
+                                        <p>Ratings</p>
+                                        <h6>4.0<img src="{% static 'images/user/star.png' %}" class="px-1">(36 Reviews)</h6>
+                                    </div> -->
+                                    <div class="col-lg-4">
+                                        <p>Modules</p>
+                                        <h6>{{course.total_modules}} Modules</h6>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p>Version</p>
+                                        <h6>1.1</h6>
+                                    </div>
+
+                                    
+                                    
+                                </div>
+                                
+
+                            </div>
+                            <div class="col-lg-1 col-sm-8s mt-3">
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'user_app:remove_from_saved' user.id course.id %}">
+                                    <img src="{% static 'images/user/save.png' %}" alt="Save" />
+                                </a>
+                                {% endif %}
+                            </div>
+
+                        </div>
+                      
+                 
+
+                        <!-- </div> -->
+
+    
+                    </div>
+                    {% empty %}
+                    <h6 class=" text-center">No Saved Courses</h6>
+            {% endfor %}
+                    <!-- <div class="card card-body card-border rounded-4  p-3 pb-3">
+                        
+                        <div class="row pt-3">
+                            <div class="col-lg-2 col-sm-4">
+                                <img src="images/my_course.png">
+                            </div>
+                            <div class="col-lg-9 col-sm-8s mt-3">
+                                <h3>Course Name In 2 to 3lines Study material</h3>
+                                <h5>Jayamravi Rajamovli</h5>
+
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <p>Duration</p>
+                                        <h6><img src="images/duration.png"  class="px-1">36h 45min</h6>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p>Ratings</p>
+                                        <h6>4.0<img src="images/star.png"  class="px-1">(36 Reviews)</h6>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <p>Modules</p>
+                                        <h6>11 Modules</h6>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <p>Version</p>
+                                        <h6>1.1</h6>
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                            <div class="col-lg-1 col-sm-8s mt-3"><img src="images/save.png"></div>
+
+                        </div>
+
+
+                    
+
+    
+                    </div> -->
+
+<!-- 
+                    <div class="card card-body card-border rounded-4  p-3 mt-3">
+                        
+                        <div class="row pt-3">
+                            <div class="col-lg-2 col-sm-4">
+                                <img src="images/my_course.png">
+                            </div>
+                            <div class="col-lg-9 col-sm-8s mt-3">
+                                <h3>Course Name In 2 to 3lines Study material</h3>
+                                <h5>Jayamravi Rajamovli</h5>
+
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <p>Duration</p>
+                                        <h6><img src="images/duration.png"  class="px-1">36h 45min</h6>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p>Ratings</p>
+                                        <h6>4.0<img src="images/star.png"  class="px-1">(36 Reviews)</h6>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <p>Modules</p>
+                                        <h6>11 Modules</h6>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <p>Version</p>
+                                        <h6>1.1</h6>
+                                    </div>
+                                    
+                                </div>
+
+                             
+
+
+
+
+                            </div>
+                            <div class="col-lg-1 col-sm-8s mt-3"><img src="images/save.png"></div>
+
+                        </div>
+
+                      
+
+                      
+                     
+
+    
+                    </div> -->
+
+
+                </div>
+                
+    
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    </div>
+</div>
+
+
+
+
+    <!-- footer -->
+
+   
+
+
+{% endblock %}

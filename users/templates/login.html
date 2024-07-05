@@ -1,0 +1,85 @@
+{% extends "user_base.html" %}
+{% load static %}
+{% block title %}
+User Login
+{% endblock %}
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+<div class="container-fluid custom-bg">
+    <div class="row">
+      <!-- left-section -->
+      <div class="col-md-6 left-components">
+        <img src="{% static 'images/user/brand.png' %}" alt="Brand Logo" class="img-fluid" />
+        <p class="text-start mt-md-4">
+          "Unlock Your Potential with Medics Academy Where <br />
+          Knowledge Meets Opportunity!"
+        </p>
+      </div>
+      <!-- right-section -->
+      <div class="col-md-6 mb-5 mt-5">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-7">
+            <div class="card rounded-4">
+              <!-- Start of card content -->
+              <div class="card-body p-md-5">
+                <a href="#">
+                  <img src="{% static 'images/user/form-logo.svg' %}" alt="Brand Logo" class="img-fluid w-50" />
+                </a>
+                <h2 class="brand-color mt-3">Welcome Back</h2>
+                <h6 class="sub">Sign in to continue Medics Academy</h6>
+                <p class="h3 title-admin mt-md-5">User Login</p>
+
+                <form action="{% url 'user_app:user_login' %}" method="post">
+                  {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" />
+                        <div id="emailHelp" class="form-text">
+                        We'll never share your email with anyone else.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" />
+                    </div>
+
+                    <div class="mb-3 d-flex justify-content-between align-items-center">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me" />
+                            <label class="form-check-label custom-label" for="remember_me">Remember me</label>
+                        </div>
+                        <a class="link-offset-2 link-underline link-underline-opacity-0 ms-2 forgot" href="{% url 'user_app:password_reset' %}">Forgot
+                            Password</a>
+                    </div>
+                    <div class="text-danger">
+                      {% for message in messages %}
+                          <p>{{ message }}</p>
+                      {% endfor %}
+                  </div>
+                    <button class="btn btn-dark w-100 mt-md-2" type="submit">Log in</button>
+
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="d-flex justify-content-center">
+                                <p class="page_end">Don't have an account?</p>
+                                <a class="ms-2 page_end" id="sign_custom"  href="{% url 'user_app:userRegistration' %}">Sign-up</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+              </div>
+              <!-- End of card content -->
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

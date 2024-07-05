@@ -1,0 +1,174 @@
+{% extends "user_base.html" %}
+{% load static %}
+{% block title %}
+{{user.username}} Courses
+{% endblock %}
+{% block styles %}
+{% load custom_filters %}
+
+<link rel="stylesheet" href="{% static 'css/user/user_user_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/user/mobile_view.css' %}">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row p-3  mb_p">
+        <!-- <div class="col-xl-1 col-3">
+            <a href=""><img src="{% static 'images/user/back-arrow.png' %}"></a>
+        </div> -->
+        <div class="col-xl-12 col-12">
+            <h4><span class="page_title ms-2">Profile</span></h4>
+        </div>
+    </div>
+    <div class="row p-3 ">
+        <div class="col-md-3">
+            {% include "profile/user_profile_sidebar.html" with active="user_courses" %}
+        </div>
+        <div class="col-md-9 pb-5">
+          
+            <div class="card card-body rounded-4  p-3">
+                
+                {% for course in purchased_course_models %}
+               
+                <!-- <h5 class="text-center">"You have not yet purchased any courses."</h5> -->
+                <div class="card card-body card-border rounded-4 mt-2 p-3">
+            
+                    <div class="row pt-3">
+                        <div class="col-lg-2 col-sm-4">
+                            <img src="{{ course.cover_image.url }}" height="100" width="100">
+                        </div>
+                        <div class="col-lg-10 col-sm-8s mt-3">
+                            <h3>{{ course.course_title }}</h3>
+                            <h5>{{ course.course_author }}</h5>
+
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <p>Duration</p>
+                                    <h6><img class="me-1" src="{% static 'images/user/duration.png' %}">{{ course.course_duration_months }} Months {{ course.course_duration_days }} Days </h6>
+                                </div>
+                                <!-- <div class="col-lg-3">
+                                    <p>Ratings</p>
+                                    <h6>4.0<img src="{% static 'images/user/star.png' %}"  class="px-1">(36 Reviews)</h6>
+                                </div> -->
+                                <div class="col-lg-3">
+                                    <p>Modules</p>
+                                    <h6>{{course.modulemodel_set.count}} Modules</h6>
+                                </div>
+                                <div class="col-lg-3">
+                                    <p>Version</p>
+                                    <h6>{{course.version}}</h6>
+                                </div>
+                                <div class="col-lg-3">
+                                    <p>Assessment Score </p>
+                                    <h6>1.1</h6>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-lg-3">
+                                    <a href="{% url 'user_app:learning' course.pk %}" class="btn btn-color mb_text">Start Learning</a> 
+
+                                </div>
+                                {% with user|purchased_course_progress_percentage:course as progress %}
+                                <div class="col-lg-6">
+                                    <div class="progress mb_text">
+                                        <div class="progress-bar custom-progress " role="progressbar" style="width: {{progress}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                            {{progress}}%
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {% endwith %}
+                                <div class="col-lg-3">
+                                    <button type="button" class="btn  btn-outline-success text-success mb_text">Payment - <span>Done</span></button>
+                                    
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                 
+                </div> 
+                {% endfor %}
+ </div>
+                <!-- <div class="card card-body card-border rounded-4  p-3 mt-3">
+                    
+                    <div class="row pt-3">
+                        <div class="col-lg-2 col-sm-4">
+                            <img src="{% static 'images/user/my_course.png' %}">
+                        </div>
+                        <div class="col-lg-10 col-sm-8s mt-3">
+                            <h3>Course Name In 2 to 3lines Study material</h3>
+                            <h5>Jayamravi Rajamovli</h5>
+
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <p>Duration</p>
+                                    <h6><img src="{% static 'images/user/duration.png' %}">36h 45min</h6>
+                                </div>
+                                <div class="col-lg-3">
+                                    <p>Ratings</p>
+                                    <h6>4.0<img src="{% static 'images/user/star.png' %}"  class="px-1">(36 Reviews)</h6>
+                                </div>
+                                <div class="col-lg-2">
+                                    <p>Modules</p>
+                                    <h6>11 Modules</h6>
+                                </div>
+                                <div class="col-lg-2">
+                                    <p>Version</p>
+                                    <h6>1.1</h6>
+                                </div>
+                                <div class="col-lg-3">
+                                    <p>Assessment Score </p>
+                                    <h6>1.1</h6>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-lg-4">
+                                    <button type="button" class="btn btn-color mb_text">Start Learning</button>
+
+                                </div>
+                                <div class="col-lg-4 pt-2">
+                                    <div class="progress">
+                                        <div class="progress-bar custom-progress " role="progressbar" style="width: 70%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                            70%
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <button type="button" class="btn btn-color payment-btn px-4">Payment - <span>Done</span></button>
+                                    
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+                  
+                    <!-- </div> -->
+
+<!-- 
+                </div> --> 
+
+
+            
+            
+           
+        </div>
+    </div>
+</div>
+{% endblock %}

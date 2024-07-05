@@ -1,0 +1,1528 @@
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 11, 2024 - 05:30:43
+Django version 4.2.13, using settings 'medics_academy.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+test
+[11/Jun/2024 05:30:55] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 05:31:02] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 05:31:11] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 05:31:11] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[11/Jun/2024 05:31:11] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[11/Jun/2024 05:31:11] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[11/Jun/2024 05:31:11] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[11/Jun/2024 05:31:11] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[11/Jun/2024 05:31:11] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[11/Jun/2024 05:31:11] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[11/Jun/2024 05:31:11] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[11/Jun/2024 05:31:11] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[11/Jun/2024 05:31:11] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[11/Jun/2024 05:31:11] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[11/Jun/2024 05:31:11] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[11/Jun/2024 05:31:11] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[11/Jun/2024 05:31:11] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+test
+[11/Jun/2024 05:35:48] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 05:35:48] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[11/Jun/2024 05:35:48] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[11/Jun/2024 05:35:48] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[11/Jun/2024 05:35:48] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[11/Jun/2024 05:35:48] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[11/Jun/2024 05:35:48] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[11/Jun/2024 05:35:48] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[11/Jun/2024 05:35:48] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[11/Jun/2024 05:35:48] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[11/Jun/2024 05:35:48] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[11/Jun/2024 05:35:48] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[11/Jun/2024 05:35:48] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[11/Jun/2024 05:35:48] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[11/Jun/2024 05:35:48] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+Not Found: /favicon.ico
+[11/Jun/2024 05:35:48] "GET /favicon.ico HTTP/1.0" 404 8073
+[11/Jun/2024 05:37:06] "GET /register/ HTTP/1.0" 200 15754
+[11/Jun/2024 05:37:06] "GET /static/css/user/user_login.css HTTP/1.0" 200 3644
+[11/Jun/2024 05:37:06] "GET /static/css/aloader.css HTTP/1.0" 200 273
+[11/Jun/2024 05:37:07] "GET /static/images/user/brand.png HTTP/1.0" 200 7622
+[11/Jun/2024 05:37:07] "GET /static/images/user/user_login_bg.png HTTP/1.0" 200 255200
+[11/Jun/2024 05:37:12] "GET /login/ HTTP/1.0" 200 4450
+Forbidden (Origin checking failed - https://medicsacademy.in does not match any trusted origins.): /login/
+[11/Jun/2024 05:38:11] "POST /login/ HTTP/1.0" 403 2572
+Forbidden (Origin checking failed - https://medicsacademy.in does not match any trusted origins.): /login/
+[11/Jun/2024 05:38:32] "POST /login/ HTTP/1.0" 403 2572
+test
+[11/Jun/2024 05:38:39] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 05:38:41] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 05:38:44] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 05:38:46] "GET /about_us/ HTTP/1.0" 200 12393
+[11/Jun/2024 05:38:46] "GET /static/css/user/about_us.css HTTP/1.0" 200 287
+[11/Jun/2024 05:38:46] "GET /static/css/user/contact_us.css HTTP/1.0" 200 1246
+[11/Jun/2024 05:38:46] "GET /static/images/user/plus.png HTTP/1.0" 200 6521
+[11/Jun/2024 05:38:46] "GET /static/images/user/heart.png HTTP/1.0" 200 4532
+[11/Jun/2024 05:38:46] "GET /static/images/user/phone-call.svg HTTP/1.0" 200 15073
+[11/Jun/2024 05:38:46] "GET /static/images/user/about1.png HTTP/1.0" 200 405992
+[11/Jun/2024 05:38:46] "GET /static/images/user/chat.svg HTTP/1.0" 200 2419
+[11/Jun/2024 05:38:46] "GET /static/images/user/about-us.png HTTP/1.0" 200 1063902
+[11/Jun/2024 05:38:46] "GET /static/images/user/Vector.svg HTTP/1.0" 200 1028
+[11/Jun/2024 05:38:46] "GET /static/images/user/fb.svg HTTP/1.0" 200 551
+[11/Jun/2024 05:38:46] "GET /static/images/user/linkedin.svg HTTP/1.0" 200 2556
+[11/Jun/2024 05:38:46] "GET /static/images/user/twitter.svg HTTP/1.0" 200 1062
+[11/Jun/2024 05:38:46] "GET /static/images/user/instagram.svg HTTP/1.0" 200 3172
+[11/Jun/2024 05:38:46] "GET /static/images/user/icon_account.svg HTTP/1.0" 200 892
+[11/Jun/2024 05:38:46] "GET /static/images/user/icon_Email.svg HTTP/1.0" 200 758
+test
+[11/Jun/2024 05:40:34] "GET / HTTP/1.1" 200 108098
+[11/Jun/2024 05:40:34] "GET /static/css/user/mobile_view.css HTTP/1.1" 200 2626
+[11/Jun/2024 05:40:34] "GET /static/css/user/user_base.css HTTP/1.1" 200 2600
+[11/Jun/2024 05:40:34] "GET /static/css/user/user_home_page.css HTTP/1.1" 200 2875
+[11/Jun/2024 05:40:34] "GET /static/css/user/fontawesome.css HTTP/1.1" 200 102028
+[11/Jun/2024 05:40:35] "GET /static/css/user/bootstrap_style.css HTTP/1.1" 200 232947
+[11/Jun/2024 05:40:35] "GET /static/images/user/caorosel_bg.png HTTP/1.1" 200 1703857
+[11/Jun/2024 05:40:35] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.1" 200 178751
+[11/Jun/2024 05:40:35] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.1" 200 260691
+[11/Jun/2024 05:40:35] "GET /static/images/user/form-logo.svg HTTP/1.1" 200 676223
+[11/Jun/2024 05:40:35] "GET /static/js/bootstrap.js HTTP/1.1" 200 80663
+[11/Jun/2024 05:40:35] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.1" 200 229820
+[11/Jun/2024 05:40:35] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.1" 200 267889
+[11/Jun/2024 05:40:35] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.1" 200 143676
+[11/Jun/2024 05:40:35] "GET /static/js/bootstrap.js HTTP/1.1" 200 80663
+[11/Jun/2024 05:40:35] "GET /static/images/user/car-bg-two.png HTTP/1.1" 200 1612149
+test
+[11/Jun/2024 05:40:43] "GET / HTTP/1.1" 200 108098
+[11/Jun/2024 05:40:48] "GET /register/ HTTP/1.1" 200 15754
+[11/Jun/2024 05:40:48] "GET /static/css/user/user_login.css HTTP/1.1" 200 3644
+[11/Jun/2024 05:40:48] "GET /static/images/user/brand.png HTTP/1.1" 200 7622
+[11/Jun/2024 05:40:48] "GET /static/css/aloader.css HTTP/1.1" 200 273
+[11/Jun/2024 05:40:48] "GET /static/images/user/user_login_bg.png HTTP/1.1" 200 255200
+test
+[11/Jun/2024 05:48:50] "GET / HTTP/1.1" 200 108098
+Not Found: /favicon.ico
+[11/Jun/2024 05:48:51] "GET /favicon.ico HTTP/1.1" 404 8073
+test
+[11/Jun/2024 05:48:55] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 05:48:55] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[11/Jun/2024 05:48:55] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[11/Jun/2024 05:48:55] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[11/Jun/2024 05:48:55] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[11/Jun/2024 05:48:55] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[11/Jun/2024 05:48:55] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[11/Jun/2024 05:48:55] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[11/Jun/2024 05:48:55] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[11/Jun/2024 05:48:55] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[11/Jun/2024 05:48:55] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[11/Jun/2024 05:48:55] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[11/Jun/2024 05:48:55] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[11/Jun/2024 05:48:55] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[11/Jun/2024 05:48:55] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+test
+[11/Jun/2024 05:49:00] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[11/Jun/2024 05:49:15] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[11/Jun/2024 05:49:54] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 05:49:54] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[11/Jun/2024 05:49:54] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[11/Jun/2024 05:49:54] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[11/Jun/2024 05:49:54] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[11/Jun/2024 05:49:54] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[11/Jun/2024 05:49:54] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[11/Jun/2024 05:49:54] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[11/Jun/2024 05:49:54] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[11/Jun/2024 05:49:54] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[11/Jun/2024 05:49:54] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[11/Jun/2024 05:49:54] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[11/Jun/2024 05:49:54] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[11/Jun/2024 05:49:54] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[11/Jun/2024 05:49:54] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+test
+[11/Jun/2024 05:50:02] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 05:53:53] "GET / HTTP/1.0" 200 108098
+/usr/lib/python3/dist-packages/jinja2/tests.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 11, 2024 - 06:32:29
+Django version 4.2.13, using settings 'medics_academy.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+test
+[11/Jun/2024 06:36:18] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[11/Jun/2024 06:47:02] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[11/Jun/2024 06:49:11] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 06:49:21] "GET /login/ HTTP/1.0" 200 4450
+Forbidden (Origin checking failed - https://medicsacademy.in does not match any trusted origins.): /login/
+[11/Jun/2024 06:49:57] "POST /login/ HTTP/1.0" 403 2572
+test
+[11/Jun/2024 06:57:33] "GET / HTTP/1.1" 200 108098
+Not Found: /favicon.ico
+[11/Jun/2024 06:57:34] "GET /favicon.ico HTTP/1.1" 404 8073
+[11/Jun/2024 06:57:41] "POST /search_course/ HTTP/1.1" 200 4907
+[11/Jun/2024 06:57:42] "GET /static/images/user/profile_pic.png HTTP/1.1" 200 15913
+test
+[11/Jun/2024 06:57:50] "GET / HTTP/1.1" 200 108098
+[11/Jun/2024 06:57:55] "POST /search_course/ HTTP/1.1" 200 4907
+[11/Jun/2024 06:57:57] "GET /user_profile_list/ HTTP/1.1" 302 0
+[11/Jun/2024 06:57:57] "GET /login/?next=/user_profile_list/ HTTP/1.1" 200 4450
+test
+[11/Jun/2024 06:58:04] "GET / HTTP/1.1" 200 108098
+[11/Jun/2024 06:58:10] "POST /search_course/ HTTP/1.1" 200 7075
+[11/Jun/2024 06:58:10] "GET /static/css/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1857
+[11/Jun/2024 06:58:10] "GET /static/css/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1851
+[11/Jun/2024 06:58:22] "GET /dashboard/ HTTP/1.1" 302 0
+[11/Jun/2024 06:58:22] "GET /login/?next=/dashboard/ HTTP/1.1" 200 4450
+test
+[11/Jun/2024 06:58:28] "GET / HTTP/1.1" 200 108098
+[11/Jun/2024 06:58:28] "GET /static/css/webfonts/fa-solid-900.woff2 HTTP/1.1" 404 1857
+[11/Jun/2024 06:58:28] "GET /static/css/webfonts/fa-solid-900.ttf HTTP/1.1" 404 1851
+test
+[11/Jun/2024 06:58:37] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 06:58:37] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[11/Jun/2024 06:58:37] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[11/Jun/2024 06:58:37] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[11/Jun/2024 06:58:37] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[11/Jun/2024 06:58:37] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[11/Jun/2024 06:58:38] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[11/Jun/2024 06:58:38] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[11/Jun/2024 06:58:38] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[11/Jun/2024 06:58:38] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[11/Jun/2024 06:58:39] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[11/Jun/2024 06:58:39] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[11/Jun/2024 06:58:39] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[11/Jun/2024 06:58:39] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[11/Jun/2024 06:58:39] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+Not Found: /favicon.ico
+[11/Jun/2024 06:58:40] "GET /favicon.ico HTTP/1.0" 404 8073
+Forbidden (Origin checking failed - https://medicsacademy.in does not match any trusted origins.): /search_course/
+[11/Jun/2024 06:58:46] "POST /search_course/ HTTP/1.0" 403 2572
+[11/Jun/2024 06:58:55] "GET /about_us/ HTTP/1.0" 200 12393
+[11/Jun/2024 06:58:55] "GET /static/css/user/user_login.css HTTP/1.0" 200 3644
+[11/Jun/2024 06:58:55] "GET /static/css/aloader.css HTTP/1.0" 200 273
+[11/Jun/2024 06:58:55] "GET /static/css/user/about_us.css HTTP/1.0" 200 287
+[11/Jun/2024 06:58:55] "GET /static/css/user/contact_us.css HTTP/1.0" 200 1246
+[11/Jun/2024 06:58:55] "GET /static/images/user/about-us.png HTTP/1.0" 200 1063902
+[11/Jun/2024 06:58:55] "GET /static/images/user/about1.png HTTP/1.0" 200 405992
+[11/Jun/2024 06:58:55] "GET /static/images/user/heart.png HTTP/1.0" 200 4532
+[11/Jun/2024 06:58:55] "GET /static/images/user/plus.png HTTP/1.0" 200 6521
+[11/Jun/2024 06:58:55] "GET /static/images/user/phone-call.svg HTTP/1.0" 200 15073
+[11/Jun/2024 06:58:55] "GET /static/images/user/chat.svg HTTP/1.0" 200 2419
+[11/Jun/2024 06:58:55] "GET /static/images/user/Vector.svg HTTP/1.0" 200 1028
+[11/Jun/2024 06:58:55] "GET /static/images/user/fb.svg HTTP/1.0" 200 551
+[11/Jun/2024 06:58:55] "GET /static/images/user/linkedin.svg HTTP/1.0" 200 2556
+[11/Jun/2024 06:58:55] "GET /static/images/user/twitter.svg HTTP/1.0" 200 1062
+[11/Jun/2024 06:58:55] "GET /static/images/user/instagram.svg HTTP/1.0" 200 3172
+[11/Jun/2024 06:58:55] "GET /static/images/user/icon_Email.svg HTTP/1.0" 200 758
+[11/Jun/2024 06:58:55] "GET /static/images/user/icon_account.svg HTTP/1.0" 200 892
+Forbidden (Origin checking failed - https://medicsacademy.in does not match any trusted origins.): /contact_us_message/
+[11/Jun/2024 06:59:01] "POST /contact_us_message/ HTTP/1.0" 403 2572
+test
+[11/Jun/2024 07:07:10] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 07:07:16] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 07:07:16] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 07:41:35] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 08:18:50] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 08:21:17] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 08:21:25] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 08:21:25] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[11/Jun/2024 08:21:26] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[11/Jun/2024 08:21:26] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[11/Jun/2024 08:21:26] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[11/Jun/2024 08:21:26] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[11/Jun/2024 08:21:26] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[11/Jun/2024 08:21:26] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[11/Jun/2024 08:21:26] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[11/Jun/2024 08:21:26] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[11/Jun/2024 08:21:26] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[11/Jun/2024 08:21:27] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[11/Jun/2024 08:21:27] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[11/Jun/2024 08:21:28] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[11/Jun/2024 08:21:28] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[11/Jun/2024 09:06:41,226] - Broken pipe from ('162.142.125.213', 51260)
+test
+test
+[11/Jun/2024 09:06:48] "GET / HTTP/1.1" 200 108098
+[11/Jun/2024 09:06:48,928] - Broken pipe from ('162.142.125.213', 56538)
+[11/Jun/2024 09:06:49] code 505, message Invalid HTTP version (2.0)
+[11/Jun/2024 09:06:49] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[11/Jun/2024 09:06:49] "GET /favicon.ico HTTP/1.1" 404 8073
+[11/Jun/2024 09:42:22] code 400, message Bad request version ('À\x14À')
+[11/Jun/2024 09:42:22] You're accessing the development server over HTTPS, but it only supports HTTP.
+[11/Jun/2024 09:42:22] code 400, message Bad request version ('À\x14À')
+[11/Jun/2024 09:42:22] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[11/Jun/2024 09:42:23] "GET / HTTP/1.1" 200 108098
+[11/Jun/2024 09:42:24] code 400, message Bad request version ('À\x14À')
+[11/Jun/2024 09:42:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+[11/Jun/2024 09:42:24] "GET /login HTTP/1.1" 301 0
+test
+[11/Jun/2024 10:26:02] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 10:26:03] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[11/Jun/2024 10:26:03] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[11/Jun/2024 10:26:03] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[11/Jun/2024 10:26:03] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[11/Jun/2024 10:26:03] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[11/Jun/2024 10:26:03] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[11/Jun/2024 10:26:03] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[11/Jun/2024 10:26:03] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[11/Jun/2024 10:26:03] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[11/Jun/2024 10:26:03] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[11/Jun/2024 10:26:03] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[11/Jun/2024 10:26:03] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[11/Jun/2024 10:26:03] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[11/Jun/2024 10:26:03] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+Not Found: /favicon.ico
+[11/Jun/2024 10:26:04] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[11/Jun/2024 10:30:59] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 10:31:01] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 10:31:04] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 10:31:04] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[11/Jun/2024 10:31:05] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[11/Jun/2024 10:31:05] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[11/Jun/2024 10:31:05] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[11/Jun/2024 10:31:05] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[11/Jun/2024 10:31:05] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[11/Jun/2024 10:31:06] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[11/Jun/2024 10:31:06] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[11/Jun/2024 10:31:06] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[11/Jun/2024 10:31:06] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[11/Jun/2024 10:31:06] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[11/Jun/2024 10:31:06] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[11/Jun/2024 10:31:07] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[11/Jun/2024 10:31:07] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+Not Found: /.git/config
+[11/Jun/2024 11:14:40] "GET /.git/config HTTP/1.0" 404 8073
+test
+[11/Jun/2024 12:15:23] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 12:18:02] "GET / HTTP/1.0" 200 108098
+[11/Jun/2024 12:18:11] "GET /login/ HTTP/1.0" 200 4450
+[11/Jun/2024 18:07:05,072] - Broken pipe from ('167.94.138.43', 43098)
+[11/Jun/2024 18:07:07] code 400, message Bad request version ('\x83ü²#¾CÖL^')
+[11/Jun/2024 18:07:07] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[11/Jun/2024 21:44:37] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 21:44:42] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[11/Jun/2024 21:44:45] "GET /favicon.ico HTTP/1.0" 404 8073
+Not Found: /favicon.ico
+[11/Jun/2024 21:44:45] "GET /favicon.ico HTTP/1.0" 404 8073
+Not Found: /favicon.ico
+[11/Jun/2024 21:44:46] "GET /favicon.ico HTTP/1.0" 404 8073
+Not Found: /favicon.png
+[11/Jun/2024 21:44:46] "GET /favicon.png HTTP/1.0" 404 8073
+Not Found: /favicon.png
+[11/Jun/2024 21:44:47] "GET /favicon.png HTTP/1.0" 404 8073
+Not Found: /favicon.png
+[11/Jun/2024 21:44:47] "GET /favicon.png HTTP/1.0" 404 8073
+[11/Jun/2024 21:45:53] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[11/Jun/2024 21:45:58] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+test
+[11/Jun/2024 21:48:13] "GET / HTTP/1.0" 200 108098
+test
+[11/Jun/2024 23:28:52] "GET / HTTP/1.0" 200 108098
+[12/Jun/2024 01:20:19] code 400, message Bad request version ('À\x14À')
+[12/Jun/2024 01:20:19] You're accessing the development server over HTTPS, but it only supports HTTP.
+[12/Jun/2024 01:20:19] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03PÛ\x01+¼\x18*æ*\x95\x13÷\x075¡\x868\x9a\x8de\x02emÃZå¢p\x9bÀ\x9a\x05\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[12/Jun/2024 01:20:19] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[12/Jun/2024 01:20:19] "GET / HTTP/1.1" 200 108098
+[12/Jun/2024 01:20:19] code 400, message Bad request version ('À\x14À')
+[12/Jun/2024 01:20:19] You're accessing the development server over HTTPS, but it only supports HTTP.
+[12/Jun/2024 01:20:19] "GET /login HTTP/1.1" 301 0
+[12/Jun/2024 03:27:55] code 400, message Bad request version ('À\x14À')
+[12/Jun/2024 03:27:55] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[12/Jun/2024 04:15:43] "HEAD / HTTP/1.0" 200 0
+test
+[12/Jun/2024 04:57:46] "GET / HTTP/1.0" 200 108098
+test
+[12/Jun/2024 04:58:04] "GET / HTTP/1.0" 200 108098
+test
+[12/Jun/2024 05:52:37] "GET / HTTP/1.0" 200 108098
+test
+[12/Jun/2024 05:52:38] "GET / HTTP/1.0" 200 108098
+test
+[12/Jun/2024 05:52:39] "GET / HTTP/1.0" 200 108098
+[12/Jun/2024 05:55:09] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[12/Jun/2024 05:55:10] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[12/Jun/2024 05:55:10] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[12/Jun/2024 05:55:10] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[12/Jun/2024 05:55:11] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[12/Jun/2024 05:55:11] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[12/Jun/2024 05:55:11] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[12/Jun/2024 05:55:11] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[12/Jun/2024 05:55:12] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[12/Jun/2024 05:55:12] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[12/Jun/2024 05:55:12] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[12/Jun/2024 05:55:12] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[12/Jun/2024 05:55:12] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[12/Jun/2024 05:55:12] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[12/Jun/2024 05:55:12] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[12/Jun/2024 05:55:12] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[12/Jun/2024 05:55:12] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[12/Jun/2024 05:55:12] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[12/Jun/2024 05:55:12] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[12/Jun/2024 05:55:13] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[12/Jun/2024 05:55:13] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[12/Jun/2024 05:55:13] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[12/Jun/2024 05:55:13] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[12/Jun/2024 05:55:13] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+Not Found: /favicon.ico
+[12/Jun/2024 05:58:01] "GET /favicon.ico HTTP/1.0" 404 8073
+[12/Jun/2024 06:37:47] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[12/Jun/2024 06:37:47] "    c                           " 400 -
+test
+[12/Jun/2024 07:09:48] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[12/Jun/2024 07:09:53] "GET /favicon.ico HTTP/1.0" 404 8073
+[12/Jun/2024 07:09:58] "GET /login/ HTTP/1.0" 200 4450
+Forbidden (Origin checking failed - https://medicsacademy.in does not match any trusted origins.): /login/
+[12/Jun/2024 07:10:12] "POST /login/ HTTP/1.0" 403 2572
+[12/Jun/2024 10:25:47,005] - Broken pipe from ('162.142.125.193', 35266)
+test
+[12/Jun/2024 10:25:50] "GET / HTTP/1.1" 200 108098
+[12/Jun/2024 10:25:50,877] - Broken pipe from ('162.142.125.193', 35318)
+test
+[12/Jun/2024 10:25:54] "GET / HTTP/1.1" 200 108098
+[12/Jun/2024 10:25:55,460] - Broken pipe from ('162.142.125.193', 60160)
+[12/Jun/2024 10:25:55] code 505, message Invalid HTTP version (2.0)
+[12/Jun/2024 10:25:55] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[12/Jun/2024 10:25:56] "GET /favicon.ico HTTP/1.1" 404 8073
+[12/Jun/2024 10:47:40] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[12/Jun/2024 10:47:40] "    c                           " 400 -
+test
+[12/Jun/2024 11:36:36] "GET / HTTP/1.0" 200 108098
+test
+[12/Jun/2024 11:36:37] "GET / HTTP/1.0" 200 108098
+test
+[12/Jun/2024 11:36:43] "GET / HTTP/1.0" 200 108098
+[12/Jun/2024 11:36:43] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[12/Jun/2024 11:36:43] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[12/Jun/2024 11:36:44] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[12/Jun/2024 11:36:44] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[12/Jun/2024 11:36:44] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[12/Jun/2024 11:36:44] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[12/Jun/2024 11:36:44] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[12/Jun/2024 11:36:45] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[12/Jun/2024 11:36:45] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[12/Jun/2024 11:36:45] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[12/Jun/2024 11:36:45] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[12/Jun/2024 11:36:45] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[12/Jun/2024 11:36:46] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[12/Jun/2024 11:36:46] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[12/Jun/2024 11:43:52] code 400, message Bad request syntax ('MGLNDD_93.127.199.206_8000')
+[12/Jun/2024 11:43:52] "MGLNDD_93.127.199.206_8000" 400 -
+test
+[12/Jun/2024 12:14:27] "GET / HTTP/1.0" 200 108098
+[12/Jun/2024 12:14:27] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[12/Jun/2024 12:14:27] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[12/Jun/2024 12:14:27] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[12/Jun/2024 12:14:27] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[12/Jun/2024 12:14:27] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[12/Jun/2024 12:14:27] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[12/Jun/2024 12:14:27] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[12/Jun/2024 12:14:27] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[12/Jun/2024 12:14:27] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[12/Jun/2024 12:14:27] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[12/Jun/2024 12:14:27] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[12/Jun/2024 12:14:27] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[12/Jun/2024 12:14:27] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[12/Jun/2024 12:14:27] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+Not Found: /favicon.ico
+[12/Jun/2024 12:14:28] "GET /favicon.ico HTTP/1.0" 404 8073
+[12/Jun/2024 12:14:37] "GET /login/ HTTP/1.0" 200 4450
+[12/Jun/2024 12:14:37] "GET /static/css/user/user_login.css HTTP/1.0" 200 3644
+[12/Jun/2024 12:14:37] "GET /static/css/aloader.css HTTP/1.0" 200 273
+[12/Jun/2024 12:14:37] "GET /static/images/user/brand.png HTTP/1.0" 200 7622
+[12/Jun/2024 12:14:38] "GET /static/images/user/user_login_bg.png HTTP/1.0" 200 255200
+Forbidden (Origin checking failed - https://medicsacademy.in does not match any trusted origins.): /login/
+[12/Jun/2024 12:14:48] "POST /login/ HTTP/1.0" 403 2572
+[12/Jun/2024 12:33:19] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[12/Jun/2024 12:33:19] "    c                           " 400 -
+test
+[12/Jun/2024 13:23:08] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[12/Jun/2024 13:23:08] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[12/Jun/2024 13:25:42] "GET / HTTP/1.0" 200 108098
+[12/Jun/2024 13:25:42] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[12/Jun/2024 13:25:42] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[12/Jun/2024 13:25:42] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[12/Jun/2024 13:25:42] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[12/Jun/2024 13:25:42] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[12/Jun/2024 13:25:42] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[12/Jun/2024 13:25:42] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[12/Jun/2024 13:25:42] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[12/Jun/2024 13:25:42] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[12/Jun/2024 13:25:42] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[12/Jun/2024 13:25:43] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[12/Jun/2024 13:25:43] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[12/Jun/2024 13:25:43] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[12/Jun/2024 13:25:43] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+Not Found: /favicon.ico
+[12/Jun/2024 13:25:43] "GET /favicon.ico HTTP/1.0" 404 8073
+Invalid HTTP_HOST header: 'srv510927.hstgr.cloud'. You may need to add 'srv510927.hstgr.cloud' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/usr/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/usr/lib/python3.8/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'srv510927.hstgr.cloud'. You may need to add 'srv510927.hstgr.cloud' to ALLOWED_HOSTS.
+Bad Request: /
+[12/Jun/2024 15:03:15] "GET / HTTP/1.1" 400 64481
+test
+[12/Jun/2024 15:38:32] "GET / HTTP/1.0" 200 108098
+Not Found: /sitemap.xml
+[12/Jun/2024 15:38:40] "GET /sitemap.xml HTTP/1.0" 404 8073
+Not Found: /robots.txt
+[12/Jun/2024 15:38:40] "GET /robots.txt HTTP/1.0" 404 8070
+[12/Jun/2024 17:20:13] code 400, message Bad request version ('À\x14À')
+[12/Jun/2024 17:20:13] You're accessing the development server over HTTPS, but it only supports HTTP.
+[12/Jun/2024 17:20:13] code 400, message Bad request version ('À\x14À')
+[12/Jun/2024 17:20:13] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[12/Jun/2024 17:20:14] "GET / HTTP/1.1" 200 108098
+[12/Jun/2024 17:20:14] code 400, message Bad request version ('À\x14À')
+[12/Jun/2024 17:20:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[12/Jun/2024 17:20:15] "GET /login HTTP/1.1" 301 0
+Not Found: /.env
+[12/Jun/2024 17:34:54] "GET /.env HTTP/1.1" 404 8052
+test
+[12/Jun/2024 20:40:42] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[12/Jun/2024 20:40:44] "GET /favicon.ico HTTP/1.0" 404 8073
+[12/Jun/2024 20:40:46] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[12/Jun/2024 20:40:49] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[12/Jun/2024 20:40:52] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[12/Jun/2024 20:40:55] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[12/Jun/2024 20:40:59] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[12/Jun/2024 20:41:01] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[12/Jun/2024 20:41:03] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[12/Jun/2024 20:41:05] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[12/Jun/2024 20:41:07] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+Not Found: /robots.txt
+[12/Jun/2024 21:30:32] "GET /robots.txt HTTP/1.0" 404 8070
+Not Found: /sitemap.xml
+[12/Jun/2024 21:30:34] "GET /sitemap.xml HTTP/1.0" 404 8073
+test
+[12/Jun/2024 21:30:37] "GET / HTTP/1.0" 200 108098
+Not Found: /robots.txt
+[12/Jun/2024 21:30:40] "GET /robots.txt HTTP/1.0" 404 8070
+Not Found: /sitemap.xml
+[12/Jun/2024 21:30:41] "GET /sitemap.xml HTTP/1.0" 404 8073
+test
+[12/Jun/2024 21:46:04] "GET / HTTP/1.0" 200 108098
+test
+[12/Jun/2024 21:46:07] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[12/Jun/2024 21:46:07] "GET /favicon.ico HTTP/1.0" 404 8073
+Not Found: /favicon.ico
+[12/Jun/2024 21:46:08] "GET /favicon.ico HTTP/1.0" 404 8073
+Not Found: /favicon.ico
+[12/Jun/2024 21:46:08] "GET /favicon.ico HTTP/1.0" 404 8073
+Not Found: /favicon.png
+[12/Jun/2024 21:46:09] "GET /favicon.png HTTP/1.0" 404 8073
+Not Found: /favicon.png
+[12/Jun/2024 21:46:09] "GET /favicon.png HTTP/1.0" 404 8073
+Not Found: /favicon.png
+[12/Jun/2024 21:46:09] "GET /favicon.png HTTP/1.0" 404 8073
+[12/Jun/2024 21:46:42] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[12/Jun/2024 21:46:47] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[12/Jun/2024 21:46:50] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+test
+[12/Jun/2024 21:49:46] "GET / HTTP/1.0" 200 108098
+[12/Jun/2024 22:37:20,482] - Broken pipe from ('167.94.138.119', 60882)
+test
+[12/Jun/2024 22:37:23] "GET / HTTP/1.1" 200 108098
+[12/Jun/2024 22:37:23,929] - Broken pipe from ('167.94.138.119', 55228)
+test
+[12/Jun/2024 22:37:27] "GET / HTTP/1.1" 200 108098
+[12/Jun/2024 22:37:27,872] - Broken pipe from ('167.94.138.119', 55242)
+[12/Jun/2024 22:37:28] code 505, message Invalid HTTP version (2.0)
+[12/Jun/2024 22:37:28] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[12/Jun/2024 22:37:28] "GET /favicon.ico HTTP/1.1" 404 8073
+test
+[12/Jun/2024 23:41:41] "GET / HTTP/1.0" 200 108098
+Not Found: /.env
+[13/Jun/2024 01:39:13] "GET /.env HTTP/1.1" 404 8052
+test
+[13/Jun/2024 04:15:44] "HEAD / HTTP/1.0" 200 0
+[13/Jun/2024 05:48:02] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[13/Jun/2024 05:48:02] "    c                           " 400 -
+Not Found: /.git/config
+Not Found: /app/.git/config
+[13/Jun/2024 06:06:10] "GET /app/.git/config HTTP/1.0" 404 8085
+[13/Jun/2024 06:06:10] "GET /.git/config HTTP/1.0" 404 8073
+Not Found: /aomanalyzer/.git/config
+[13/Jun/2024 06:06:10] "GET /aomanalyzer/.git/config HTTP/1.0" 404 8109
+Not Found: /shop/.git/config
+Not Found: /m/.git/config
+[13/Jun/2024 06:06:10] "GET /m/.git/config HTTP/1.0" 404 8079
+[13/Jun/2024 06:06:10] "GET /shop/.git/config HTTP/1.0" 404 8088
+Not Found: /api/v1/.git/config
+[13/Jun/2024 06:06:10] "GET /api/v1/.git/config HTTP/1.0" 404 8094
+Not Found: /api/user/v1/.git/config
+[13/Jun/2024 06:06:10] "GET /api/user/v1/.git/config HTTP/1.0" 404 8109
+Not Found: /common/.git/config
+[13/Jun/2024 06:06:10] "GET /common/.git/config HTTP/1.0" 404 8094
+Not Found: /database/.git/config
+Not Found: /developer/.git/config
+[13/Jun/2024 06:06:10] "GET /database/.git/config HTTP/1.0" 404 8100
+[13/Jun/2024 06:06:10] "GET /developer/.git/config HTTP/1.0" 404 8103
+Not Found: /a/.git/config
+[13/Jun/2024 06:06:10] "GET /a/.git/config HTTP/1.0" 404 8079
+Not Found: /amphtml/.git/config
+Not Found: /s3/.git/config
+[13/Jun/2024 06:06:10] "GET /amphtml/.git/config HTTP/1.0" 404 8097
+[13/Jun/2024 06:06:10] "GET /s3/.git/config HTTP/1.0" 404 8082
+Not Found: /api/admin/v3/.git/config
+[13/Jun/2024 06:06:10] "GET /api/admin/v3/.git/config HTTP/1.0" 404 8112
+Not Found: /src/.git/config
+[13/Jun/2024 06:06:10] "GET /src/.git/config HTTP/1.0" 404 8085
+Not Found: /api/admin/v1/.git/config
+Not Found: /cms/.git/config
+[13/Jun/2024 06:06:10] "GET /api/admin/v1/.git/config HTTP/1.0" 404 8112
+Not Found: /api/user/v4/.git/config
+[13/Jun/2024 06:06:10] "GET /cms/.git/config HTTP/1.0" 404 8085
+[13/Jun/2024 06:06:10] "GET /api/user/v4/.git/config HTTP/1.0" 404 8109
+Not Found: /data/.git/config
+[13/Jun/2024 06:06:10] "GET /data/.git/config HTTP/1.0" 404 8088
+Not Found: /repository/.git/config
+[13/Jun/2024 06:06:10] "GET /repository/.git/config HTTP/1.0" 404 8106
+Not Found: /wp-content/plugins/.git/config
+Not Found: /wiki/.git/config
+[13/Jun/2024 06:06:11] "GET /wp-content/plugins/.git/config HTTP/1.0" 404 8130
+[13/Jun/2024 06:06:11] "GET /wiki/.git/config HTTP/1.0" 404 8088
+Not Found: /wp-content/themes/.git/config
+[13/Jun/2024 06:06:11] "GET /wp-content/themes/.git/config HTTP/1.0" 404 8127
+Not Found: /vendor/.git/config
+[13/Jun/2024 06:06:11] "GET /vendor/.git/config HTTP/1.0" 404 8094
+Not Found: /web/.git/config
+[13/Jun/2024 06:06:11] "GET /web/.git/config HTTP/1.0" 404 8085
+Not Found: /wp-includes/js/.git/config
+[13/Jun/2024 06:06:11] "GET /wp-includes/js/.git/config HTTP/1.0" 404 8118
+Not Found: /wp-content/.git/config
+[13/Jun/2024 06:06:11] "GET /wp-content/.git/config HTTP/1.0" 404 8106
+Not Found: /v3/.git/config
+[13/Jun/2024 06:06:11] "GET /v3/.git/config HTTP/1.0" 404 8082
+Not Found: /api/admin/v2/.git/config
+Not Found: /store/.git/config
+Not Found: /samples/.git/config
+Not Found: /gateway/.git/config
+[13/Jun/2024 06:06:11] "GET /api/admin/v2/.git/config HTTP/1.0" 404 8112
+[13/Jun/2024 06:06:11] "GET /gateway/.git/config HTTP/1.0" 404 8097
+[13/Jun/2024 06:06:11] "GET /store/.git/config HTTP/1.0" 404 8091
+Not Found: /dev/.git/config
+Not Found: /api/.git/config
+[13/Jun/2024 06:06:11] "GET /api/.git/config HTTP/1.0" 404 8085
+[13/Jun/2024 06:06:11] "GET /samples/.git/config HTTP/1.0" 404 8097
+[13/Jun/2024 06:06:11] "GET /dev/.git/config HTTP/1.0" 404 8085
+Not Found: /node_modules/.git/config
+Not Found: /config/.git/config
+[13/Jun/2024 06:06:11] "GET /node_modules/.git/config HTTP/1.0" 404 8112
+[13/Jun/2024 06:06:11] "GET /config/.git/config HTTP/1.0" 404 8094
+Not Found: /user/.git/config
+[13/Jun/2024 06:06:11] "GET /user/.git/config HTTP/1.0" 404 8088
+Not Found: /public/.git/config
+[13/Jun/2024 06:06:11] "GET /public/.git/config HTTP/1.0" 404 8094
+Not Found: /blog/wp-content/themes/.git/config
+[13/Jun/2024 06:06:11] "GET /admin/.git/config HTTP/1.0" 302 0
+[13/Jun/2024 06:06:11] "GET /blog/wp-content/themes/.git/config HTTP/1.0" 404 8142
+Not Found: /old-cuburn/.git/config
+[13/Jun/2024 06:06:11] "GET /old-cuburn/.git/config HTTP/1.0" 404 8106
+Not Found: /demo/.git/config
+[13/Jun/2024 06:06:11] "GET /demo/.git/config HTTP/1.0" 404 8088
+Not Found: /beta/.git/config
+[13/Jun/2024 06:06:11] "GET /beta/.git/config HTTP/1.0" 404 8088
+Not Found: /qa/.git/config
+Not Found: /test/.git/config
+[13/Jun/2024 06:06:11] "GET /qa/.git/config HTTP/1.0" 404 8082
+[13/Jun/2024 06:06:11] "GET /test/.git/config HTTP/1.0" 404 8088
+Not Found: /__MACOSX/.git/config
+[13/Jun/2024 06:06:11] "GET /__MACOSX/.git/config HTTP/1.0" 404 8100
+Not Found: /blog/.git/config
+[13/Jun/2024 06:06:11] "GET /blog/.git/config HTTP/1.0" 404 8088
+Not Found: /includes/.git/config
+[13/Jun/2024 06:06:11] "GET /includes/.git/config HTTP/1.0" 404 8100
+Not Found: /site/.git/config
+Not Found: /api/v2/.git/config
+[13/Jun/2024 06:06:11] "GET /site/.git/config HTTP/1.0" 404 8088
+[13/Jun/2024 06:06:11] "GET /static/.git/config HTTP/1.0" 404 1797
+[13/Jun/2024 06:06:11] "GET /api/v2/.git/config HTTP/1.0" 404 8094
+Not Found: /live/.git/config
+[13/Jun/2024 06:06:11] "GET /live/.git/config HTTP/1.0" 404 8088
+Not Found: /api/user/v2/.git/config
+Not Found: /v1/.git/config
+[13/Jun/2024 06:06:11] "GET /api/user/v2/.git/config HTTP/1.0" 404 8109
+Not Found: /api/admin/v4/.git/config
+[13/Jun/2024 06:06:11] "GET /api/admin/v4/.git/config HTTP/1.0" 404 8112
+[13/Jun/2024 06:06:11] "GET /v1/.git/config HTTP/1.0" 404 8082
+Not Found: /application/.git/config
+[13/Jun/2024 06:06:11] "GET /application/.git/config HTTP/1.0" 404 8109
+Not Found: /flock/.git/config
+[13/Jun/2024 06:06:11] "GET /flock/.git/config HTTP/1.0" 404 8091
+Not Found: /staging/.git/config
+Not Found: /api/v3/.git/config
+[13/Jun/2024 06:06:11] "GET /staging/.git/config HTTP/1.0" 404 8097
+[13/Jun/2024 06:06:11] "GET /api/v3/.git/config HTTP/1.0" 404 8094
+Not Found: /build/.git/config
+[13/Jun/2024 06:06:11] "GET /build/.git/config HTTP/1.0" 404 8091
+Not Found: /api/user/v3/.git/config
+[13/Jun/2024 06:06:11] "GET /api/user/v3/.git/config HTTP/1.0" 404 8109
+Not Found: /alpha/.git/config
+Not Found: /repos/.git/config
+[13/Jun/2024 06:06:11] "GET /repos/.git/config HTTP/1.0" 404 8091
+[13/Jun/2024 06:06:11] "GET /alpha/.git/config HTTP/1.0" 404 8091
+Not Found: /v2/.git/config
+Not Found: /backup/.git/config
+[13/Jun/2024 06:06:12] "GET /v2/.git/config HTTP/1.0" 404 8082
+Not Found: /git/.git/config
+[13/Jun/2024 06:06:12] "GET /backup/.git/config HTTP/1.0" 404 8094
+Not Found: /api/v4/.git/config
+[13/Jun/2024 06:06:12] "GET /git/.git/config HTTP/1.0" 404 8085
+[13/Jun/2024 06:06:12] "GET /api/v4/.git/config HTTP/1.0" 404 8094
+Not Found: /new/.git/config
+[13/Jun/2024 06:06:12] "GET /new/.git/config HTTP/1.0" 404 8085
+test
+[13/Jun/2024 07:14:11] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[13/Jun/2024 07:14:11] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[13/Jun/2024 07:14:11] "GET / HTTP/1.0" 200 108098
+test
+[13/Jun/2024 07:14:12] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[13/Jun/2024 07:14:12] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[13/Jun/2024 07:14:12] "GET / HTTP/1.0" 200 108098
+[13/Jun/2024 07:32:04] code 400, message Bad request version ('À\x13À')
+[13/Jun/2024 07:32:04] You're accessing the development server over HTTPS, but it only supports HTTP.
+[13/Jun/2024 07:32:04] code 400, message Bad request version ('À(À$À\x14À')
+[13/Jun/2024 07:32:04] You're accessing the development server over HTTPS, but it only supports HTTP.
+[13/Jun/2024 07:33:44] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[13/Jun/2024 07:33:44] "    c                           " 400 -
+[13/Jun/2024 07:59:24] code 400, message Bad request version ('À\x14À')
+[13/Jun/2024 07:59:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+[13/Jun/2024 07:59:24] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03ü\x88r\x9fÓq¼Öo9®f=BÕkÊõ\x99G½5\x00·à\x90=^\x952d0\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[13/Jun/2024 07:59:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[13/Jun/2024 07:59:24] "GET / HTTP/1.1" 200 108098
+[13/Jun/2024 07:59:24] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Ý"qËpá\x97/×*ñ\x97Àâ7ªS\x8b¾!ÞÊ@µ½L×\x8f\x07\x828\x8b\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[13/Jun/2024 07:59:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+[13/Jun/2024 07:59:24] "GET /login HTTP/1.1" 301 0
+[13/Jun/2024 08:26:57,280] - Broken pipe from ('167.94.138.115', 49854)
+test
+[13/Jun/2024 08:27:00] "GET / HTTP/1.1" 200 108098
+[13/Jun/2024 08:27:00,733] - Broken pipe from ('167.94.138.115', 49870)
+test
+[13/Jun/2024 08:27:04] "GET / HTTP/1.1" 200 108098
+[13/Jun/2024 08:27:04,759] - Broken pipe from ('167.94.138.115', 47434)
+[13/Jun/2024 08:27:04] code 505, message Invalid HTTP version (2.0)
+[13/Jun/2024 08:27:04] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[13/Jun/2024 08:27:05] "GET /favicon.ico HTTP/1.1" 404 8073
+[13/Jun/2024 09:19:02] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[13/Jun/2024 09:19:02] "    c                           " 400 -
+test
+[13/Jun/2024 10:23:56] "GET / HTTP/1.0" 200 108098
+Not Found: /robots.txt
+[13/Jun/2024 11:29:27] "GET /robots.txt HTTP/1.0" 404 8070
+test
+[13/Jun/2024 11:29:28] "GET / HTTP/1.0" 200 108098
+[13/Jun/2024 13:36:04] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[13/Jun/2024 13:36:04] "    c                           " 400 -
+Not Found: /.git/config
+[13/Jun/2024 14:52:49] "GET /.git/config HTTP/1.0" 404 8073
+[13/Jun/2024 17:26:29,708] - Broken pipe from ('167.94.138.36', 39056)
+test
+[13/Jun/2024 17:26:33] "GET / HTTP/1.1" 200 108098
+[13/Jun/2024 17:26:34,388] - Broken pipe from ('167.94.138.36', 39058)
+test
+[13/Jun/2024 17:26:41] "GET / HTTP/1.1" 200 108098
+[13/Jun/2024 17:26:42,764] - Broken pipe from ('167.94.138.36', 41524)
+[13/Jun/2024 17:26:43] code 505, message Invalid HTTP version (2.0)
+[13/Jun/2024 17:26:43] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[13/Jun/2024 17:26:44] "GET /favicon.ico HTTP/1.1" 404 8073
+[13/Jun/2024 20:19:01] code 400, message Bad request version ('À\x14À')
+[13/Jun/2024 20:19:01] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[13/Jun/2024 21:45:55] "GET / HTTP/1.0" 200 108098
+test
+[13/Jun/2024 21:45:57] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[13/Jun/2024 21:45:57] "GET /favicon.ico HTTP/1.0" 404 8073
+Not Found: /favicon.ico
+[13/Jun/2024 21:45:58] "GET /favicon.ico HTTP/1.0" 404 8073
+Not Found: /favicon.ico
+[13/Jun/2024 21:45:59] "GET /favicon.ico HTTP/1.0" 404 8073
+Not Found: /favicon.png
+[13/Jun/2024 21:45:59] "GET /favicon.png HTTP/1.0" 404 8073
+Not Found: /favicon.png
+[13/Jun/2024 21:45:59] "GET /favicon.png HTTP/1.0" 404 8073
+Not Found: /favicon.png
+[13/Jun/2024 21:45:59] "GET /favicon.png HTTP/1.0" 404 8073
+[13/Jun/2024 21:46:17] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[13/Jun/2024 21:46:39] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[14/Jun/2024 00:12:41] code 400, message Bad request version ('À\x14À')
+[14/Jun/2024 00:12:41] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jun/2024 00:12:41] code 400, message Bad request version ('À\x14À')
+[14/Jun/2024 00:12:41] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[14/Jun/2024 00:12:42] "GET / HTTP/1.1" 200 108098
+[14/Jun/2024 00:12:43] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03û\x16÷E2\x07@¨\x00ú¬¿Û.Õ_Óå\x81þÃç.\x96¸m?à»¨\x84\x8b\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[14/Jun/2024 00:12:43] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jun/2024 00:12:43] "GET /login HTTP/1.1" 301 0
+test
+[14/Jun/2024 01:01:37] "GET / HTTP/1.0" 200 108098
+[14/Jun/2024 01:01:37] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[14/Jun/2024 01:01:37] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[14/Jun/2024 01:01:37] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[14/Jun/2024 01:01:37] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[14/Jun/2024 01:01:37] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[14/Jun/2024 01:01:37] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[14/Jun/2024 01:01:38] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[14/Jun/2024 01:01:38] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[14/Jun/2024 01:01:38] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[14/Jun/2024 01:01:38] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[14/Jun/2024 01:01:38] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[14/Jun/2024 01:01:38] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[14/Jun/2024 01:01:38] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[14/Jun/2024 01:01:38] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[14/Jun/2024 01:01:39] "GET /static/css/webfonts/fa-solid-900.woff2 HTTP/1.0" 404 1857
+[14/Jun/2024 01:01:39] "GET /static/css/webfonts/fa-regular-400.woff2 HTTP/1.0" 404 1863
+[14/Jun/2024 01:01:39] "GET /static/css/webfonts/fa-solid-900.ttf HTTP/1.0" 404 1851
+[14/Jun/2024 01:01:39] "GET /static/css/webfonts/fa-regular-400.ttf HTTP/1.0" 404 1857
+Not Found: /favicon.ico
+[14/Jun/2024 01:01:41] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[14/Jun/2024 01:01:42] "GET / HTTP/1.0" 200 108098
+[14/Jun/2024 01:01:42] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[14/Jun/2024 01:01:43] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[14/Jun/2024 01:01:43] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[14/Jun/2024 01:01:43] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[14/Jun/2024 01:01:43] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[14/Jun/2024 01:01:43] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[14/Jun/2024 01:01:43] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[14/Jun/2024 01:01:43] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[14/Jun/2024 01:01:43] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[14/Jun/2024 01:01:43] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[14/Jun/2024 01:01:43] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[14/Jun/2024 01:01:43] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[14/Jun/2024 01:01:44] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[14/Jun/2024 01:01:44] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[14/Jun/2024 01:01:44] "GET /static/css/webfonts/fa-regular-400.woff2 HTTP/1.0" 404 1863
+[14/Jun/2024 01:01:44] "GET /static/css/webfonts/fa-solid-900.woff2 HTTP/1.0" 404 1857
+[14/Jun/2024 01:01:44] "GET /static/css/webfonts/fa-regular-400.ttf HTTP/1.0" 404 1857
+[14/Jun/2024 01:01:44] "GET /static/css/webfonts/fa-solid-900.ttf HTTP/1.0" 404 1851
+Not Found: /favicon.ico
+[14/Jun/2024 01:01:46] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[14/Jun/2024 04:15:43] "HEAD / HTTP/1.0" 200 0
+test
+[14/Jun/2024 09:36:37] "GET / HTTP/1.0" 200 108098
+test
+[14/Jun/2024 09:36:38] "GET / HTTP/1.0" 200 108098
+test
+[14/Jun/2024 13:29:02] "GET / HTTP/1.0" 200 108098
+test
+[14/Jun/2024 13:49:09] "GET / HTTP/1.0" 200 108098
+Invalid HTTP_HOST header: 'cpanel.srv510927.hstgr.cloud'. You may need to add 'cpanel.srv510927.hstgr.cloud' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/usr/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/usr/lib/python3.8/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'cpanel.srv510927.hstgr.cloud'. You may need to add 'cpanel.srv510927.hstgr.cloud' to ALLOWED_HOSTS.
+Bad Request: /
+[14/Jun/2024 17:40:42] "GET / HTTP/1.1" 400 64587
+test
+[14/Jun/2024 19:54:11] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[14/Jun/2024 19:54:12] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[14/Jun/2024 19:54:12] "GET / HTTP/1.0" 200 108098
+test
+[14/Jun/2024 19:54:12] "GET / HTTP/1.0" 200 108098
+test
+[14/Jun/2024 19:54:12] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[14/Jun/2024 19:54:13] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[14/Jun/2024 19:54:13] "GET / HTTP/1.0" 200 108098
+test
+[14/Jun/2024 21:48:00] "GET / HTTP/1.0" 200 108098
+[14/Jun/2024 22:54:34] code 400, message Bad request version ('À\x14À')
+[14/Jun/2024 22:54:34] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jun/2024 22:54:35] code 400, message Bad request version ('À\x14À')
+[14/Jun/2024 22:54:35] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[14/Jun/2024 22:54:35] "GET / HTTP/1.1" 200 108098
+[14/Jun/2024 22:54:37] code 400, message Bad request version ('À\x14À')
+[14/Jun/2024 22:54:37] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jun/2024 22:54:37] "GET /login HTTP/1.1" 301 0
+test
+[15/Jun/2024 02:40:08] "GET / HTTP/1.0" 200 108098
+Invalid HTTP_HOST header: 'autoconfig.srv510927.hstgr.cloud'. You may need to add 'autoconfig.srv510927.hstgr.cloud' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/usr/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/usr/lib/python3.8/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'autoconfig.srv510927.hstgr.cloud'. You may need to add 'autoconfig.srv510927.hstgr.cloud' to ALLOWED_HOSTS.
+Bad Request: /
+[15/Jun/2024 03:31:44] "GET / HTTP/1.1" 400 64647
+[15/Jun/2024 04:00:03] code 400, message Bad request syntax ('MGLNDD_93.127.199.206_8000')
+[15/Jun/2024 04:00:03] "MGLNDD_93.127.199.206_8000" 400 -
+test
+[15/Jun/2024 04:15:43] "HEAD / HTTP/1.0" 200 0
+test
+[15/Jun/2024 04:31:17] "GET / HTTP/1.0" 200 108098
+[15/Jun/2024 04:31:17] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[15/Jun/2024 04:31:18] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[15/Jun/2024 04:31:18] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[15/Jun/2024 04:31:18] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[15/Jun/2024 04:31:18] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[15/Jun/2024 04:31:18] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[15/Jun/2024 04:31:18] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[15/Jun/2024 04:31:18] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[15/Jun/2024 04:31:18] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[15/Jun/2024 04:31:18] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[15/Jun/2024 04:31:18] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[15/Jun/2024 04:31:19] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[15/Jun/2024 04:31:19] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[15/Jun/2024 04:31:19] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[15/Jun/2024 04:31:19] "GET /static/css/webfonts/fa-solid-900.woff2 HTTP/1.0" 404 1857
+[15/Jun/2024 04:31:19] "GET /static/css/webfonts/fa-regular-400.woff2 HTTP/1.0" 404 1863
+[15/Jun/2024 04:31:19] "GET /static/css/webfonts/fa-solid-900.ttf HTTP/1.0" 404 1851
+[15/Jun/2024 04:31:19] "GET /static/css/webfonts/fa-regular-400.ttf HTTP/1.0" 404 1857
+Not Found: /favicon.ico
+[15/Jun/2024 04:31:21] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[15/Jun/2024 04:31:23] "GET / HTTP/1.0" 200 108098
+[15/Jun/2024 04:31:23] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[15/Jun/2024 04:31:23] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[15/Jun/2024 04:31:23] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[15/Jun/2024 04:31:23] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[15/Jun/2024 04:31:23] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[15/Jun/2024 04:31:23] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[15/Jun/2024 04:31:24] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[15/Jun/2024 04:31:24] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[15/Jun/2024 04:31:24] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[15/Jun/2024 04:31:24] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[15/Jun/2024 04:31:24] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[15/Jun/2024 04:31:24] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[15/Jun/2024 04:31:24] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[15/Jun/2024 04:31:24] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[15/Jun/2024 04:31:24] "GET /static/css/webfonts/fa-solid-900.woff2 HTTP/1.0" 404 1857
+[15/Jun/2024 04:31:24] "GET /static/css/webfonts/fa-regular-400.woff2 HTTP/1.0" 404 1863
+[15/Jun/2024 04:31:25] "GET /static/css/webfonts/fa-solid-900.ttf HTTP/1.0" 404 1851
+[15/Jun/2024 04:31:25] "GET /static/css/webfonts/fa-regular-400.ttf HTTP/1.0" 404 1857
+Not Found: /favicon.ico
+[15/Jun/2024 04:31:27] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[15/Jun/2024 07:40:30] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[15/Jun/2024 07:40:31] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[15/Jun/2024 07:40:32] "GET / HTTP/1.0" 200 108098
+test
+[15/Jun/2024 07:40:32] "GET / HTTP/1.0" 200 108098
+test
+[15/Jun/2024 07:40:32] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[15/Jun/2024 07:40:32] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[15/Jun/2024 07:40:32] "GET / HTTP/1.0" 200 108098
+Not Found: /.env
+[15/Jun/2024 08:48:08] "GET /.env HTTP/1.1" 404 8052
+test
+[15/Jun/2024 10:06:43] "GET / HTTP/1.0" 200 108098
+test
+[15/Jun/2024 10:14:38] "GET / HTTP/1.0" 200 108098
+test
+[15/Jun/2024 10:14:46] "GET / HTTP/1.0" 200 108098
+[15/Jun/2024 10:14:47] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[15/Jun/2024 10:14:47] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[15/Jun/2024 10:14:47] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[15/Jun/2024 10:14:47] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[15/Jun/2024 10:14:47] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[15/Jun/2024 10:14:47] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[15/Jun/2024 10:14:48] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[15/Jun/2024 10:14:48] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[15/Jun/2024 10:14:48] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[15/Jun/2024 10:14:48] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[15/Jun/2024 10:14:48] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[15/Jun/2024 10:14:48] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[15/Jun/2024 10:14:49] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[15/Jun/2024 10:14:49] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+test
+[15/Jun/2024 11:14:59] "GET / HTTP/1.0" 200 108098
+[15/Jun/2024 11:58:41] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[15/Jun/2024 11:58:41] "    c                           " 400 -
+test
+[15/Jun/2024 13:21:36] "GET / HTTP/1.0" 200 108098
+[15/Jun/2024 13:21:36] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[15/Jun/2024 13:21:36] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[15/Jun/2024 13:21:36] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[15/Jun/2024 13:21:36] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[15/Jun/2024 13:21:36] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[15/Jun/2024 13:21:36] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[15/Jun/2024 13:21:36] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[15/Jun/2024 13:21:36] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[15/Jun/2024 13:21:37] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[15/Jun/2024 13:21:37] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[15/Jun/2024 13:21:37] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[15/Jun/2024 13:21:37] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[15/Jun/2024 13:21:37] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[15/Jun/2024 13:21:37] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+Not Found: /favicon.ico
+[15/Jun/2024 13:21:39] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[15/Jun/2024 13:45:32] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[15/Jun/2024 13:45:33] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[15/Jun/2024 13:46:37] "GET / HTTP/1.0" 200 108098
+[15/Jun/2024 13:46:37] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[15/Jun/2024 13:46:37] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[15/Jun/2024 13:46:37] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[15/Jun/2024 13:46:37] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[15/Jun/2024 13:46:37] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[15/Jun/2024 13:46:37] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[15/Jun/2024 13:46:37] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[15/Jun/2024 13:46:37] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[15/Jun/2024 13:46:37] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[15/Jun/2024 13:46:37] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[15/Jun/2024 13:46:37] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[15/Jun/2024 13:46:37] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[15/Jun/2024 13:46:37] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[15/Jun/2024 13:46:37] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+Not Found: /favicon.ico
+[15/Jun/2024 13:46:38] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[15/Jun/2024 15:22:39] "GET / HTTP/1.0" 200 108098
+Not Found: /.env
+[15/Jun/2024 15:45:28] "GET /.env HTTP/1.1" 404 8052
+[15/Jun/2024 16:00:49] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+[15/Jun/2024 16:00:49] "  *%à     Cookie: mstshash=Test" 400 -
+Not Found: /.env
+[15/Jun/2024 17:11:22] "GET /.env HTTP/1.1" 404 8052
+[15/Jun/2024 20:37:27] code 400, message Bad request syntax ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03¯ÔÊô`¦ìU\x7f*öö')
+[15/Jun/2024 20:37:27] You're accessing the development server over HTTPS, but it only supports HTTP.
+[15/Jun/2024 20:37:28] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x94\x81IÉ´E\x83|öLÌ>\x89`JyÁþ÷Òî\x8ck]\x91YàY\x07¢ðú\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[15/Jun/2024 20:37:28] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[15/Jun/2024 20:37:29] "GET / HTTP/1.1" 200 108098
+[15/Jun/2024 20:37:30] code 400, message Bad request version ('À\x14À')
+[15/Jun/2024 20:37:30] You're accessing the development server over HTTPS, but it only supports HTTP.
+[15/Jun/2024 20:37:30] "GET /login HTTP/1.1" 301 0
+test
+[15/Jun/2024 22:39:26] "GET / HTTP/1.1" 200 108098
+[15/Jun/2024 22:39:28,690] - Broken pipe from ('162.142.125.36', 41220)
+[15/Jun/2024 22:39:29] code 505, message Invalid HTTP version (2.0)
+[15/Jun/2024 22:39:29] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[15/Jun/2024 22:39:32] "GET /favicon.ico HTTP/1.1" 404 8073
+test
+[15/Jun/2024 23:10:03] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[15/Jun/2024 23:10:05] "GET /favicon.ico HTTP/1.0" 404 8073
+[16/Jun/2024 01:53:15] code 400, message Bad request syntax ('MGLNDD_93.127.199.206_8000')
+[16/Jun/2024 01:53:15] "MGLNDD_93.127.199.206_8000" 400 -
+test
+[16/Jun/2024 06:38:20] "HEAD / HTTP/1.0" 200 0
+test
+[16/Jun/2024 09:25:20] "GET / HTTP/1.0" 200 108098
+Not Found: /wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:21] "GET /wp-includes/wlwmanifest.xml HTTP/1.0" 404 8121
+Not Found: /xmlrpc.php
+[16/Jun/2024 09:25:22] "GET /xmlrpc.php?rsd HTTP/1.0" 404 8074
+test
+[16/Jun/2024 09:25:22] "GET / HTTP/1.0" 200 108098
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:22] "GET /blog/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /web/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:22] "GET /web/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:23] "GET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8151
+Not Found: /website/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:23] "GET /website/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8145
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:23] "GET /wp/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8130
+Not Found: /news/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:23] "GET /news/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2020/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:24] "GET /2020/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:24] "GET /2019/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:24] "GET /shop/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:24] "GET /wp1/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /test/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:25] "GET /test/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:25] "GET /wp2/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /site/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:25] "GET /site/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:25] "GET /cms/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:25:26] "GET /sito/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+test
+[16/Jun/2024 09:46:20] "GET / HTTP/1.0" 200 108098
+Not Found: /wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:20] "GET /wp-includes/wlwmanifest.xml HTTP/1.0" 404 8121
+Not Found: /xmlrpc.php
+[16/Jun/2024 09:46:20] "GET /xmlrpc.php?rsd HTTP/1.0" 404 8074
+test
+[16/Jun/2024 09:46:20] "GET / HTTP/1.0" 200 108098
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:21] "GET /blog/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /web/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:21] "GET /web/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:21] "GET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8151
+Not Found: /website/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:21] "GET /website/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8145
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:21] "GET /wp/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8130
+Not Found: /news/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:21] "GET /news/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2018/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:22] "GET /2018/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:22] "GET /2019/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:22] "GET /shop/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:22] "GET /wp1/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /test/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:22] "GET /test/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /media/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:22] "GET /media/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8343
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:23] "GET /wp2/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /site/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:23] "GET /site/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:23] "GET /cms/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[16/Jun/2024 09:46:23] "GET /sito/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+test
+[16/Jun/2024 10:11:09] "GET / HTTP/1.0" 200 108098
+Not Found: /wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:10] "GET /wp-includes/wlwmanifest.xml HTTP/1.0" 404 8121
+Not Found: /xmlrpc.php
+[16/Jun/2024 10:11:10] "GET /xmlrpc.php?rsd HTTP/1.0" 404 8074
+test
+[16/Jun/2024 10:11:10] "GET / HTTP/1.0" 200 108098
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:11] "GET /blog/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /web/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:11] "GET /web/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:11] "GET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8151
+Not Found: /website/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:12] "GET /website/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8145
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:12] "GET /wp/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8130
+Not Found: /news/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:12] "GET /news/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2020/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:12] "GET /2020/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:13] "GET /2019/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:13] "GET /shop/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:13] "GET /wp1/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /test/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:13] "GET /test/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:14] "GET /wp2/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /site/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:14] "GET /site/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:14] "GET /cms/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:11:14] "GET /sito/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+test
+[16/Jun/2024 10:17:26] "GET / HTTP/1.0" 200 108098
+test
+[16/Jun/2024 10:17:28] "GET / HTTP/1.0" 200 108098
+test
+[16/Jun/2024 10:17:33] "GET / HTTP/1.0" 200 108098
+[16/Jun/2024 10:17:34] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[16/Jun/2024 10:17:34] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[16/Jun/2024 10:17:34] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[16/Jun/2024 10:17:34] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[16/Jun/2024 10:17:34] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[16/Jun/2024 10:17:34] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[16/Jun/2024 10:17:35] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[16/Jun/2024 10:17:35] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[16/Jun/2024 10:17:35] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[16/Jun/2024 10:17:35] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[16/Jun/2024 10:17:35] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[16/Jun/2024 10:17:35] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[16/Jun/2024 10:17:36] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[16/Jun/2024 10:17:36] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+test
+[16/Jun/2024 10:23:26] "GET / HTTP/1.0" 200 108098
+Not Found: /wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:27] "GET /wp-includes/wlwmanifest.xml HTTP/1.0" 404 8121
+Not Found: /xmlrpc.php
+[16/Jun/2024 10:23:27] "GET /xmlrpc.php?rsd HTTP/1.0" 404 8074
+test
+[16/Jun/2024 10:23:27] "GET / HTTP/1.0" 200 108098
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:27] "GET /blog/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /web/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:28] "GET /web/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:28] "GET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8151
+Not Found: /website/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:28] "GET /website/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8145
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:28] "GET /wp/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8130
+Not Found: /news/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:29] "GET /news/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2020/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:29] "GET /2020/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:29] "GET /2019/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:29] "GET /shop/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:29] "GET /wp1/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /test/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:30] "GET /test/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:30] "GET /wp2/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /site/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:30] "GET /site/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:31] "GET /cms/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:23:31] "GET /sito/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+test
+[16/Jun/2024 10:39:41] "GET / HTTP/1.0" 200 108098
+Not Found: /wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:42] "GET /wp-includes/wlwmanifest.xml HTTP/1.0" 404 8121
+Not Found: /xmlrpc.php
+[16/Jun/2024 10:39:42] "GET /xmlrpc.php?rsd HTTP/1.0" 404 8074
+test
+[16/Jun/2024 10:39:42] "GET / HTTP/1.0" 200 108098
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:42] "GET /blog/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /web/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:43] "GET /web/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:43] "GET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8151
+Not Found: /website/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:43] "GET /website/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8145
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:43] "GET /wp/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8130
+Not Found: /news/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:43] "GET /news/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2018/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:43] "GET /2018/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:44] "GET /2019/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:44] "GET /shop/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:44] "GET /wp1/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /test/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:44] "GET /test/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /media/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:44] "GET /media/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8343
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:44] "GET /wp2/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /site/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:44] "GET /site/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:45] "GET /cms/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:39:45] "GET /sito/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+test
+[16/Jun/2024 10:54:49] "GET / HTTP/1.0" 200 108098
+Not Found: /wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:50] "GET /wp-includes/wlwmanifest.xml HTTP/1.0" 404 8121
+Not Found: /xmlrpc.php
+[16/Jun/2024 10:54:50] "GET /xmlrpc.php?rsd HTTP/1.0" 404 8074
+test
+[16/Jun/2024 10:54:50] "GET / HTTP/1.0" 200 108098
+Not Found: /blog/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:51] "GET /blog/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /web/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:51] "GET /web/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:51] "GET /wordpress/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8151
+Not Found: /website/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:51] "GET /website/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8145
+Not Found: /wp/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:51] "GET /wp/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8130
+Not Found: /news/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:52] "GET /news/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2018/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:52] "GET /2018/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /2019/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:52] "GET /2019/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /shop/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:52] "GET /shop/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:52] "GET /wp1/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /test/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:53] "GET /test/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /media/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:53] "GET /media/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8343
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:53] "GET /wp2/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /site/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:53] "GET /site/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+Not Found: /cms/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:53] "GET /cms/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8133
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[16/Jun/2024 10:54:53] "GET /sito/wp-includes/wlwmanifest.xml HTTP/1.0" 404 8136
+[16/Jun/2024 12:23:57] code 400, message Bad request version ('À\x14À')
+[16/Jun/2024 12:23:57] You're accessing the development server over HTTPS, but it only supports HTTP.
+[16/Jun/2024 12:23:58] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\xad\x07·¾ël]°ùpóMk¾õÜ\x82\x14\x00Öä\x1a]RPU\x05mOk\x92\x97\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[16/Jun/2024 12:23:58] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[16/Jun/2024 12:23:58] "GET / HTTP/1.1" 200 108098
+[16/Jun/2024 12:23:59] code 400, message Bad request version ('À\x14À')
+[16/Jun/2024 12:23:59] You're accessing the development server over HTTPS, but it only supports HTTP.
+[16/Jun/2024 12:23:59] "GET /login HTTP/1.1" 301 0
+test
+[16/Jun/2024 12:54:15] "GET / HTTP/1.0" 200 108098
+test
+[16/Jun/2024 22:46:30] "GET / HTTP/1.1" 200 108098
+Invalid HTTP_HOST header: 'srv510927.hstgr.cloud:8000'. You may need to add 'srv510927.hstgr.cloud' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/usr/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/usr/lib/python3.8/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'srv510927.hstgr.cloud:8000'. You may need to add 'srv510927.hstgr.cloud' to ALLOWED_HOSTS.
+Bad Request: /
+[16/Jun/2024 22:48:14] "GET / HTTP/1.0" 400 63620
+test
+[16/Jun/2024 23:26:53] "GET / HTTP/1.0" 200 108098
+[17/Jun/2024 00:14:59] code 400, message Bad request syntax ('MGLNDD_93.127.199.206_8000')
+[17/Jun/2024 00:14:59] "MGLNDD_93.127.199.206_8000" 400 -
+test
+[17/Jun/2024 03:30:48] "GET / HTTP/1.0" 200 108098
+[17/Jun/2024 03:31:31,240] - Broken pipe from ('167.94.138.118', 59838)
+test
+[17/Jun/2024 03:31:36] "GET / HTTP/1.1" 200 108098
+[17/Jun/2024 03:31:36,946] - Broken pipe from ('167.94.138.118', 41090)
+test
+[17/Jun/2024 03:31:42] "GET / HTTP/1.1" 200 108098
+[17/Jun/2024 03:31:43,206] - Broken pipe from ('167.94.138.118', 49312)
+[17/Jun/2024 03:31:43] code 505, message Invalid HTTP version (2.0)
+[17/Jun/2024 03:31:43] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[17/Jun/2024 03:31:48] "GET /favicon.ico HTTP/1.1" 404 8073
+test
+[17/Jun/2024 04:49:08] "GET / HTTP/1.0" 200 108098
+Not Found: /cdn.js
+[17/Jun/2024 04:49:29] "GET /cdn.js HTTP/1.0" 404 8058
+Not Found: /bootstrap.bundle.min.js
+[17/Jun/2024 04:49:29] "GET /bootstrap.bundle.min.js HTTP/1.0" 404 8109
+[17/Jun/2024 04:49:31] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+Not Found: /cdn.js
+[17/Jun/2024 04:49:51] "GET /cdn.js HTTP/1.0" 404 8058
+[17/Jun/2024 04:49:51] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+Not Found: /bootstrap.bundle.min.js
+[17/Jun/2024 04:49:51] "GET /bootstrap.bundle.min.js HTTP/1.0" 404 8109
+[17/Jun/2024 04:50:15] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+Not Found: /cdn.js
+[17/Jun/2024 04:50:15] "GET /cdn.js HTTP/1.0" 404 8058
+Not Found: /bootstrap.bundle.min.js
+[17/Jun/2024 04:50:19] "GET /bootstrap.bundle.min.js HTTP/1.0" 404 8109
+Not Found: /bootstrap.bundle.min.js
+[17/Jun/2024 04:50:38] "GET /bootstrap.bundle.min.js HTTP/1.0" 404 8109
+[17/Jun/2024 04:50:38] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+Not Found: /cdn.js
+[17/Jun/2024 04:50:40] "GET /cdn.js HTTP/1.0" 404 8058
+Not Found: /robots.txt
+[17/Jun/2024 06:00:23] "GET /robots.txt HTTP/1.0" 404 8070
+test
+[17/Jun/2024 06:00:24] "HEAD / HTTP/1.0" 200 0
+Not Found: /robots.txt
+[17/Jun/2024 06:00:26] "GET /robots.txt HTTP/1.0" 404 8070
+test
+[17/Jun/2024 06:00:27] "GET / HTTP/1.0" 200 108098
+[17/Jun/2024 06:00:27] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[17/Jun/2024 06:00:28] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[17/Jun/2024 06:00:29] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[17/Jun/2024 06:00:29] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[17/Jun/2024 06:00:29] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[17/Jun/2024 06:00:29] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[17/Jun/2024 06:00:32] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+test
+[17/Jun/2024 06:38:20] "HEAD / HTTP/1.0" 200 0
+test
+[17/Jun/2024 08:50:49] "GET / HTTP/1.0" 200 108098
+test
+[17/Jun/2024 10:03:20] "GET / HTTP/1.0" 200 108098
+test
+[17/Jun/2024 10:03:22] "GET / HTTP/1.0" 200 108098
+test
+[17/Jun/2024 10:03:29] "GET / HTTP/1.0" 200 108098
+[17/Jun/2024 10:03:29] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[17/Jun/2024 10:03:29] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[17/Jun/2024 10:03:30] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[17/Jun/2024 10:03:30] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[17/Jun/2024 10:03:30] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[17/Jun/2024 10:03:30] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[17/Jun/2024 10:03:31] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[17/Jun/2024 10:03:31] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[17/Jun/2024 10:03:31] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[17/Jun/2024 10:03:31] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[17/Jun/2024 10:03:31] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[17/Jun/2024 10:03:31] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[17/Jun/2024 10:03:32] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[17/Jun/2024 10:03:32] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+test
+[17/Jun/2024 10:49:33] "GET / HTTP/1.0" 200 108098
+test
+[17/Jun/2024 10:49:53] "GET / HTTP/1.0" 200 108098
+test
+[17/Jun/2024 10:50:16] "GET / HTTP/1.0" 200 108098
+[17/Jun/2024 10:50:16] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[17/Jun/2024 10:50:16] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[17/Jun/2024 10:50:16] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[17/Jun/2024 10:50:16] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[17/Jun/2024 10:50:16] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[17/Jun/2024 10:50:16] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[17/Jun/2024 10:50:17] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[17/Jun/2024 10:50:17] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[17/Jun/2024 10:50:17] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[17/Jun/2024 10:50:17] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[17/Jun/2024 10:50:17] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[17/Jun/2024 10:50:17] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[17/Jun/2024 10:50:17] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[17/Jun/2024 10:50:18] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+test
+[17/Jun/2024 10:50:30] "GET / HTTP/1.0" 200 108098
+test
+[17/Jun/2024 11:18:11] "GET / HTTP/1.0" 200 108098
+[17/Jun/2024 11:18:11] "GET /static/css/user/bootstrap_style.css HTTP/1.0" 200 232947
+[17/Jun/2024 11:18:11] "GET /static/css/user/mobile_view.css HTTP/1.0" 200 2626
+[17/Jun/2024 11:18:11] "GET /static/css/user/user_base.css HTTP/1.0" 200 2600
+[17/Jun/2024 11:18:11] "GET /static/css/user/user_home_page.css HTTP/1.0" 200 2875
+[17/Jun/2024 11:18:11] "GET /static/css/user/fontawesome.css HTTP/1.0" 200 102028
+[17/Jun/2024 11:18:11] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+[17/Jun/2024 11:18:11] "GET /static/images/user/caorosel_bg.png HTTP/1.0" 200 1703857
+[17/Jun/2024 11:18:11] "GET /static/images/user/car-bg-two.png HTTP/1.0" 200 1612149
+[17/Jun/2024 11:18:11] "GET /media/course_cover_images/cover_image_four_yfBKIeH.jpeg HTTP/1.0" 200 178751
+[17/Jun/2024 11:18:11] "GET /media/course_cover_images/cover_image_three_KxwiEHl.jpeg HTTP/1.0" 200 260691
+[17/Jun/2024 11:18:11] "GET /static/images/user/form-logo.svg HTTP/1.0" 200 676223
+[17/Jun/2024 11:18:11] "GET /media/course_cover_images/cover_image_two_qAokm6o.jpeg HTTP/1.0" 200 229820
+[17/Jun/2024 11:18:11] "GET /media/course_cover_images/cover_image1_AplCpFw.jpeg HTTP/1.0" 200 267889
+[17/Jun/2024 11:18:11] "GET /media/course_cover_images/_1cb05acd-36b8-448e-a117-b7139e888006_DrbRAmV.jpeg HTTP/1.0" 200 143676
+[17/Jun/2024 11:18:11] "GET /static/js/bootstrap.js HTTP/1.0" 200 80663
+Not Found: /favicon.ico
+[17/Jun/2024 11:18:12] "GET /favicon.ico HTTP/1.0" 404 8073
+[17/Jun/2024 11:18:13] "GET /about_us/ HTTP/1.0" 200 12393
+[17/Jun/2024 11:18:13] "GET /static/css/user/user_login.css HTTP/1.0" 200 3644
+[17/Jun/2024 11:18:13] "GET /static/css/aloader.css HTTP/1.0" 200 273
+[17/Jun/2024 11:18:13] "GET /static/css/user/contact_us.css HTTP/1.0" 200 1246
+[17/Jun/2024 11:18:13] "GET /static/css/user/about_us.css HTTP/1.0" 200 287
+[17/Jun/2024 11:18:14] "GET /static/images/user/heart.png HTTP/1.0" 200 4532
+[17/Jun/2024 11:18:14] "GET /static/images/user/plus.png HTTP/1.0" 200 6521
+[17/Jun/2024 11:18:14] "GET /static/images/user/phone-call.svg HTTP/1.0" 200 15073
+[17/Jun/2024 11:18:14] "GET /static/images/user/chat.svg HTTP/1.0" 200 2419
+[17/Jun/2024 11:18:14] "GET /static/images/user/about-us.png HTTP/1.0" 200 1063902
+[17/Jun/2024 11:18:14] "GET /static/images/user/about1.png HTTP/1.0" 200 405992
+[17/Jun/2024 11:18:14] "GET /static/images/user/Vector.svg HTTP/1.0" 200 1028
+[17/Jun/2024 11:18:14] "GET /static/images/user/fb.svg HTTP/1.0" 200 551
+[17/Jun/2024 11:18:14] "GET /static/images/user/linkedin.svg HTTP/1.0" 200 2556
+[17/Jun/2024 11:18:14] "GET /static/images/user/twitter.svg HTTP/1.0" 200 1062
+[17/Jun/2024 11:18:14] "GET /static/images/user/instagram.svg HTTP/1.0" 200 3172
+[17/Jun/2024 11:18:14] "GET /static/images/user/icon_account.svg HTTP/1.0" 200 892
+[17/Jun/2024 11:18:14] "GET /static/images/user/icon_Email.svg HTTP/1.0" 200 758
+[17/Jun/2024 11:18:15] "GET /login/ HTTP/1.0" 200 4450
+[17/Jun/2024 11:18:15] "GET /static/images/user/brand.png HTTP/1.0" 200 7622
+[17/Jun/2024 11:18:15] "GET /static/images/user/user_login_bg.png HTTP/1.0" 200 255200
+Not Found: /.env
+[17/Jun/2024 12:54:45] "GET /.env HTTP/1.1" 404 8052
+[17/Jun/2024 16:17:43] code 400, message Bad request syntax ('MGLNDD_93.127.199.206_8000')
+[17/Jun/2024 16:17:43] "MGLNDD_93.127.199.206_8000" 400 -
+[17/Jun/2024 16:31:15,998] - Broken pipe from ('167.94.146.51', 43786)
+test
+test
+[17/Jun/2024 16:31:22] "GET / HTTP/1.1" 200 108098
+[17/Jun/2024 16:31:22,746] - Broken pipe from ('167.94.146.51', 54404)
+[17/Jun/2024 16:31:22] code 505, message Invalid HTTP version (2.0)
+[17/Jun/2024 16:31:22] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[17/Jun/2024 16:31:23] "GET /favicon.ico HTTP/1.1" 404 8073
+[18/Jun/2024 03:14:33] code 400, message Bad request version ('À\x14À')
+[18/Jun/2024 03:14:33] You're accessing the development server over HTTPS, but it only supports HTTP.
+[18/Jun/2024 03:14:33] code 400, message Bad request version ('À\x14À')
+[18/Jun/2024 03:14:33] You're accessing the development server over HTTPS, but it only supports HTTP.
+test
+[18/Jun/2024 03:14:34] "GET / HTTP/1.1" 200 108098
+[18/Jun/2024 03:14:35] code 400, message Bad request version ('À\x14À')
+[18/Jun/2024 03:14:35] You're accessing the development server over HTTPS, but it only supports HTTP.
+[18/Jun/2024 03:14:36] "GET /login HTTP/1.1" 301 0
+test
+[18/Jun/2024 04:40:28] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[18/Jun/2024 04:40:29] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[18/Jun/2024 04:40:29] "GET / HTTP/1.0" 200 108098
+test
+[18/Jun/2024 04:40:29] "GET / HTTP/1.0" 200 108098
+Not Found: /favicon.ico
+[18/Jun/2024 04:40:29] "GET /favicon.ico HTTP/1.0" 404 8073
+test
+[18/Jun/2024 04:40:29] "GET / HTTP/1.0" 200 108098
+test
+[18/Jun/2024 06:38:20] "HEAD / HTTP/1.0" 200 0
+test
+[18/Jun/2024 08:50:53] "GET / HTTP/1.0" 200 108098

@@ -1,0 +1,149 @@
+{% extends "admin/change_form.html" %}
+
+{% load i18n static courses_admin_helpers %}
+
+{% block title %}
+Edit Question
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/assesment.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+{% include "admin/custom_nav.html" %}
+
+<div class="container">
+    <!-- Content here -->
+    <div class="row mt-5">
+        <div class="col-12 col-offset-4">
+            <p class="h5 text-center">{{original.module.course.course_title}} >> {{original.module.module_title}}</p>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <p class="h5">Edit Assesement Question</p>
+        </div>
+        <div class="col-3">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card card-body rounded-4 p-4">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="module" value="{{original.module.id}}">
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <label class="form-label head-label">Question</label>
+                            <input name="question_text" type="text" class="form-control" placeholder="Enter Question" value="{% if request.method == 'POST' %}{{request.POST.question_text}}{% else %}{{original.question_text}}{% endif %}">
+                            <span class="text-danger">{{adminform.form.errors.question_text.0}}</span>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="form-label sub-head">Add Options</label>
+                            <span class="text-danger"><br>{{adminform.form.errors.answer.1}}</span>
+                            <div id="radioContainer" class="col-8 d-flex flex-column mt-2">
+                                {% if request.method == 'POST' %}
+                                {% for choice in request.POST|get_list:'choices' %}
+                                <label class='mb-4 d-flex'>
+                                    <input class='me-2' type='radio' name='answer' value='{{choice}}' {% if choice == request.POST.answer %}{{'checked'}}{% endif %}> {{choice}} <button type="button" class="btn-close align-bottom closeOptBtn ms-auto" aria-label="Close"></button>
+                                    <input type="hidden" name="choices" value="{{choice}}">
+                                </label>
+                                {% endfor %}
+                                {% else %}
+                                {% for choice in original.choice_set.all %}
+                                <label class='mb-4 d-flex'>
+                                    <input class='me-2' type='radio' name='answer' value='{{choice.choice_text}}' {% if choice.is_correct_answer == True %}{{'checked'}}{% endif %}> {{choice.choice_text}} <button type="button" class="btn-close align-bottom closeOptBtn ms-auto" aria-label="Close"></button>
+                                    <input type="hidden" name="choices" value="{{choice.choice_text}}">
+                                </label>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <input type="text" class="form-control" id="optionInput" placeholder="Enter Option">
+                        </div>
+                        <div class="col-4">
+                            <button type="button" id="addButton" class="btn">+ Add Option</button>
+                        </div>
+                    </div>
+                    <span class="text-danger">{{adminform.form.errors.choices.0}}</span>
+                    <div class="row mt-3 p-2">
+                        <div class="col-12">
+                            <hr class="hr hr-blurry" />
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <!-- <button type="button" class="btn delete-btn"><i class="fas fa-trash"></i> Delete</button> -->
+                            <a href="{% url 'admin:list_module_questions' original.module.id %}" class="btn ps-0 mb-1 "><i class="fa-solid fa-less-than me-2"></i> Back
+                            </a>
+                            <button type="submit" class="btn btn-outline-dark float-end">Submit</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+    <script type="text/javascript">
+        $(function(){
+            $("#addButton").click(function () {
+                // Get the user input value
+                var inputValue = $("#optionInput").val().trim();
+
+                if (inputValue !== "") {
+                    var label = $("<label class='mb-4 d-flex'>");
+                    label.append(`<input class='me-2' type='radio' name='answer' value='${inputValue}'> ${inputValue} <button type="button" class="btn-close align-bottom closeOptBtn ms-auto" aria-label="Close"></button>`);
+                    label.append(`<input type="hidden" name="choices" value="${inputValue}">`);
+                    $("#radioContainer").append(label);
+                    // Clear the input field after adding the radio button
+                    $("#optionInput").val("");
+                } else {
+                    alert("Please enter a value for the option.");
+                }
+            });
+
+            $('body').on('click', '.closeOptBtn', function(e){
+                $(this).parent('label').remove();
+            });
+        });
+    </script>
+{% endblock %}

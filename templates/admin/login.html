@@ -1,0 +1,115 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block title %}
+Medics Academy - Admin Login
+{% endblock %}
+
+
+{% block responsivestyle %}{% endblock %}
+
+{% block extrastyle %}{{ block.super }}
+{{ form.media }}
+{% endblock %}
+
+{% block styles %}
+<link href="{% static 'css/admin_login.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} login{% endblock %}
+
+{% block usertools %}{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_id %}{% endblock %}
+
+{% block footer %}{% endblock %}
+{% block content %}
+
+<div class="container-fluid custom-bg">
+  <div class="row">
+    <!-- left-section -->
+
+    <div class="col-md-6 left-components">
+      <img src="{% static 'images/brand.png' %}" alt="Brand Logo" class="img-fluid" />
+      <p class="text-start mt-4">
+        "Unlock Your Potential with Medics Academy Where <br />
+        Knowledge Meets Opportunity!"
+      </p>
+    </div>
+    <!-- right-section -->
+
+    <div class="col-md-6">
+
+      <div class="card w-75 p-5 mt-5 form-card">
+        <span class="d-block form">
+          <a href="#">
+            <img src="{% static 'images/form-logo.svg' %}" alt="Brand Logo" class="img-fluid w-50" />
+          </a>
+
+          <h2 class="brand-color mt-3">Welcome Back</h2>
+          <h6>Sign in to continue Medics Academy</h6>
+
+          <p class="h3 mt-5">Admin Login</p>
+
+          {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+          <span class="errornote">
+              {{ error }}
+          </span>
+          {% endfor %}
+          {% endif %}
+
+          <form action="{{ app_path }}" method="post" class=" rounded mx-auto mt-3">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{% if request.GET.next %}{{request.GET.next}}{% else %}{{ next }}{% endif %}">
+            <div class="mb-3">
+              <label for="InputEmail1" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control mb-1" id="InputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter Username" value="{{request.POST.username}}" />
+                {{ form.username.errors }}
+              <!-- <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div> -->
+            </div>
+            <div class="mb-3">
+              <label for="InputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control mb-1" id="InputPassword1" placeholder="Password" />
+              {{ form.password.errors }}
+            </div>
+            <div class="mb-3 d-flex justify-content-between align-items-center form-check w-100">
+              <div>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember_me" {% if request.POST.remember_me %}checked{% endif %}/>
+                <label class="form-check-label custom-label" for="exampleCheck1">Remember me</label>
+              </div>
+              <!-- <a class="link-offset-2 link-underline link-underline-opacity-0 ms-2" href="#">Forgot Password</a> -->
+            </div>
+            <button type="submit" class="btn btn-dark w-100 mt-2">
+              Submit
+            </button>
+
+            <!-- <div class="mb-3 mt-5 justify-content-between d-flex sign">
+            <p class="text-start">New to Medics Academy</p>
+            <a class="link-offset-2 link-underline link-underline-opacity-0" href="#">Create an account</a>
+          </div> -->
+          </form>
+        </span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block br_clear %}{% endblock %}

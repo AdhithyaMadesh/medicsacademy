@@ -1,0 +1,157 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n static admin_list courses_admin_helpers courses_admin_pagination tz %}
+
+{% block title %}
+Admin Log
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/admin_log.css' %}" />
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}admin_log_body{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid header">
+    <div class="container">
+        {% include "admin/custom_nav.html" %}
+    </div>
+</div>
+
+<div class="container admin_log_container">
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="log_title">Admin Log</div>
+        </div>
+       
+
+    </div>
+ 
+    <form method="get">
+        <div class="row mt-2 bb py-3" >
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <label for="from" class="mb-1">From Date</label>
+                <input type="date" class="form-control date_custom" id="from" name="from" value="{{ from_date }}">
+            </div>
+            <div class="col-md-2">
+                <label for="to" class="mb-1">To Date</label>
+                <input type="date" class="form-control date_custom" id="to" name="to" value="{{ to_date }}">
+            </div>
+            <div class="col-md-3">
+                <label for="user_id" class="mb-1">Users</label>
+                <select class="form-select select_custom" id="user_id" name="user_id">
+                    <option value="all" {% if not request.GET.user_id__id__exact %}selected{% endif %}>All Users</option>
+                    {% for user in users %}
+                        <option value="{{user.id}}" {% if request.GET.user_id__id__exact == user.id|title %}selected{% endif %}>{{user.username}} ({% if user.is_superuser %}superuser{% elif user.is_staff %}staff{% endif %})</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <div class="d-grid gap-2 mt-4 pt-1">
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <div class="table-responsive">
+        <table class="table" id="admin_log_table">
+            <thead>
+                <tr>
+                    <th>Date & Time </th>
+                    <th>Username </th>
+                    <th>Action</th>
+                    <th>Module Name</th>
+                    <th>Note</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in cl.result_list %}
+                <tr >
+                    <td>
+                        <span>
+                            {% timezone "Asia/Kolkata" %}
+                            {{log.action_time}}
+                            {% endtimezone %}
+                        </span>
+                    </td>
+                    <td><span>{{log.user.username}}</span> </td>
+                    <td>
+                        <span>
+                            {% if log.action_flag == 1 %}
+                            Added
+                            {% elif log.action_flag == 2 %}
+                            Changed
+                            {% elif log.action_flag == 3 %}
+                            Deleted
+                            {% endif %}
+                        </span>
+                    </td>
+                    <td><span>{{log.object_repr}}</span></td>
+                    <td><span>{% if log.get_change_message %}{{ log.get_change_message}}{% else %}-{% endif %}</span></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center">
+                        <span>
+                            No record found!
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% block pagination %}{% custom_pagination cl custom_data='' %}{% endblock %}
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="text/javascript">
+    $(function(){
+        var url = "{% url 'admin:admin_logentry_changelist' %}";
+        $('form').on('submit', function(e){
+            e.preventDefault();
+            var from = $('#from').val();
+            var to = $('#to').val();
+            var user_id = $('#user_id').val();
+            if(from!='' && to!=''){
+                url += '?action_time__gte='+from+'+00:00:00%2B05:30'+'&action_time__lte='+to+'+23:59:59%2B05:30';
+            }
+            if(user_id != 'all'){
+                url += '&user_id__id__exact='+user_id;
+            }
+            window.location.href = url;
+        });
+    });
+</script>
+{% endblock %}

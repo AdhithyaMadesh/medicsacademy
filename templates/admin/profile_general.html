@@ -1,0 +1,86 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+Staff Profile
+{% endblock %}
+
+
+{% block stylesheet %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/user_style.css' %}">
+{% endblock %}
+
+{% block responsivestyle %}{% endblock %}
+
+{% block dark-mode-vars %}{% endblock %}
+
+{% block coltype %}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block header %}{% endblock %}
+{% block skiptocontent %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+{% block content_subtitle %}{% endblock %}
+
+{% block content %}
+<div class="container-fluid header">
+    <div class="container">
+        {% include "admin/custom_nav.html" %}
+    </div>
+</div>
+
+<div class="container">
+    <div class="row p-3 ">
+        <div class="col-1">
+            <a href="/admin"><img src="{% static 'images/arrow.png' %}"></a>
+            
+        </div>
+        <div class="col-11">
+            <h4><span class="page_title">Profile</span></h4>
+        </div>
+    </div>
+    <div class="row p-3 ">
+        <div class="col-md-3">
+            {% include "admin/profile_sidebar.html" with active="general" %}
+        </div>
+        <div class="col-md-9">
+            <div class="card card-body rounded-4  p-3">
+                <!-- <div class="card-body"> -->
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-4">
+                            <img src="{% static 'images/profile_pic.png' %}">
+                        </div>
+                        <div class="col-lg-10 col-sm-8 pname">
+                            <h3>{{request.user.username}}</h3>
+                            <h5>{{request.user.email}}</h5>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-sm-6">
+                            <label>First Name</label><br>
+                            <input type="text"  class="form-control" value="{{request.user.first_name}}" disabled>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Last Name</label><br>
+                            <input type="text"  class="form-control" value="{{request.user.last_name}}" disabled>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% include "admin/custom_footer.html" %}
+{% endblock %}

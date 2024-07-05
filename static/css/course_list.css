@@ -1,0 +1,181 @@
+
+
+body {
+  margin-bottom: 48px;
+  /* background: var(--color-contentbg); */
+  
+}
+
+/* header-items */
+
+.search-lens {
+  width: 25px;
+  height: 25px;
+}
+
+.form-control {
+  border: unset;
+  border-radius: unset;
+}
+
+.form-select:focus,
+.nav-search:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: unset !important;
+}
+
+/* .search-control {
+  border: 0;
+  background: none;
+} */
+/* Calendar Date-Picker */
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: var(--brand-font);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: inherit;
+  border: unset;
+  color: #74899fa9 ;
+  
+  
+  
+  
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+  background-color:var(--brand-color)!important;
+  border-color: transparent;
+  color: #fff;
+}
+
+/* .btn:hover {
+  color: var(--bs-btn-hover-color);
+  background-color: var(--brand-color)!important;
+  border-color: unset;
+} */
+.daterangepicker .drp-buttons .btn  {
+  border: unset !important;
+  color: var(--bs-btn-hover-color)!important;
+  background-color: var(--color-black)!important;
+  color: #fff !important;
+}
+
+
+.daterangepicker .drp-selected {
+  display: inline-block;
+  font-size: 12px;
+  padding-right: 8px;
+  font-weight: 700;
+  font-family: var(--brand-font);
+  color: var(--brand-color);
+}
+
+.calendar{
+  outline: none;
+}
+
+#btn-months {
+  background: none !important;
+  border: none;
+  border-radius: 0%;
+  color: #74899f;
+  font-family: var(--brand-font);
+  font-size: 14px;
+  font-weight: 500;
+
+  border-left: 1px solid #c4cfdb;
+}
+
+#btn-months:hover {
+  color: var(--brand-color) !important;
+}
+
+/* #btn-months option:hover {
+  background-color: var(--brand-color) !important;
+} */
+
+.course-filter p {
+  font-family: var(--brand-font);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+
+  color: #ffffff;
+}
+.course-filter .btn {
+  border: #fff solid 1px !important;
+  color: #ffffff;
+}
+
+/* card-items */
+.courses-card {
+  position: relative;
+  margin-top: -40px;
+}
+
+.courses-row {
+  border-bottom: 1px solid #3ca1ba2d !important;
+}
+
+.btn-pagination {
+  color: var(--brand-color);
+  border: solid var(--brand-color) 1px;
+}
+
+.btn-page {
+  background-color: var(--brand-color) !important;
+  border: none;
+  color: #ffffff !important;
+}
+
+.course-active {
+  font-family: var(--brand-font);
+  /* font-size: 14px; */
+  font-weight: 500;
+
+  letter-spacing: 0px;
+  text-align: left;
+  color: var(--color-green);
+}
+
+.paused {
+  color: red;
+}
+
+.custom-badge {
+  background-color: var(--brand-color) !important;
+}
+
+.course-title {
+  color: var(--brand-color) !important;
+}
+
+.heading {
+  color: #74899f;
+}
+
+/* Bootstrap Customization */
+
+.active > .page-link,
+.page-link.active {
+  color: var(--brand-color);
+  background-color: unset;
+  border-color: var(--brand-color);
+}
+
+.dropdown-item:active {
+  background-color: var(--brand-color) !important;
+}
+
+.form-select {
+  border: unset;
+}
+
+/* unused-non-delete */
+
+/* .input-group{
+    } */

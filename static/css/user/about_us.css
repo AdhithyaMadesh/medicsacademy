@@ -1,0 +1,27 @@
+.heading-bg
+{
+  color: #3CA0BA;
+}
+.about-content
+{
+  line-height: 36px;
+  font-family: var(--brand-font);
+}
+.about-section2
+{
+  background-color: #E3EDEF;
+}
+.about-vision
+{
+  color: #3CA0BA;
+}
+.about-row
+{
+  background-color: #E3EDEF;
+}
+
+body {
+    margin-bottom: 55px !important;
+ 
+
+  }

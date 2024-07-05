@@ -1,0 +1,1117 @@
+[33mcommit dbd63a39d7e0520d2244080dfac66558ae7b5779[m[33m ([m[1;36mHEAD -> [m[1;32muser-feature[m[33m)[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Tue Nov 14 12:17:59 2023 +0530
+
+    user updates
+
+[33mcommit fd0b4c912bdcc9d15692a4ae1ca78b384d48008a[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Thu Nov 9 17:45:23 2023 +0530
+
+    course purchase confirm
+
+[33mcommit 103a913701c5052c417bfed1dd8d4fd0cb1e1e05[m
+Merge: be35b10 f1c1314
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Thu Nov 9 17:43:22 2023 +0530
+
+    resolve commits
+
+[33mcommit be35b10d59fc7427e2ddf968134218bbfb7a296a[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Thu Nov 9 17:36:57 2023 +0530
+
+    course purchase config
+
+[33mcommit f1c1314a237c20f64e74b6efaac28a64f9ddd790[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 8 18:19:51 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit abc79379bc35fc6fcd7f782e8039ca986e9d0b9d[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 8 18:19:42 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 626384f12437017c34a85d14dae8f2314949dbdb[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Wed Nov 8 17:58:36 2023 +0530
+
+    user_profile
+
+[33mcommit 82cb9ae38e01d877d929fba2518d1e1cd37af8c9[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Mon Nov 6 17:39:38 2023 +0530
+
+    live update
+
+[33mcommit d44d27cb4d0c4f454237b9a1a2a77bbc2d60068b[m
+Merge: 0002be6 b1f25e1
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 16:31:26 2023 +0530
+
+    Merge pull request #24 from aryuhub/admin-user-master
+    
+    Merge pull request #23 from aryuhub/user-feature
+
+[33mcommit b1f25e11f1d462bb49f19fa54b1f195cd4f93bb3[m
+Merge: be1b106 0002be6
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 16:29:45 2023 +0530
+
+    Merge pull request #23 from aryuhub/user-feature
+    
+    User feature
+
+[33mcommit 0002be63a0e9cee0f712e88805faceeb05fec1d0[m
+Merge: 470b8e6 be1b106
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 16:29:38 2023 +0530
+
+    Merge branch 'admin-user-master' into user-feature
+
+[33mcommit 470b8e61559d3c3a25952ebd52f1579f2f606fd7[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:53:10 2023 +0530
+
+    Delete users/migrations/__pycache__ directory
+
+[33mcommit b4dc9bede627baa0ca3b93980e0caf90c8ffea11[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:52:49 2023 +0530
+
+    Delete users/templatetags/__pycache__ directory
+
+[33mcommit b372f664d55347f182738af37ace7e91b3e49fa5[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:52:37 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit 8e76c9f90dc7a363cdb950a0f65b213a7ab058c6[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:52:19 2023 +0530
+
+    Delete payment/migrations/__pycache__ directory
+
+[33mcommit b3200ca838594dec8821e6281145253502c5fad1[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:52:10 2023 +0530
+
+    Delete payment/__pycache__ directory
+
+[33mcommit ef191c9bd9c50b9a2aa3d021443e1bc0f4228c78[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:51:59 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 6c9a98985e9e8dff9c203d06425e12363556bd1e[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:51:31 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit f5317e6fd51c572772954774119dea0fd9a1fa88[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:51:21 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit 29f4e9322cf54e1972e3b4071946d6e7f7dcba68[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:51:13 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit c64aec4ee2d334657ba8cb3cabfd668f7f4fbc4d[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Mon Nov 6 15:50:14 2023 +0530
+
+    user-reassemment contact_us
+
+[33mcommit be1b1061ce6f4c4d9ef15b3aceeff35b9c9a3b0d[m
+Merge: 287ff2a d29581c
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:28:24 2023 +0530
+
+    Merge pull request #22 from aryuhub/admin-user
+    
+    user_learning page features implementation and fixes
+
+[33mcommit d29581ceb6ff583e2c2691082c161beac014a879[m
+Merge: c002b0a 287ff2a
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:28:14 2023 +0530
+
+    Merge branch 'admin-user-master' into admin-user
+
+[33mcommit c002b0ae84b4c719b759fe22d7e81368c866c060[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Nov 6 15:26:22 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit dabb83812014f94f9ba914ffbfe772881cce7158[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Sat Nov 4 14:44:18 2023 +0530
+
+    user_learning page features implementation and fixes
+
+[33mcommit e93cf240bd62e4bffbb4ea06d9714f3bd9c2afb0[m
+Merge: 7bee67c 287ff2a
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:27:43 2023 +0530
+
+    Merge pull request #21 from aryuhub/admin-user-master
+    
+    Merge pull request #20 from aryuhub/user-feature
+
+[33mcommit 287ff2a252c5f496418d0c43a9d59b57a5f7d5fb[m
+Merge: 6f1c495 7bee67c
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:23:19 2023 +0530
+
+    Merge pull request #20 from aryuhub/user-feature
+    
+    User feature
+
+[33mcommit 7bee67cad2be8e74c1f67a489ad6bcef0814c477[m
+Merge: b1fb236 6f1c495
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:23:09 2023 +0530
+
+    Merge branch 'admin-user-master' into user-feature
+
+[33mcommit 6f1c495c0439f8b3348fcf39e10f06655ea5ec56[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:20:43 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit a10bb53a987b4c71f25c549956ba7dccd327e464[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:20:24 2023 +0530
+
+    Delete payment/migrations/__pycache__ directory
+
+[33mcommit 1c494b7062495654c72d463b4f6a2c42005769c8[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:20:02 2023 +0530
+
+    Delete payment/__pycache__ directory
+
+[33mcommit 7d97ff6cf0792054e2d0b53b04d6760870f1ca26[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:19:34 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit d129fcbcc61d0d9c49f439a45ad4db8cfc1858e9[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:19:10 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit 9c959301ae5f3e5fd9e54b466c72d4b45a21fe81[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:18:55 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit b1fb236a0ad2675e3e8a29b6fb0c1eac2ec85326[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:17:34 2023 +0530
+
+    Delete users/templatetags/__pycache__ directory
+
+[33mcommit ca01e25e2ff7bbd6954e37d5e9f9ce00d18ee1cf[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:17:21 2023 +0530
+
+    Delete users/migrations/__pycache__ directory
+
+[33mcommit 437b09d658ebb866a7e4dd9161f4a78fa68d0ff6[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:17:09 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit b4949f9db4643e465c78e6e224842b4b800aa73f[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:16:57 2023 +0530
+
+    Delete payment/__pycache__ directory
+
+[33mcommit 3a796e4c4e17c7c81b4a483957088ec4a222226d[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:16:43 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 53284cc4ef33d07eebffb13ea3092eb51499baad[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:16:24 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit 18d0fd1a00d62d8016a91b28dc6ada9fce6a7796[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Nov 2 15:16:08 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit d328fde48983b5a2541508376c52d52d84cfbee3[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Thu Nov 2 15:14:00 2023 +0530
+
+    Ui fix
+
+[33mcommit 02b0472402d1ee89c5dc253b1a3e7c23ae46e123[m
+Merge: 30fb3ae 958421b
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Thu Nov 2 15:06:55 2023 +0530
+
+    my merge
+
+[33mcommit 30fb3aea8d97975f685484627c4182a91885bf1a[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Thu Nov 2 15:03:00 2023 +0530
+
+    UI fix
+
+[33mcommit 0f95352dd52f03c062de5060e25c4faed42672db[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Thu Nov 2 14:26:18 2023 +0530
+
+    course progress implementation in user learning page
+
+[33mcommit 6faaf0a19946b7d8c1b985cd95b539d4c52660b9[m
+Merge: a2e3448 24c8140
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Wed Nov 1 15:05:16 2023 +0530
+
+    Merge branch 'admin-user-master' of https://github.com/aryuhub/medics into admin-user-master
+
+[33mcommit 24c814043956ef0157f25086e0bc4cfed6659146[m
+Merge: bea3f60 958421b
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 15:04:18 2023 +0530
+
+    Merge pull request #19 from aryuhub/user-feature
+    
+    User feature
+
+[33mcommit a2e3448af8b88d395c3f0fb020fc814ef9709b33[m
+Merge: 954a90f bea3f60
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Wed Nov 1 15:01:30 2023 +0530
+
+    Merged Merge branch 'admin-user-master' of https://github.com/aryuhub/medics into admin-user-master
+
+[33mcommit 954a90ff24284146d173a0605523560a65530efc[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Wed Nov 1 14:56:14 2023 +0530
+
+    admin-side ajax loader implementation, admin dashboard page
+
+[33mcommit 958421b616d53eea036be6207cb65af584145b44[m
+Merge: d84ed64 bea3f60
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:53:28 2023 +0530
+
+    Merge branch 'admin-user-master' into user-feature
+
+[33mcommit bea3f60647c363304bde926cec49a6b2f096c2f3[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:50:46 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit d84ed64d6010d12771dc87565d460949fdeb3f94[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:47:59 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 698e4e99270ab1cd59361668179837cab927dc3a[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:45:52 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit 99a1eddfdc64ad8ba69fd721a9b40c7707555052[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:45:35 2023 +0530
+
+    Delete payment/migrations/__pycache__ directory
+
+[33mcommit f3fbaa3a8ca74b728f966f5ab8f536fb1f96719b[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:45:00 2023 +0530
+
+    Delete users/migrations/__pycache__ directory
+
+[33mcommit 941e614d91056b562397313293b8bab515cdce59[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:44:41 2023 +0530
+
+    Delete users/templatetags/__pycache__ directory
+
+[33mcommit b67729c9e26abcacc568fb9767f68f3e3e1210c9[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:44:28 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit b21a0624c53a0063f8e38b8cd2e8bf1a4a439e2c[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:44:17 2023 +0530
+
+    Delete payment/__pycache__ directory
+
+[33mcommit 055723419ccbb08a05aa4cf4968e61a1c28c5afc[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:43:58 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit d04a6d251743e80e7aa76adf3f1bea509e3ad781[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Nov 1 14:43:45 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit 006abadba26d3de8c8eea82b14a9b5b8f2c7edf5[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Wed Nov 1 14:42:49 2023 +0530
+
+    Assessmentmodel
+
+[33mcommit befac758ccccf580cedf8e63f8c29a4a1c0bbc3e[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Tue Oct 31 18:55:32 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit a3e56414b282232e3b34b281aa5e1b683b231fe7[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Tue Oct 31 18:55:20 2023 +0530
+
+    Delete users/migrations/__pycache__ directory
+
+[33mcommit cc83e9c79c471b43cb2746c5b64592131609dbbd[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Tue Oct 31 18:54:54 2023 +0530
+
+    Delete users/templatetags/__pycache__ directory
+
+[33mcommit 5a7ad5dfb7fe65477e6d32931e1f922212e9c2db[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Tue Oct 31 18:54:45 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit 9bc02157c76872a0602547060d1995c9c90d9085[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Tue Oct 31 18:54:23 2023 +0530
+
+    Delete payment/migrations/__pycache__ directory
+
+[33mcommit 26519e476e98fd2aa951c49d4d300264a5f7992a[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Tue Oct 31 18:54:13 2023 +0530
+
+    Delete payment/__pycache__ directory
+
+[33mcommit d11550a1dce9c0170e04a6f1a9af5d788b532e2f[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Tue Oct 31 18:54:00 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit 3a4d48e286cea572629245c5eb06976bbda821fc[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Tue Oct 31 18:53:36 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit 8cc28fa49c0cb3b46d575966d8ea0bdf9156ae22[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Tue Oct 31 18:48:16 2023 +0530
+
+    user_learning page, popup question for video
+
+[33mcommit 32c9cb34eb84b93f67f17d59a5e62447571ea4bf[m
+Merge: e803749 2e8fbca
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 20:12:54 2023 +0530
+
+    Merge pull request #17 from aryuhub/user-feature
+    
+    User feature
+
+[33mcommit 2e8fbca0d57f00d36ab19b79f55785831e58a4c9[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 20:12:14 2023 +0530
+
+    Delete payment/__pycache__ directory
+
+[33mcommit f2d1078f61d613f987ec0449894ab54ffb1e44e3[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 20:11:35 2023 +0530
+
+    Delete users/migrations/__pycache__ directory
+
+[33mcommit d1a45ea75f023639c814e6ff651884a12beac091[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 20:11:22 2023 +0530
+
+    Delete users/templatetags/__pycache__ directory
+
+[33mcommit 6202059bdfadee2bf799ed2988b3568c9202a151[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 20:11:14 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit 6dd00cca473c827de8c85bea7be8bfe227266ef0[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 20:11:04 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit a3c3e1465e2174e8a315726c331f53535eb03c5d[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 20:10:51 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit 2c2cbb86b3363133e6e2e368d14d3c1ed9fe2f8c[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 20:10:35 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit 92c9d762829026da99798fbfdc3269affdb034a1[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 20:10:20 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit 053108465ee39658de9176a92318b71d77a8ea9f[m[33m ([m[1;31morigin/user-latest[m[33m, [m[1;32muser-latest[m[33m)[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Mon Oct 30 19:55:53 2023 +0530
+
+    user-feature
+
+[33mcommit ffec27a9e61da8ce5a6894420aaa98cbc83a5aeb[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Mon Oct 30 19:47:34 2023 +0530
+
+    user-updates
+
+[33mcommit 914bce136782c708839f4a0d8729e505567e8297[m
+Merge: 7e9dd9d 040a30f
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 14:12:08 2023 +0530
+
+    Merge pull request #16 from aryuhub/user-feature
+    
+    User feature
+
+[33mcommit 7e9dd9de46a6b17ff32d40ae6d9c31e50ea4a513[m
+Merge: 1bede77 6a1982b
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 14:11:06 2023 +0530
+
+    Merge pull request #15 from aryuhub/admin-feature
+    
+    Admin feature
+
+[33mcommit 040a30f3213bf2140926c4eb70d3544d17491cc0[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 14:09:55 2023 +0530
+
+    Delete users/templatetags/__pycache__ directory
+
+[33mcommit 3782226c0d80d0e912a7487f50ee6ad020964397[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 14:09:44 2023 +0530
+
+    Delete users/migrations/__pycache__ directory
+
+[33mcommit 304d012df0e72f0a14457a3680c0f8052b8f76c5[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 14:09:03 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit 97d2951fcdf5f4f4d3e5f0f3491c8942240f0c14[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 14:08:32 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit a3c4aa93706a8079b2945ab03b8cefbb4dd8f588[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 14:08:22 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit b38d75ce453ada5a3620cff0b7eac1478abe208c[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Mon Oct 30 14:05:47 2023 +0530
+
+    user-features
+
+[33mcommit 6a1982b039bc13636a9585e5fe688e5a79e35afd[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 13:28:42 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 00fafe3b5d9eff49b32f673f3df8f71103436fbe[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 13:28:24 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit 81fea5dddda809669b8dd7d950a94df2e343c098[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 13:28:03 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit bc0cc15adf02f8f5feebeda1fb05ae52ec457a3b[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 30 13:27:53 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit 0d0a39d9c798948a1d099f187cecd6fe45bb9d67[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Fri Oct 27 16:48:19 2023 +0530
+
+    popup questions in modules add,edit page, assessment questions import option
+
+[33mcommit 1bede772eb683d3022cc33412d1e6a97a4781efc[m
+Merge: aa399b7 0a0ab0b
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:49:25 2023 +0530
+
+    Merge pull request #14 from aryuhub/user-master
+    
+    User master
+
+[33mcommit 0a0ab0b6768023e1884d2e86c2ed58da4141fcfb[m
+Merge: cbaf427 aa399b7
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:49:15 2023 +0530
+
+    Merge branch 'master' into user-master
+
+[33mcommit cbaf42780b5992fa3058cbed8d331e1e7f7a9134[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:43:37 2023 +0530
+
+    Rename .medics_academy_pgpassxt to .medics_academy_pgpass
+
+[33mcommit 1e27229fd0f47b781907beef146f9b448be34bad[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:42:56 2023 +0530
+
+    Rename .medics_academy_pgpass.txt to .medics_academy_pgpassxt
+
+[33mcommit ecdb58cd5ea5cd639e6de01550dcff6e9bc5ef87[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:39:02 2023 +0530
+
+    Rename medics_academy_pgpass.txt to .medics_academy_pgpass.txt
+
+[33mcommit cf2a546cd8d5c342af0083447d16e9efa7cac843[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:38:13 2023 +0530
+
+    Add files via upload
+
+[33mcommit 31f6659f12f11b45707fc286dea08ea48e07722a[m
+Merge: 9fc092c 86a7d06
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:31:23 2023 +0530
+
+    Merge pull request #13 from aryuhub/user-feature
+    
+    User feature
+
+[33mcommit 86a7d0638a84d5777d8bc041a20464ba9002b6e3[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:31:07 2023 +0530
+
+    Delete users/templatetags/__pycache__ directory
+
+[33mcommit 33f98da36dfe401c4a8c2a52c8b1bf1e202031bb[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:30:32 2023 +0530
+
+    Delete users/migrations/__pycache__ directory
+
+[33mcommit cf19c5421f4ba2e297b03ce4311236ffba6b71e6[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:28:33 2023 +0530
+
+    Delete .medics_academy_pgpass
+
+[33mcommit 7e0ee9e8966d8b1263ccc0a037d52cfd9058d21d[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:27:58 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit a1297d073d693985d441ca9fb846baa00803965b[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:27:39 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 8c598cf5792c920d147c9df52824f194a1ad9a4c[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:27:22 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit f9abb52a04ca0090cd61d6c2d8324dfa0e1cefe3[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:26:54 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit 235094c3e1d03a696971fc6cbe807458410df9a7[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:26:44 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit d9a20b1e420f51ff3c17bf790f9b827ef2258468[m[33m ([m[1;31morigin/user-master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32muser-master[m[33m)[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Wed Oct 25 10:25:19 2023 +0530
+
+    user-feature
+
+[33mcommit 9fc092c6d75310c7308432b55195d738622ec884[m
+Merge: 99c709a b8993f6
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:20:10 2023 +0530
+
+    Merge pull request #12 from aryuhub/admin-feature
+    
+    Admin feature
+
+[33mcommit 99c709aeda67a7b49b0da0fe5794b9cefb11d9ed[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:19:51 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit b8993f6b36b2cb39c89158e60fc4da70761c4756[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:13:45 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 20837490731d49f47d86a40f7f037eb5b3f718a8[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:13:21 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit 6ffe85fbc10c356ade5acf0458a0beecd884757e[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:13:01 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit 15f4212bde53dcf9fd460171c0a7da5467c89587[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 25 10:12:35 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit 82b3011385274c654c6fa123ab73de0edf5e1e61[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Wed Oct 25 09:54:48 2023 +0530
+
+    necessary bug fixes
+
+[33mcommit aa399b7559593e2864180ddd2c1838e6887668dd[m
+Merge: 97efe04 94d161e
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 20 16:40:14 2023 +0530
+
+    Merge pull request #11 from aryuhub/feature-admin
+    
+    Feature admin
+
+[33mcommit 97efe045dadd4e7322e12825ca50c99fd29d43c1[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 20 16:39:05 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 94d161ebbe4cc7a1f7ddde86a5e3d7595fd78ef4[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 20 16:35:29 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 159824dfbfefb02ea601edb4945f418ee1fb0b20[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 20 16:34:17 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit 0a2329d516c5293744682adf6a7df8ab0bbd5580[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 20 16:34:06 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit 1978a752a3f9173567ee63fb446682b791c72a52[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 20 16:33:54 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit 57cc2b5f2925bd498c86b838521b8cd6cbc10abe[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Thu Oct 19 15:56:27 2023 +0530
+
+    new functionalities for add modules,edit modules form and minor bug fixes
+
+[33mcommit 4fea5a677e5ddfdb6dea1b320d93891acb0a278e[m
+Merge: fd408ac 2692d99
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 16 18:32:03 2023 +0530
+
+    Merge pull request #10 from aryuhub/user-master
+    
+    User master
+
+[33mcommit 2692d9983a6b7552f2da48df6659da92ded4192b[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 16 18:30:10 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit b6481281a7a20cbeddef42a0d36ceecdfe1123e2[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 16 18:29:52 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit 36278b300059e8795c3ae02e94ca25a3019a9b6e[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 16 18:29:41 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit 2d677ed1581a2b3f0fe6f508e27abda758b64d6e[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 16 18:29:09 2023 +0530
+
+    Delete users/migrations/__pycache__ directory
+
+[33mcommit 56674a60786cf761ab49eb998d16e4eb40bb97cf[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 16 18:28:48 2023 +0530
+
+    Delete users/templatetags/__pycache__ directory
+
+[33mcommit 7a0c8f992a7261926791a2a32de86b640d60556d[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Mon Oct 16 18:28:18 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit e8037493735a5d7697e6599502891e46e35a0761[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Mon Oct 16 18:03:46 2023 +0530
+
+    user side
+
+[33mcommit 54af7d9722c00a8397516fa35305cc96f22a08b9[m
+Merge: ce28639 5034fd1
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Fri Oct 13 12:57:10 2023 +0530
+
+    update
+
+[33mcommit ce28639e92cd0a687181c7ebea3d84b8bd77437a[m[33m ([m[1;31morigin/feature-homepage[m[33m)[m
+Author: aryuhub <awsadmin@aryuenterprises.com>
+Date:   Fri Oct 13 12:30:50 2023 +0530
+
+    user homepage
+
+[33mcommit 5034fd1097c109299f9d749a4119ed0e4400bc4f[m
+Merge: cf4c2a6 706237f
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 13 12:09:22 2023 +0530
+
+    Merge pull request #9 from aryuhub/develop-user
+    
+    Develop user
+
+[33mcommit cf4c2a6245854e748f0aea05cd37a1a32ce44c19[m
+Merge: 5031427 fd408ac
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 13 12:07:28 2023 +0530
+
+    Merge pull request #8 from aryuhub/master
+    
+    User Side
+
+[33mcommit 706237f19a2e31c9a04f2d19218cb8c9cd9dda48[m
+Merge: 7cefbb6 f5eb0aa
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 13 12:06:03 2023 +0530
+
+    Merge pull request #7 from aryuhub/develop-u
+    
+    Develop u
+
+[33mcommit f5eb0aa183f52a09c7c374b51ac8580d683560d5[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 13 12:04:34 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit ff4f6b5b862f22ee158a9a3d186f35648042d4a4[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 13 12:04:11 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit c2d7377bb4ed727e8408535b8f4d7abcfd88c437[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 13 12:03:48 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit d022cca7bacf008a331125aa1777b8c00626707b[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 13 12:03:34 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit d80387dfbba6251cd6f94cf6cb3e9568184985d9[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 13 12:03:17 2023 +0530
+
+    Delete users/migrations/__pycache__ directory
+
+[33mcommit 779ecd666323b97b097a95072589e66b5cbe0c6a[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Fri Oct 13 12:03:04 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit 178514393d5a0fd4ccb8dc20659d907b09da2cc8[m
+Author: kanimozhiT <kanimozhi@aryuenterprises.com>
+Date:   Fri Oct 13 11:58:50 2023 +0530
+
+    user profile
+
+[33mcommit fd408ac49f450c3bc6fc9e66b6a6258ae83cf496[m
+Merge: f8ebede ff79ade
+Author: saravanan-aryu <128052895+saravanan-aryu@users.noreply.github.com>
+Date:   Thu Oct 12 10:21:04 2023 +0530
+
+    Merge pull request #6 from aryuhub/feature
+    
+    Feature
+
+[33mcommit ff79adecf4e732b9d96aea0cb98b63e872b99ab4[m
+Author: saravanan-aryu <128052895+saravanan-aryu@users.noreply.github.com>
+Date:   Thu Oct 12 10:19:43 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 24d95a6feba5fd3503fc1c2a9319f1e92f3011a0[m
+Author: saravanan-aryu <128052895+saravanan-aryu@users.noreply.github.com>
+Date:   Thu Oct 12 10:17:30 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit df34be132fd9e3ae2aab9b745c3c43042de96126[m
+Author: saravanan-aryu <128052895+saravanan-aryu@users.noreply.github.com>
+Date:   Thu Oct 12 10:16:45 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit b7f6147d3b3fed09a58f1b2a7b17fdd74135c6ec[m
+Author: saravanan-aryu <128052895+saravanan-aryu@users.noreply.github.com>
+Date:   Thu Oct 12 10:16:21 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit a9b9b7c160c48a4efb7067caf2f6d7e79ff2ceaf[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Thu Oct 12 10:09:50 2023 +0530
+
+    admin user list and some missouts
+
+[33mcommit 50314271631d6d2014dea68ecde22723ab87c35f[m
+Merge: 204176d 7cefbb6
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 12:08:12 2023 +0530
+
+    Merge pull request #5 from aryuhub/develop-user
+    
+    Develop user
+
+[33mcommit 7cefbb669294f8c2648cff85606e797f37b14c68[m[33m ([m[1;31morigin/develop-user[m[33m)[m
+Merge: e81732c 204176d
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 12:08:00 2023 +0530
+
+    Merge branch 'user-master' into develop-user
+
+[33mcommit e81732c88ef7d60b498d31bce88c5362beb9cc76[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:54:42 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit 204176d16aafda78ac434a2eb396286355c38d8b[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:54:14 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit f8ebede762f50fb1c8e303fd10415ad5480953e9[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:53:53 2023 +0530
+
+    Delete courses/templatetags/__pycache__ directory
+
+[33mcommit e918096f9384f28e99d73b9ef98281230f233c6b[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:45:58 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit f16998419ff23e99ef73de1cf0344130197b57d8[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:45:42 2023 +0530
+
+    Delete courses/migrations/__pycache__ directory
+
+[33mcommit 89780742e918acef8cc778e97803dcf3c3deee0b[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:43:47 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit e8795adbc6a5bc8b40423506937c482538f9967f[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:43:03 2023 +0530
+
+    Delete users/__pycache__ directory
+
+[33mcommit 0fd53e00018bd28c3c103acf7014aa85377ba8e1[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:42:46 2023 +0530
+
+    Delete courses/__pycache__ directory
+
+[33mcommit 0926498c83d40c612c058bb25306b977dce19b55[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:41:28 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit 46cfefcf08f50d45bc129823b8f6a5532ccfacd8[m
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 11 11:41:04 2023 +0530
+
+    Delete medics_academy/__pycache__ directory
+
+[33mcommit a8e898ade1236f3385912f21d653d7bbe0bfdb66[m
+Author: kanimozhiT <kanimozhi@aryuenterprises.com>
+Date:   Wed Oct 11 11:27:57 2023 +0530
+
+    user side
+
+[33mcommit 1cf9b926157ab796abf7dc66cd03540ad7105e6b[m
+Merge: 9258c70 b89ab3d
+Author: saravanan-aryu <128052895+saravanan-aryu@users.noreply.github.com>
+Date:   Mon Oct 9 15:06:24 2023 +0530
+
+    Merge pull request #4 from aryuhub/feature
+    
+    assessment pages and some fixes
+
+[33mcommit b89ab3d30ae07ed769955ca8868e19e460205286[m[33m ([m[1;31morigin/feature[m[33m)[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Mon Oct 9 14:56:07 2023 +0530
+
+    assessment pages and somes fixes
+
+[33mcommit 9258c704cdd59199dad12a92dd69c194f055de45[m
+Merge: f4570aa 64d2221
+Author: saravanan-aryu <128052895+saravanan-aryu@users.noreply.github.com>
+Date:   Thu Oct 5 17:30:09 2023 +0530
+
+    Merge pull request #3 from aryuhub/develop
+    
+    modules list, edit and fixes
+
+[33mcommit 64d2221aaf5867efc6f4adc359b0c0f87a40b49e[m[33m ([m[1;31morigin/develop[m[33m)[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Thu Oct 5 17:26:55 2023 +0530
+
+    modules list, edit and fixes
+
+[33mcommit f4570aa94a8aa2e5e81d394726fabcd7c9a6a6e3[m
+Merge: 4ec44ee 7b96a0d
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Thu Oct 5 10:46:41 2023 +0530
+
+    Merge pull request #2 from aryuhub/feature
+    
+    modules list and delete functionality
+
+[33mcommit 7b96a0d3ca4e5bd523f15503944ddfded27ae573[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Thu Oct 5 10:29:50 2023 +0530
+
+    modules list and delete functionality
+
+[33mcommit 4ec44eef42aad9303edd29f91c4bab7967b727e0[m
+Merge: 3a7f6f8 77c65d5
+Author: Aryu Enterprises <128415568+aryuhub@users.noreply.github.com>
+Date:   Wed Oct 4 12:45:43 2023 +0530
+
+    Merge pull request #1 from aryuhub/develop
+    
+    simple dashboard page
+
+[33mcommit 77c65d5db305ddeba05cf5f3e7b553bdab566c11[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Wed Oct 4 12:40:49 2023 +0530
+
+    simple dashboard page
+
+[33mcommit 3a7f6f82f5fb9cb28dfd9036c3c6df8a84b98d60[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Tue Oct 3 16:18:42 2023 +0530
+
+    requirement.txt
+
+[33mcommit e5aa3eab6b1758d5bfacc02ed05c5481680978e1[m
+Author: saravanan-aryu <saravanan@aryuenterprises.com>
+Date:   Tue Oct 3 15:34:33 2023 +0530
+
+    first commit medics academy

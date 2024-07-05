@@ -1,0 +1,167 @@
+body {
+  margin-bottom: 55px;
+  /* background: var(--color-contentbg); */
+  background-color: white;
+}
+
+/* .form-control {
+  font-family: var(--brand-font);
+  font-size: 12px;
+  color: #cdd6df;
+  border-color: #cdd6df;
+} */
+
+.form-control:focus {
+  color: var(--bs-body-color) !important;
+  background-color: var(--bs-body-bg) !important;
+  border-color: unset !important;
+  outline: none !important;
+  box-shadow: unset !important;
+}
+
+input:focus-visible {
+  /* outline: none !important; */
+  /* border: none; */
+  border-color: grey;
+}
+
+/* section-content */
+.section-two {
+  background-image: url("/static/images/user/user_banner.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  height: 573px; /* Set the minimum height to fill the viewport */
+}
+
+.section-one {
+  background-image: url("/static/images/user/user_banner.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  height: 573px; /* Set the minimum height to fill the viewport */
+}
+
+.custom-card {
+  background-color: #ebf5f8;
+  border: unset;
+  position: relative;
+  top: 150px;
+}
+
+.courses-row {
+  border-bottom: 1px solid #3ca1ba2d !important;
+}
+
+/* #custom-control-nexts {
+  margin-left: unset !important;
+}
+
+
+#custom-control-prevs 
+{
+    margin-right:  none !important;
+} */
+/* .custom-card-top{
+    border-radius: 15px 15px 0px 0px;
+   
+  
+    --bs-card-border-radius: none;
+  
+    --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+   
+    /* border-radius: none; */
+.btn-custom-brand {
+  background-color: var(--brand-color);
+  color: var(--color-white);
+}
+
+.card-text {
+  font-size: 12px;
+}
+
+.card-text-star,
+.price {
+  color: var(--brand-color) !important;
+  text-decoration: none !important;
+}
+
+.card-text-icon {
+  color: var(--brand-color);
+  font-size: 12px;
+}
+
+.trending-title {
+  font-family: var(--brand-font);
+  font-weight: 600;
+}
+
+.title-more {
+  font-family: var(--brand-font);
+  color: var(--brand-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* home-Page-without-course */
+
+.custom-control {
+  background-color: black !important;
+}
+
+.custom-control-prev {
+  background-color: black !important;
+  margin-right: 110px;
+}
+
+.custom-control-next {
+  background-color: black !important;
+  margin-left: 110px;
+}
+
+.carousel-btn {
+  position: absolute;
+  bottom: 20%;
+  left: 7.5%;
+}
+
+/* Custom CSS to remove border */
+.no-border-card {
+  border: none;
+  box-shadow: none;
+}
+
+
+.card-title {
+  text-decoration: none;
+  color: var(--color-black);
+
+}
+
+
+.card-title a{
+  text-decoration: none;
+  color: var(--color-black) !important;
+}
+
+.bi.bi-bookmark:hover{
+  color: var(--brand-color)!important;
+
+}
+
+
+.bi-bookmark-check-fill{
+  color: var(--brand-color)!important;
+}
+
+
+
+
+@media (max-width: 576px) {
+  .courses-card {
+    margin-top: 1rem !important; /* Use !important to ensure it overrides other styles */
+  }
+}
+
+
+
